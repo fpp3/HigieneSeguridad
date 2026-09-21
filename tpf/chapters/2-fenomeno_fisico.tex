@@ -2,21 +2,67 @@
 \label{sec.cap2:fenomeno_fisico}
 
 El fuego es un proceso fisicoquímico de combustión caracterizado por una reacción de oxidación-reducción fuertemente
-exotérmica, rápida y autosostenida en fase gaseosa, acompañada por la emisión de energía en forma de luz y calor. Desde
-la perspectiva de la ingeniería de seguridad, este fenómeno se modela a través del tetraedro del fuego, el cual postula
-que para que la combustión se inicie y persista deben coincidir simultáneamente cuatro factores:
+exotérmica, rápida y autosostenida en fase gaseosa o superficial, acompañada por la emisión de energía en forma de luz
+y calor. Para comprender su dinámica y los métodos disponibles para su extinción, la ingeniería de seguridad recurre a
+dos modelos teóricos complementarios: el clásico triángulo del fuego y el moderno tetraedro del fuego.
+
+\section{Modelos Conceptuales: Triángulo y Tetraedro del Fuego}
+\label{sec.cap2:modelos_fuego}
+
+\subsection{El Triángulo del Fuego}
+
+Históricamente, el inicio y sostenimiento de la combustión se describió a través del modelo del triángulo del fuego,
+el cual establece que para que exista fuego deben coexistir simultáneamente tres factores:
+
 \begin{itemize}
-    \item Combustible: Material o sustancia reductora susceptible de oxidarse.
-    \item Comburente: Agente oxidante que alimenta la reacción, constituido habitualmente por el oxígeno ambiental
-          ($21\percent$ en volumen en aire normal).
-    \item Energía de activación: Calor o fuente de ignición que eleva la temperatura local hasta alcanzar el umbral de
-          reacción de los reactivos.
-    \item Reacción química en cadena: Propagación molecular ininterrumpida sustentada por radicales libres altamente
-          activos ($H^\bullet$, $OH^\bullet$, $O^{\bullet\bullet}$).
+    \item Combustible: Material o sustancia reductora en estado sólido, líquido o gaseoso susceptible de oxidarse.
+    \item Comburente: Agente oxidante que alimenta y sustenta la reacción, constituido habitualmente por el oxígeno
+          atmosférico ($21\percent$ en volumen en aire normal; requiriéndose una concentración mínima del $14\text{--}15\percent$
+          para mantener llamas abiertas).
+    \item Energía de activación (Calor): Aporte térmico que eleva la temperatura local de la mezcla reactiva hasta
+          alcanzar su umbral de ignición.
 \end{itemize}
-La eliminación o inhibición de cualquiera de estos cuatro vértices produce la extinción inmediata del proceso ígneo.
-En la Figura \ref{fig.cap2:tetraedro} se presenta la configuración tridimensional del tetraedro del fuego, detallando
-los cuatro factores indispensables para la combustión y el mecanismo de extinción asociado a la remoción de cada uno.
+
+Bajo este esquema elemental, la eliminación de cualquiera de los tres lados del triángulo produce la extinción inmediata
+del proceso ígneo, dando origen a los tres métodos clásicos de combate: desalimentación (supresión del combustible),
+sofocación (desplazamiento o aislamiento del comburente) y enfriamiento (disipación de la energía calórica por debajo de
+la temperatura de ignición). En la Figura \ref{fig.cap2:triangulo} se ilustra la configuración del triángulo del fuego y
+sus respectivos mecanismos de extinción.
+
+\begin{figure}[!ht]
+    \centering
+    \input{figures/fig_cap2_triangulo.tex}
+    \caption{Representación esquemática del triángulo del fuego y mecanismos clásicos de extinción.}
+    \label{fig.cap2:triangulo}
+\end{figure}
+
+Si bien el modelo del triángulo del fuego resulta plenamente válido para explicar el encendido inicial y los procesos
+de combustión incandescente superficial o sin llama (fuegos en masa de brasas carbonosas), manifiesta limitaciones
+físicas al analizar fuegos vivos con llama en fase gaseosa y la acción de agentes extintores químicos especiales.
+
+\subsection{Evolución hacia el Tetraedro del Fuego}
+
+Las investigaciones termodinámicas demostraron que en una combustión con llama no basta con la presencia simultánea de
+combustible, comburente y calor. La persistencia de las llamas depende de una reacción química en cadena autosostenida,
+gobernada por la generación e interacción continua de radicales libres altamente reactivos e inestables ($H^\bullet$,
+$OH^\bullet$, $O^{\bullet\bullet}$) en la fase gaseosa.
+
+Al incorporar este factor cinético molecular, el modelo geométrico evoluciona de una figura plana a un cuerpo
+tridimensional: el tetraedro del fuego. Este modelo postula que para que la combustión con llama se mantenga activa se
+requiere la interacción simultánea de cuatro factores:
+\begin{itemize}
+    \item Combustible: Sustancia reductora susceptible de oxidarse.
+    \item Comburente: Agente oxidante (oxígeno ambiental).
+    \item Energía de activación: Calor o fuente de ignición que suministra la energía de activación inicial.
+    \item Reacción química en cadena: Propagación molecular autosostenida por radicales libres.
+\end{itemize}
+
+La incorporación del cuarto elemento fundamenta un mecanismo de extinción específico y de gran relevancia en la
+protección moderna: la inhibición química (o desactivación catalítica de radicales). Agentes como los polvos químicos
+secos (sales de fosfato monoamónico y bicarbonato) y los gases limpios halocarbonados capturan los radicales libres en la
+zona de reacción, extinguiendo las llamas de forma prácticamente instantánea sin necesidad de enfriar la masa ni reducir
+la concentración global de oxígeno. En la Figura \ref{fig.cap2:tetraedro} se presenta la configuración del tetraedro del
+fuego con sus cuatro elementos y los métodos de extinción asociados.
 
 \begin{figure}[!ht]
     \centering
@@ -24,6 +70,68 @@ los cuatro factores indispensables para la combustión y el mecanismo de extinci
     \caption{Representación esquemática del tetraedro del fuego y mecanismos asociados de extinción.}
     \label{fig.cap2:tetraedro}
 \end{figure}
+
+\section{Tipos y Regímenes de Combustión}
+\label{sec.cap2:tipos_combustion}
+
+Desde la perspectiva fisicoquímica y de la seguridad industrial, la combustión se clasifica según diferentes parámetros
+operativos:
+
+\subsection{Según la Velocidad de Propagación de la Reacción}
+
+La velocidad lineal del frente de llama y la tasa de desprendimiento energético determinan el régimen de reacción:
+
+\begin{itemize}
+    \item Combustión Lenta u Oxidación: Reacción en la cual la velocidad de oxidación es sumamente reducida. No se emite
+          luz visible y el calor generado se disipa hacia el entorno sin producir incrementos térmicos sensibles (e.g.,
+          la corrosión atmosférica de metales, procesos biológicos de fermentación y el envejecimiento térmico paulatino
+          de aislaciones dieléctricas).
+    \item Combustión Simple o Rápida (Fuego Convencional): Proceso exotérmico donde la velocidad de propagación del frente
+          de llama es inferior a $1\,\mathrm{m/s}$. Va acompañado de intensa emisión de luz (llamas) y calor sensible,
+          siendo la forma representativa en que arden materiales combustibles habituales como maderas, textiles, líquidos y
+          gases.
+    \item Deflagración: Combustión acelerada y violenta donde el frente de llama se propaga por transferencia de calor y
+          difusión de masa a velocidad subsónica (desde algunos metros por segundo hasta cientos de metros por segundo,
+          pero sin superar la velocidad del sonido en la mezcla reactiva sin quemar, $v < 340\,\mathrm{m/s}$ en aire). Genera
+          ondas de presión moderadas (hasta unos pocos bares) y es característica de inflamaciones súbitas de mezclas de
+          vapores inflamables, gases o nubes de polvo en suspensión en conductos o recintos.
+    \item Detonación: Régimen de combustión extremadamente destructivo donde la reacción química se propaga a velocidad
+          supersónica (típicamente entre $1000\,\mathrm{m/s}$ y más de $2000\,\mathrm{m/s}$), acoplada a una onda de
+          choque compresiva que autocomprime los reactivos. La onda de sobrepresión resultante (de decenas a cientos de
+          bares) produce efectos mecánicos devastadores sobre recintos y estructuras edilicias.
+\end{itemize}
+
+\subsection{Según la Disponibilidad de Comburente}
+
+La proporción relativa entre el comburente disponible y el combustible condiciona los subproductos de la reacción:
+
+\begin{itemize}
+    \item Combustión Completa o Perfecta: Ocurre cuando la concentración de oxígeno se encuentra en proporción
+          estequiométrica o en exceso respecto al combustible. La totalidad del carbono e hidrógeno se oxida completamente
+          a dióxido de carbono ($CO_2$) y vapor de agua ($H_2 O$), liberando la máxima energía térmica teórica. La llama
+          resultante es de color azulado o transparente y no genera humo opaco ni monóxido de carbono.
+    \item Combustión Incompleta: Se desarrolla cuando el aporte de oxígeno es insuficiente para completar la oxidación,
+          situación característica de los siniestros en recintos cerrados. Parte del carbono no se oxida y se libera como
+          partículas sólidas incandescentes de carbón (hollín que confiere a la llama su color amarillo-anaranjado) y gases
+          altamente tóxicos, principalmente monóxido de carbono ($CO$), aldehídos y vapores pirolíticos incombustos.
+\end{itemize}
+
+\subsection{Según la Morfología de la Combustión y Fenómenos Espontáneos}
+
+\begin{itemize}
+    \item Combustión con Llama vs. Combustión Incandescente (sin Llama): La combustión con llama se desarrolla
+          exclusivamente en fase gaseosa entre los vapores inflamables y el comburente. Por el contrario, la combustión
+          incandescente (en masa de brasas o smoldering) es una reacción heterogénea superficial directamente sobre la matriz
+          sólida carbonosa. Esta última no produce llama, pero mantiene temperaturas elevadas y puede subsistir con
+          concentraciones muy bajas de oxígeno ($< 5\percent$), albergando el riesgo severo de ignición violenta ante el
+          ingreso repentino de aire fresco (fenómeno de backdraft).
+    \item Combustión Espontánea (Autoignición Confinada): Fenómeno en el cual una reacción de oxidación lenta y continua en
+          el interior de una masa de material poroso (e.g., trapos embebidos en aceites secantes o hidrocarburos, acopios de
+          carbón o silos de granos) libera calor que no logra disiparse debido a la baja conductividad térmica del entorno.
+          La temperatura interna se eleva progresivamente hasta alcanzar la temperatura de autoignición del material,
+          iniciando el fuego abierto sin necesidad de aporte térmico exterior ni presencia de chispa.
+\end{itemize}
+
 
 \section{Termodinámica y Cinética de la Combustión}
 

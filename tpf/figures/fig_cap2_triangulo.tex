@@ -1,0 +1,67 @@
+\begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+  % Paleta cromática normalizada
+  \definecolor{colorCalor}{RGB}{205, 35, 25}          % Rojo
+  \definecolor{colorCombustible}{RGB}{30, 135, 50}     % Verde
+  \definecolor{colorComburente}{RGB}{20, 100, 190}     % Azul
+
+  % Vértices del triángulo equilátero
+  \coordinate (A) at (0, 2.2);        % Vértice superior
+  \coordinate (B) at (-2.3, -1.2);    % Vértice inferior izquierdo
+  \coordinate (C) at (2.3, -1.2);     % Vértice inferior derecho
+
+  % Fondo del triángulo con sombreado suave
+  \fill[yellow!10] (A) -- (B) -- (C) -- cycle;
+
+  % Lados coloreados según el elemento correspondiente
+  % Lado izquierdo: Combustible (A - B)
+  \draw[colorCombustible!90!black, line width=2.8pt] (A) -- (B);
+  % Lado derecho: Comburente (A - C)
+  \draw[colorComburente!90!black, line width=2.8pt] (A) -- (C);
+  % Lado inferior / Base: Calor (B - C)
+  \draw[colorCalor!90!black, line width=2.8pt] (B) -- (C);
+
+  % Llama central estilizada
+  \begin{scope}[shift={(0, -0.2)}, scale=0.6]
+    \shade[inner color=yellow!90!white, outer color=orange!95!red, opacity=0.9]
+      (0,-0.6) .. controls (-0.7,-0.2) and (-0.6,0.6) .. (0,1.4)
+               .. controls (0.6,0.6) and (0.7,-0.2) .. (0,-0.6);
+    \shade[inner color=white, outer color=yellow!85!orange, opacity=0.95]
+      (0,-0.4) .. controls (-0.35,-0.1) and (-0.3,0.3) .. (0,0.8)
+               .. controls (0.3,0.3) and (0.35,-0.1) .. (0,-0.4);
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % Tarjetas descriptivas exteriores con Mecanismos de Extinción
+  % -------------------------------------------------------------
+
+  % 1. COMBUSTIBLE (Izquierda)
+  \node[anchor=east, align=flush right, text width=4.7cm, fill=white, draw=colorCombustible!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardComb) at (-2.5, 0.6) {
+    \textcolor{colorCombustible!90!black}{\bfseries Combustible}\\[1.5pt]
+    \scriptsize Materia reductora (sólido, líquido o gas).\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorCombustible!90!black}{\textbf{Desalimentación}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorCombustible!85!black, line width=0.85pt] (cardComb.east) -- (-1.15, 0.5);
+
+  % 2. COMBURENTE (Derecha)
+  \node[anchor=west, align=flush left, text width=4.7cm, fill=white, draw=colorComburente!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardOx) at (2.5, 0.6) {
+    \textcolor{colorComburente!90!black}{\bfseries Comburente}\\[1.5pt]
+    \scriptsize Agente oxidante ($O_2$ ambiental $\ge 14\text{--}15\%$).\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorComburente!90!black}{\textbf{Sofocación}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorComburente!85!black, line width=0.85pt] (cardOx.west) -- (1.15, 0.5);
+
+  % 3. CALOR (Inferior / Base)
+  \node[anchor=north, align=center, text width=6.6cm, fill=white, draw=colorCalor!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardCalor) at (0, -1.6) {
+    \textcolor{colorCalor!90!black}{\bfseries Calor / Energía de Activación}\\[1.5pt]
+    \scriptsize Aporte térmico para alcanzar la temperatura de ignición.\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorCalor!90!black}{\textbf{Enfriamiento}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorCalor!85!black, line width=0.85pt] (cardCalor.north) -- (0, -1.25);
+
+\end{tikzpicture}
