@@ -1,0 +1,49 @@
+\documentclass[]{informeutn}
+
+% Bibliografía
+\usepackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
+\addbibresource{fuentes.bib}
+
+% Paquetes adicionales
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% Unidades personalizadas adicionales a las de la clase
+\newcommand{\dBA}{\,\mathrm{dBA}}
+\newcommand{\dB}{\,\mathrm{dB}}
+\newcommand{\dBC}{\,\mathrm{dBC}}
+\newcommand{\h}{\,\mathrm{h}}
+\newcommand{\m}{\,\mathrm{m}}
+\newcommand{\kHz}{\,\mathrm{kHz}}
+
+% Configuración de datos del informe
+\materia{Seguridad, Higiene y Medio Ambiente}
+\titulo{Trabajo Práctico Nº 3}
+\subtitulo{Medición y Evaluación de Ruido en el Ambiente Laboral}
+\comision{4R2}
+\autores{Franco Palombo - 401910}
+\fecha{26 de Agosto de 2026}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\setcounter{page}{1}
+\thispagestyle{plain}
+
+% Capítulos del informe
+\input{chapters/1-introduccion.tex}
+\input{chapters/2-teoria.tex}
+\input{chapters/3-metodologia.tex}
+\input{chapters/4-mediciones.tex}
+\input{chapters/5-analisis.tex}
+\input{chapters/6-protocolo_srt8512.tex}
+\input{chapters/7-conclusiones.tex}
+
+\end{document}

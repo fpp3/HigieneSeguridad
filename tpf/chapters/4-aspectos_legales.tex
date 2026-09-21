@@ -1,0 +1,265 @@
+\chapter{Aspectos Legales y Normativos en Argentina}
+\label{sec.cap4:aspectos_legales}
+
+El marco regulatorio argentino en materia de seguridad laboral y protección contra incendios en establecimientos
+industriales se asienta en la Ley de Higiene y Seguridad en el Trabajo Nº 19.587, la Ley de Riesgos del Trabajo Nº 24.557
+y el Decreto Reglamentario 351/79. En particular, el Capítulo 18 y el Anexo VII de este decreto establecen las
+prescripciones de diseño estructural, compartimentación de sectores, medios de escape y cálculo de cargas combustibles.
+
+\section{Decreto Reglamentario 351/79 (Anexo VII)}
+
+La reglamentación exige que todo establecimiento se divida en sectores de incendio aislados entre sí mediante muros
+cortafuego y cerramientos cuya resistencia al fuego ($F$) esté garantizada para un lapso temporal determinado (e.g.,
+$F30$, $F60$, $F90$, $F120$, $F180$). Esta compartimentación busca confinar el foco inicial, evitando su propagación al
+resto de las naves y posibilitando la evacuación segura del personal antes del colapso estructural.
+
+\subsection{Determinación Analítica de la Carga de Fuego}
+
+Para caracterizar el potencial destructor de un recinto, la normativa define la Carga de Fuego ($Q_f$) como la masa de
+madera estándar equivalente por unidad de superficie de piso ($kg/m^2$) capaz de liberar una cantidad de energía térmica
+igual a la combustión completa de todos los materiales contenidos en el sector. La fórmula matemática de cálculo pericial
+se expresa en la ecuación \ref{eq.cap4:carga_fuego}:
+
+\begin{equation}
+\label{eq.cap4:carga_fuego}
+Q_f = \frac{\sum (M_i \cdot PC_i)}{S \cdot 4400}
+\end{equation}
+
+Donde las magnitudes representan:
+\begin{itemize}
+    \item $M_i$: Masa total inventariada de cada material combustible presente en el sector ($kg$).
+    \item $PC_i$: Poder Calorífico Inferior de cada sustancia considerada ($kcal/kg$).
+    \item $S$: Superficie útil de piso del sector de incendio ($m^2$).
+    \item $4400$: Constante estandarizada que representa el Poder Calorífico Inferior de la madera de referencia
+          ($4400\kcal/\kg \approx 18.4\,\mathrm{MJ/kg}$).
+\end{itemize}
+
+El valor de $Q_f$, conjugado con el tipo de riesgo del material dominante (desde Riesgo 1, explosivos, hasta Riesgo 5,
+incombustibles; siendo el almacenamiento industrial típicamente clasificado como Riesgo 3, muy combustible, o Riesgo 4,
+combustible), determina la resistencia al fuego mínima de muros y los requerimientos de ventilación y extinción.
+
+\subsection{Unidades de Ancho de Salida (UAS) y Medios de Evacuación}
+
+El dimensionamiento de las vías de escape responde a criterios deterministas basados en el concepto de Unidades de Ancho
+de Salida (UAS). Una UAS representa el espacio libre requerido para que circule una hilera de personas en marcha
+ordenada. La reglamentación fija que las dos primeras unidades equivalen a $0.55\m$ de ancho útil cada una (totalizando un
+ancho mínimo de acceso de $1.10\m$), mientras que cada unidad adicional subsecuente añade $0.45\m$. Ninguna puerta de
+emergencia o pasaje podrá tener un ancho libre inferior a $0.90\m$.
+
+Para calcular la población teórica ($N$) a evacuar, se divide la superficie del sector por el factor de ocupación
+($f_o$), conforme a la ecuación \ref{eq.cap4:ocupantes}:
+
+\begin{equation}
+\label{eq.cap4:ocupantes}
+N = \frac{S}{f_o}
+\end{equation}
+
+El factor $f_o$ depende del destino edilicio (e.g., $f_o = 16\m^2/\text{persona}$ en naves industriales mecánicas,
+$f_o = 8\m^2/\text{persona}$ en oficinas, y $f_o = 40\m^2/\text{persona}$ en depósitos generales). Determinado $N$, el
+número requerido de unidades de ancho de salida ($n$) se calcula mediante la ecuación \ref{eq.cap4:uas}:
+
+\begin{equation}
+\label{eq.cap4:uas}
+n = \frac{N}{100}
+\end{equation}
+
+Toda fracción igual o superior a $0.5$ se redondea al entero superior más próximo. Por disposición legal, el ancho
+mínimo permitido para cualquier salida colectiva corresponde a $2\UAS$ ($1.10\m$).
+
+En vías de evacuación que incluyan escaleras, los peldaños deben responder a la fórmula ergonómica de paso de Blondel,
+establecida en la inecuación \ref{eq.cap4:escalera}:
+
+\begin{equation}
+\label{eq.cap4:escalera}
+2a + p = 0.60\m \text{ a } 0.63\m
+\end{equation}
+
+Donde la alzada ($a$) no puede superar los $0.18\m$ y la pedada ($p$) no debe ser inferior a $0.26\m$. La distancia
+máxima desde el punto más desfavorable de trabajo hacia una caja de escaleras o salida al exterior no puede exceder los
+$40\m$. Si el cálculo arroja que $n \ge 4$, el flujo de personas debe dividirse obligatoriamente en medios de escape
+independientes ($ME$), según la ecuación \ref{eq.cap4:escape_indep}:
+
+\begin{equation}
+\label{eq.cap4:escape_indep}
+ME = \frac{n}{4} + 1
+\end{equation}
+
+\section{Reglamentación de la Asociación Electrotécnica Argentina (AEA 90364)}
+
+La reglamentación AEA 90364 establece los lineamientos obligatorios para el proyecto de instalaciones eléctricas en
+inmuebles en el territorio nacional. En materia de seguridad contra incendios destacan dos capítulos:
+
+\begin{itemize}
+    \item Sección 42 (Protección contra efectos térmicos): Establece requisitos perentorios sobre canalizaciones y
+          conductores en locales con alta densidad de personas o con riesgos de incendio (clasificación BD2, BD3 y BD4).
+          Exige el empleo exclusivo de conductores no propagadores de la llama, de reducida emisión de humos opacos y
+          libres de halógenos y gases corrosivos (bajo norma IRAM 62267 o IEC 60332), previniendo que la combustión del
+          aislamiento propague el siniestro o emita ácido clorhídrico ($HCl$) que asfixie al personal y corroa los
+          equipos.
+    \item Sección 43 (Protección contra sobrecorrientes): Prescribe la coordinación térmica estricta de las protecciones
+          contra cortocircuitos. Para garantizar que un cable no sufra degradación pirolítica durante el tiempo de
+          despeje de una falla, se debe satisfacer la inecuación de energía pasante \ref{eq.cap4:tiempo_corte}:
+\end{itemize}
+
+\begin{equation}
+\label{eq.cap4:tiempo_corte}
+I_{cc}^2 \cdot t \le k^2 \cdot S^2
+\end{equation}
+
+Donde $I_{cc}$ representa la corriente de cortocircuito eficaz presunta en el punto de falla en amperes, $t$ el tiempo
+de actuación de la protección en segundos, $S$ la sección nominal útil del conductor en $mm^2$, y $k$ una constante
+térmica dependiente del metal (cobre o aluminio) y del tipo de aislamiento (e.g., $k = 115$ para cobre con aislación de
+PVC y $k = 143$ para cobre con aislación de polietileno reticulado XLPE). Si esta condición no se verifica, el cable
+alcanza su temperatura límite de régimen de cortocircuito ($160\Celsius$ para PVC), iniciando la carbonización y la
+generación de llamas.
+
+\section{Ejemplos Prácticos de Aplicación y Cálculo Reglamentario}
+\label{sec.cap4:ejemplos_practicos}
+
+Con el fin de ilustrar la aplicación concreta de las prescripciones legales analizadas, se desarrollan a continuación
+tres memorias de cálculo representativas de la práctica pericial en instalaciones industriales y de ingeniería
+electrónica.
+
+\subsection{Ejemplo 1: Memoria de Cálculo de Carga de Fuego y Dotación de Extintores}
+\label{sec.cap4:ejemplo_carga_fuego}
+
+Se considera un depósito anexo a una nave de montaje de equipos electrónicos cuya superficie útil de piso es $S = 600\m^2$.
+El relevamiento de inventario de materiales combustibles arroja las siguientes masas y poderes caloríficos inferiores:
+
+\begin{itemize}
+    \item Embalajes celulósicos (cajas de cartón corrugado): masa $M_1 = 3200\kg$, con poder calorífico
+          $PC_1 = 4000\kcal/\kg$.
+    \item Tarimas de soporte logístico (pallets de pino): masa $M_2 = 2000\kg$, con poder calorífico
+          $PC_2 = 4400\kcal/\kg$.
+    \item Plásticos de embalaje (polietileno expandido): masa $M_3 = 600\kg$, con poder calorífico
+          $PC_3 = 9500\kcal/\kg$.
+    \item Gabinetes poliméricos (resinas ABS y policarbonato): masa $M_4 = 800\kg$, con poder calorífico
+          $PC_4 = 8000\kcal/\kg$.
+\end{itemize}
+
+El calor total acumulado en el sector se calcula integrando la energía liberable por cada material:
+
+\begin{align}
+\sum (M_i \cdot PC_i) &= (3200 \cdot 4000) + (2000 \cdot 4400) + (600 \cdot 9500) + (800 \cdot 8000) \notag \\
+&= 12800000 + 8800000 + 5700000 + 6400000 = 33700000\kcal
+\end{align}
+
+Aplicando la ecuación \ref{eq.cap4:carga_fuego}, se obtiene la carga de fuego ponderada equivalente en madera:
+
+\begin{equation}
+Q_f = \frac{33700000\kcal}{600\m^2 \cdot 4400\kcal/\kg} = \frac{33700000}{2640000} \approx 12.77\kg/\m^2
+\end{equation}
+
+A partir de este resultado analítico, se contrastan las exigencias reglamentarias del Anexo VII del Decreto 351/79:
+
+\begin{enumerate}
+    \item Clasificación de Riesgo: El sector corresponde a Riesgo 3 (Muy Combustible), dado el predominio de plásticos
+          y material celulósico de embalaje.
+    \item Resistencia al Fuego de Muros: Conforme al Cuadro 2.2.1 del Anexo VII, para un establecimiento de Riesgo 3 con
+          ventilación natural y carga de fuego $Q_f \le 15\kg/\m^2$, los muros perimetrales de compartimentación deben
+          poseer una resistencia al fuego mínima $F60$ (sesenta minutos de resistencia mecánica y estanqueidad a humos).
+    \item Dotación de Extintores Portátiles: De acuerdo al Cuadro 4 del Anexo VII, para Riesgo 3 y $Q_f \le 15\kg/\m^2$,
+          se exige una unidad extintora de potencial mínimo $2\mathrm{A}$ por cada $200\m^2$ de superficie de piso. El número
+          mínimo de extintores requeridos resulta:
+          \begin{equation}
+          N_{\text{ext}} = \frac{600\m^2}{200\m^2} = 3 \text{ extintores Clase A}
+          \end{equation}
+          Debido a la presencia de tableros eléctricos seccionales y luminarias energizadas, se añade la exigencia de
+          capacidad de extinción para riesgos Clase C. En consecuencia, se instalan tres extintores de polvo químico seco
+          ABC (fosfato monoamónico) de $5\kg$ con rating certificado $4\mathrm{A}:40\mathrm{B:C}$, superando ampliamente el
+          potencial normativo. Asimismo, se distribuyen de modo tal que la distancia máxima de recorrido desde cualquier
+          punto operativo hasta el matafuego más cercano no exceda los $20\m$.
+\end{enumerate}
+
+\subsection{Ejemplo 2: Dimensionamiento de Medios de Escape y Salidas de Emergencia}
+\label{sec.cap4:ejemplo_uas}
+
+Se proyecta una nave de manufactura electrónica de dos plantas con una superficie útil de $S = 1600\m^2$ en planta alta,
+destinada a líneas de inserción superficial (SMT) y bancos de control de calidad.
+
+\begin{enumerate}
+    \item Cálculo de Población Teórica ($N$): Para establecimientos industriales, el Decreto 351/79 estipula un factor de
+          ocupación $f_o = 16\m^2/\text{persona}$. Mediante la ecuación \ref{eq.cap4:ocupantes}:
+          \begin{equation}
+          N = \frac{1600\m^2}{16\m^2/\text{persona}} = 100 \text{ personas}
+          \end{equation}
+    \item Determinación de Unidades de Ancho de Salida ($n$): Aplicando la ecuación \ref{eq.cap4:uas}:
+          \begin{equation}
+          n = \frac{100}{100} = 1\UAS
+          \end{equation}
+          Sin embargo, el marco legal impone la restricción perentoria de que ninguna salida colectiva puede tener un ancho
+          inferior a $2\UAS$. Por lo tanto, se adoptan obligatoriamente $2\UAS$, correspondientes a un ancho libre de paso
+          de $1.10\m$.
+    \item Supuesto de Alta Densidad y Salidas Múltiples: Si la nave albergase un sector de capacitación anexo o un área de
+          empaque manual con una población recalculada de $N = 320$ operarios, las unidades de ancho de salida resultarían:
+          \begin{equation}
+          n = \frac{320}{100} = 3.2 \implies 4\UAS \quad (\text{redondeo al entero superior})
+          \end{equation}
+          El ancho útil total demandado se calcula sumando las dos primeras unidades ($1.10\m$) y las dos adicionales
+          ($2 \times 0.45\m = 0.90\m$), alcanzando $2.00\m$ de luz libre. Al verificarse que $n \ge 4$, el flujo de personas
+          no puede evacuarse por una sola puerta, rigiendo la exigencia de medios de escape independientes según la
+          ecuación \ref{eq.cap4:escape_indep}:
+          \begin{equation}
+          ME = \frac{4}{4} + 1 = 2 \text{ medios de escape independientes}
+          \end{equation}
+          Esto impone la apertura de dos salidas diferenciadas de $2\UAS$ ($1.10\m$) cada una, ubicadas en extremos opuestos
+          de la planta para impedir que un foco ígneo anule simultáneamente ambas vías de evacuación, verificando que la
+          distancia máxima hacia cualquiera de ellas no supere los $40\m$.
+    \item Verificación Ergonómica de la Escalera de Evacuación: La caja de escaleras presurizada que conecta con la planta
+          baja se diseña con peldaños de alzada $a = 0.17\m$ y pedada $p = 0.28\m$. Verificando la relación de Blondel
+          (\ref{eq.cap4:escalera}):
+          \begin{equation}
+          2a + p = 2(0.17\m) + 0.28\m = 0.34\m + 0.28\m = 0.62\m
+          \end{equation}
+          El valor obtenido se sitúa dentro del intervalo reglamentario $[0.60\m; 0.63\m]$, garantizando un descenso fluido
+          y seguro del personal en condiciones de emergencia.
+\end{enumerate}
+
+\subsection{Ejemplo 3: Verificación Térmica de Conductores ante Cortocircuito}
+\label{sec.cap4:ejemplo_cortocircuito}
+
+En un tablero general de baja tensión ($400\,\mathrm{V}$ trifásico, $50\,\mathrm{Hz}$), se proyecta un alimentador hacia un
+centro de distribución secundario que abastece bancos de potencia y servidores. El alimentador está constituido por cables
+unipolares de cobre con aislamiento termoplástico de PVC según norma IRAM NM 247-3, con una sección nominal de fase
+$S = 25\mm^2$.
+
+El estudio de cortocircuito arroja en las barras de salida una corriente de cortocircuito trifásica simétrica presunta
+$I_{cc} = 8500\,\mathrm{A}$ ($8.5\,\mathrm{kA}$). El circuito está protegido aguas arriba por un interruptor automático en
+caja moldeada (MCCB) con unidad de disparo magnético regulada, cuyo tiempo total de apertura y extinción del arco eléctrico
+ante fallas francas es $t = 30\,\mathrm{ms} = 0.03\,\mathrm{s}$.
+
+A fin de comprobar si el conductor se encuentra debidamente protegido contra incendios originados por calentamiento
+adiabático, se evalúa la inecuación de energía específica pasante (\ref{eq.cap4:tiempo_corte}):
+
+\begin{enumerate}
+    \item Energía Pasante del Cortocircuito ($I_{cc}^2 \cdot t$):
+          \begin{equation}
+          I_{cc}^2 \cdot t = (8500\,\mathrm{A})^2 \cdot 0.03\,\mathrm{s} = 72.25 \times 10^6 \cdot 0.03 = 2.1675 \times 10^6\,\mathrm{A^2 s}
+          \end{equation}
+    \item Capacidad Térmica Límite del Conductor ($k^2 \cdot S^2$):
+          Para conductores de cobre aislados en PVC, la constante térmica establecida por la reglamentación AEA 90364 es
+          $k = 115\,\mathrm{A\sqrt{s}/mm^2}$ (correspondiente a una temperatura de régimen permanente de $70\Celsius$ y un
+          límite de cortocircuito de $160\Celsius$). Reemplazando para la sección de $25\mm^2$:
+          \begin{equation}
+          k^2 \cdot S^2 = (115)^2 \cdot (25\mm^2)^2 = 13225 \cdot 625 = 8.2656 \times 10^6\,\mathrm{A^2 s}
+          \end{equation}
+    \item Evaluación de la Condición Térmica:
+          \begin{equation}
+          2.1675 \times 10^6\,\mathrm{A^2 s} \le 8.2656 \times 10^6\,\mathrm{A^2 s}
+          \end{equation}
+          La energía solicitada por la falla representa únicamente el $26.2\percent$ de la capacidad admisible del cable. Se
+          comprueba analíticamente que la aislación polimérica no alcanzará su umbral de degradación pirolítica, impidiendo
+          el cebado de llamas sobre las bandejas portacables.
+    \item Consecuencia ante Falta de Selectividad o Falla de la Protección:
+          Si la protección magnética no operase por descalibración o trabamiento mecánico, obligando a que la sobrecorriente
+          sea despejada por el bimetal térmico en un tiempo retardado de $t = 250\,\mathrm{ms} = 0.25\,\mathrm{s}$, la
+          energía disipada ascendería a:
+          \begin{equation}
+          I_{cc}^2 \cdot t = (8500\,\mathrm{A})^2 \cdot 0.25\,\mathrm{s} = 18.0625 \times 10^6\,\mathrm{A^2 s} > 8.2656 \times 10^6\,\mathrm{A^2 s}
+          \end{equation}
+          En este escenario anómalo, la energía liberada excede en más de un $218\percent$ el umbral admisible, provocando la
+          fusión instantánea de la cubierta de PVC, la emisión masiva de gas clorhídrico tóxico y la ignición abierta del
+          tendido eléctrico, evidenciando el papel crítico que desempeña el cálculo de protecciones según la reglamentación
+          AEA en la prevención de siniestros industriales.
+\end{enumerate}
+

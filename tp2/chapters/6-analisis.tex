@@ -1,0 +1,66 @@
+\chapter{Análisis de Resultados}
+\label{sec.tp2:analisis}
+
+En este capítulo se realiza la verificación comparativa de las mediciones registradas frente a los límites mínimos
+exigidos por el Decreto N° 351/79 (Anexo IV) para garantizar la aptitud higiénica de las condiciones laborales.
+
+\section{Límites Legales de Referencia}
+\label{sec.tp2:limites_legales}
+
+De acuerdo con la Tabla 2 del Anexo IV del Decreto N° 351/79, los valores mínimos de iluminancia exigidos ($E_{req}$) son:
+\begin{itemize}
+    \item \textbf{Oficina (Iluminación General):} $E_{req} = 300\lx$ (lectura y escritura general de oficina).
+    \item \textbf{Depósito (Iluminación General):} $E_{req} = 100\lx$ (depósitos de mercadería o tránsito de personas).
+    \item \textbf{Escritorio Largo (Iluminación Localizada):} $E_{req} = 500\lx$ (tareas de diseño técnico y dibujo de precisión).
+    \item \textbf{Escritorio Chico (Iluminación Localizada):} $E_{req} = 500\lx$ (tareas de dibujo técnico o $300\lx$ para tareas administrativas generales).
+\end{itemize}
+
+\section{Planilla de Verificación Normativa}
+\label{sec.tp2:verificacion_normativa}
+
+En la Tabla~\ref{tab.tp2:verificacion_ley} se presenta la comparación de los valores medidos y calculados frente a las exigencias del Decreto N° 351/79, detallando su conformidad.
+
+\begin{table}[!ht]
+\centering
+\caption{Comparación de mediciones contra las exigencias del Decreto N° 351/79.}
+\label{tab.tp2:verificacion_ley}
+\resizebox{0.95\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|}
+\hline
+\textbf{Sector} & \textbf{Criterio de Control} & \textbf{Valor Medido/Calculado} & \textbf{Límite Legal} & \textbf{Estado} \\ \hline
+\hline
+& Iluminancia Media ($E_{media,of}$) & $658{,}89\lx$ & $\ge 300\lx$ & \textbf{Cumple} \\ \cline{2-5}
+\textbf{Oficina} & Iluminancia Mínima ($E_{min,of}$)   & $188\lx$ & $\ge 329{,}44\lx$ & \textbf{No Cumple} \\ \hline
+\hline
+& Iluminancia Media ($E_{media,dep}$) & $197{,}78\lx$ & $\ge 100\lx$ & \textbf{Cumple} \\ \cline{2-5}
+\textbf{Depósito} & Iluminancia Mínima ($E_{min,dep}$)   & $140\lx$ & $\ge 98{,}89\lx$ & \textbf{Cumple} \\ \hline
+\hline
+\textbf{Escritorio Largo} & Iluminancia Localizada ($E_{media,L}$) & $345{,}67\lx$ & $\ge 500\lx$ & \textbf{No Cumple} \\ \hline
+\hline
+\textbf{Escritorio Chico} & Iluminancia Localizada ($E_{C1}$) & $710\lx$ & $\ge 500\lx$ & \textbf{Cumple} \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\section{Interpretación y Diagnóstico}
+\label{sec.tp2:interpretacion_diag}
+
+A partir de los resultados expuestos en la Tabla~\ref{tab.tp2:verificacion_ley}, se desprende el siguiente diagnóstico técnico para cada uno de los sectores relevados:
+
+\subsection{Sector Oficina}
+\begin{itemize}
+    \item \textbf{Iluminancia Media ($E_{media,of} = 658{,}89\lx$):} El nivel medio de iluminancia cumple holgadamente con el mínimo legal de $300\lx$. Esto se debe a la significativa contribución de luz natural que ingresa a través de los ventanales laterales durante la mañana tardía (rango de medición 11:15 a 11:22 Hs).
+    \item \textbf{Criterio de Uniformidad ($E_{min,of} = 188\lx$ vs. $E_{media,of}/2 = 329{,}44\lx$):} Este parámetro \textbf{no cumple} con las exigencias del Decreto N° 351/79. Se observa una marcada dispersión entre los puntos cercanos a las ventanas ($E_7 = 1311\lx$ y $E_8 = 1851\lx$) y los puntos más alejados o en zonas sombreadas ($E_2 = 188\lx$ y $E_4 = 212\lx$), los cuales dependen casi de forma exclusiva del único plafón LED general de $18\W$. Esta falta de uniformidad representa un riesgo ergonómico para el personal debido a la fatiga visual por acomodación pupilar frecuente y al deslumbramiento por contraste.
+\end{itemize}
+
+\subsection{Sector Depósito}
+\begin{itemize}
+    \item El depósito es un local cerrado sin aberturas al exterior, por lo que su iluminación es 100\% artificial. El promedio general es de $197{,}78\lx$, superando el requisito legal de $100\lx$. 
+    \item El criterio de uniformidad se satisface plenamente ($E_{min,dep} = 140\lx \ge 98{,}89\lx$). El plafón LED central de $18\W$ proporciona una distribución lumínica muy homogénea y adecuada para las tareas de almacenamiento y tránsito seguro de mercaderías.
+\end{itemize}
+
+\subsection{Puestos de Trabajo (Iluminación Localizada)}
+\begin{itemize}
+    \item \textbf{Escritorio Largo (Tira LED):} La iluminancia media sobre el plano de trabajo es de $345{,}67\lx$, valor que se encuentra \textbf{por debajo} del límite reglamentario de $500\lx$ para tareas que exijan precisión visual. A pesar del montaje directo a $62\cm$, la potencia luminosa y densidad de la tira LED actual son deficientes frente a las exigencias visuales del puesto.
+    \item \textbf{Escritorio Chico (Mesa):} El puesto registra $710\lx$ en su centro de trabajo, superando satisfactoriamente el límite de $500\lx$. La lámpara regulable resulta muy efectiva gracias a su elevado flujo luminoso ($700\lm$) y a la posibilidad de orientar y aproximar la fuente puntual según los requerimientos del operador.
+\end{itemize}

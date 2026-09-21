@@ -1,0 +1,157 @@
+\begin{tikzpicture}[scale=2.0, >=latex]
+    % === ESTILOS ===
+    \tikzstyle{wall} = [black, line width=2.0pt]
+    \tikzstyle{desk} = [pattern=north west lines, pattern color=gray!30, draw=gray, line width=0.8pt]
+    \tikzstyle{window} = [blue!80!black, line width=2.5pt, double, double distance=1.5pt]
+    \tikzstyle{cota} = [gray!80!black, thin, <->]
+    \tikzstyle{cotaline} = [gray!40, thin]
+    \tikzstyle{gridline} = [blue!15, dashed, ultra thin]
+
+    % === INDICACIÓN DEL SUR (A LA IZQUIERDA DEL CROQUIS) ===
+    \draw[thick, ->] (-0.5, 1.64) -- (-0.9, 1.64) node[left, font=\bfseries\small] {SUR};
+
+    % === DIBUJO DE PISO Y PAREDES ===
+    \fill[gray!2] (0,0) -- (0,3.28) -- (3.52,3.28) -- (3.52,0) -- cycle;
+    \fill[gray!4] (0.54,3.28) -- (0.54,5.32) -- (1.69,5.32) -- (1.69,3.28) -- cycle;
+
+    % Paredes externas
+    \draw[wall] (0,0) -- (0,1.88) -- (0.34, 1.88) -- (0.34, 2.25) -- (0, 2.25) -- (0, 3.28) 
+                -- (0.54, 3.28) -- (0.54, 5.32) -- (1.69, 5.32) -- (1.69, 3.28) 
+                -- (3.52, 3.28) -- (3.52, 0) -- (0,0);
+
+    % Ventanas
+    \draw[window] (.65, 0) -- ++(.62, 0);
+    \draw[window] (3.52, .7) -- ++(0, 1.88);
+
+    % === MUEBLES (ESCRITORIOS) ===
+    \draw[desk] (0, 0) rectangle (0.5, 1.88);
+    \draw[desk] (3.52, 3.28) rectangle (2.76, 2.08);
+
+    % === GRILLES DE MEDICIÓN GENERAL (LÍNEAS DE TRAZOS) ===
+    \foreach \x in {1.173, 2.346} {
+        \draw[gridline] (\x, 0) -- (\x, 3.28);
+    }
+    \foreach \y in {1.093, 2.186} {
+        \draw[gridline] (0, \y) -- (3.52, \y);
+    }
+
+    \foreach \x in {0.923, 1.306} {
+        \draw[gridline] (\x, 3.40) -- (\x, 5.32);
+    }
+    \foreach \y in {4.04, 4.68} {
+        \draw[gridline] (0.54, \y) -- (1.69, \y);
+    }
+
+    % Puntos de Iluminación Localizada - Cruces Rojas
+    \foreach \py/\pnum in {0.31/1, 0.94/2, 1.57/3} {
+        \draw[red!85!black, thick] (0.25-0.05, \py) -- (0.25+0.05, \py);
+        \draw[red!85!black, thick] (0.25, \py-0.05) -- (0.25, \py+0.05);
+        \node[right, scale=0.5, red!70!black] at (0.27, \py) {$E_{L\pnum}$};
+    }
+    \draw[red!85!black, thick] (3.14-0.05, 2.68) -- (3.14+0.05, 2.68);
+    \draw[red!85!black, thick] (3.14, 2.68-0.05) -- (3.14, 2.68+0.05);
+    \node[above left, scale=0.5, red!70!black] at (3.12, 2.68) {$E_{C1}$};
+
+    % === LUMINARIAS (SIN TEXTOS DE ACLARACIÓN ADENTRO) ===
+    % 1. Plafón General Oficina (Centrado en Oficina: 1.76, 1.64)
+    \draw[fill=cyan!10, draw=cyan!80!black, double, thick] (1.76, 1.64) circle (0.10);
+    \draw[cyan!80!black, thin] (1.76-0.10, 1.64) -- (1.76+0.10, 1.64);
+    \draw[cyan!80!black, thin] (1.76, 1.64-0.10) -- (1.76, 1.64+0.10);
+
+    % 2. Plafón General Depósito (Centrado en Depósito: 1.115, 4.36)
+    \draw[fill=cyan!10, draw=cyan!80!black, double, thick] (1.115, 4.36) circle (0.10);
+    \draw[cyan!80!black, thin] (1.115-0.10, 4.36) -- (1.115+0.10, 4.36);
+    \draw[cyan!80!black, thin] (1.115, 4.36-0.10) -- (1.115, 4.36+0.10);
+
+    % 3. Tira LED Escritorio Largo (x=0.25, de y=0.1 a y=1.78)
+    \draw[yellow!80!orange, line width=2.2pt, cap=round] (0.25, 0.1) -- (0.25, 1.78);
+
+    % 4. Luminaria Regulable Escritorio Chico (Centrado en Escritorio Chico: 3.14, 2.68)
+    \draw[fill=yellow!20, draw=yellow!80!orange, thick] (3.14, 2.68) circle (0.07);
+    \draw[yellow!80!orange, fill=yellow!80!orange] (3.14, 2.68) circle (0.02);
+
+
+    % === PUNTOS DE MEDICIÓN ===
+    % Puntos Oficina (E1 a E9) - Círculos Naranjas
+    \def\ox{3.52/3}
+    \def\oy{3.28/3}
+    \foreach \ix in {1,2,3} {
+        \foreach \iy in {1,2,3} {
+            \pgfmathsetmacro{\px}{(\ix - 0.5) * \ox}
+            \pgfmathsetmacro{\py}{(\iy - 0.5) * \oy}
+            \pgfmathsetmacro{\pnum}{int((\iy - 1) * 3 + \ix)}
+            \fill[orange!85!black] (\px, \py) circle (0.04);
+            \node[below, scale=0.8, orange!65!black] at (\px, \py) {$E_{\pnum}$};
+        }
+    }
+
+    % Puntos Depósito (E10 a E18) - Círculos Naranjas
+    \def\dx{1.15/3}
+    \def\dy{1.92/3}
+    \foreach \ix in {1,2,3} {
+        \foreach \iy in {1,2,3} {
+            \pgfmathsetmacro{\px}{0.54 + (\ix - 0.5) * \dx}
+            \pgfmathsetmacro{\py}{3.40 + (\iy - 0.5) * \dy}
+            \pgfmathsetmacro{\pnum}{int(9 + (\iy - 1) * 3 + \ix)}
+            \fill[orange!85!black] (\px, \py) circle (0.04);
+            \node[below, scale=0.8, orange!65!black] at (\px, \py) {$E_{\pnum}$};
+        }
+    }
+
+    % === TEXTOS / ROTULACIÓN DE AREAS ===
+    \node[scale=0.8, font=\bfseries, text=gray!70] at (1.76, 1) {OFICINA};
+    \node[scale=0.8, font=\bfseries, text=gray!70] at (1.115, 4.65) {DEPÓSITO};
+
+    % === COTAS ===
+    \draw[cotaline] (0,0) -- (0,-0.25);
+    \draw[cotaline] (3.52,0) -- (3.52,-0.25);
+    \draw[cota] (0,-0.20) -- (3.52,-0.20) node[midway, fill=white, scale=0.7] {$3{,}52\m$};
+
+    \draw[cotaline] (3.52,0) -- (3.77,0);
+    \draw[cotaline] (3.52,3.28) -- (3.77,3.28);
+    \draw[cota] (3.72,0) -- (3.72,3.28) node[midway, rotate=-90, fill=white, scale=0.7] {$3{,}28\m$};
+
+    \draw[cotaline] (0.54,5.32) -- (0.54,5.57);
+    \draw[cotaline] (1.69,5.32) -- (1.69,5.57);
+    \draw[cota] (0.54,5.52) -- (1.69,5.52) node[midway, fill=white, scale=0.7] {$1{,}15\m$};
+
+    \draw[cotaline] (0.54,3.28) -- (0.29,3.28);
+    \draw[cotaline] (0.54,5.32) -- (0.29,5.32);
+    \draw[cota] (0.34,3.28) -- (0.34,5.32) node[midway, rotate=90, fill=white, scale=0.7] {$1{,}92\m$};
+
+    \draw[cotaline] (0,1.88) -- (0.45,1.88);
+    \draw[cotaline] (0,2.25) -- (0.45,2.25);
+    \draw[cota] (0.40,1.88) -- (0.40,2.25) node[midway, right, scale=0.55] {$0{,}37\m$};
+    
+    \draw[cotaline] (0,1.88) -- (0,2.35);
+    \draw[cotaline] (0.34,1.88) -- (0.34,2.35);
+    \draw[cota] (0,2.30) -- (0.34,2.30) node[midway, above, scale=0.55] {$0{,}34\m$};
+
+    % === LISTA DE REFERENCIAS AL COSTADO (SIN LÍNEA PUNTEADA NI DE PARED) ===
+    \node[anchor=west] at (4.0, 4.8) {\textbf{Referencias:}};
+    
+    % Plafón LED General
+    \draw[fill=cyan!10, draw=cyan!80!black, double, thick] (4.2, 4.4) circle (0.08);
+    \draw[cyan!80!black, thin] (4.2-0.08, 4.4) -- (4.2+0.08, 4.4);
+    \draw[cyan!80!black, thin] (4.2, 4.4-0.08) -- (4.2, 4.4+0.08);
+    \node[anchor=west, scale=0.7] at (4.5, 4.4) {Plafón LED General (18W)};
+    
+    % Tira LED Localizada
+    \draw[yellow!80!orange, line width=2.5pt, cap=round] (4.1, 3.9) -- (4.3, 3.9);
+    \node[anchor=west, scale=0.7] at (4.5, 3.9) {Tira LED Localizada (5050)};
+    
+    % Luminaria Focalizada
+    \draw[fill=yellow!20, draw=yellow!80!orange, thick] (4.2, 3.4) circle (0.06);
+    \draw[yellow!80!orange, fill=yellow!80!orange] (4.2, 3.4) circle (0.02);
+    \node[anchor=west, scale=0.7] at (4.5, 3.4) {Luz Focalizada Escritorio (700lm)};
+    
+    % Punto de Medición General
+    \fill[orange!85!black] (4.2, 2.9) circle (0.04);
+    \node[anchor=west, scale=0.7] at (4.5, 2.9) {Punto de Medición General ($E_i$)};
+    
+    % Punto de Medición Localizado
+    \draw[red!85!black, thick] (4.2-0.04, 2.4) -- (4.2+0.04, 2.4);
+    \draw[red!85!black, thick] (4.2, 2.4-0.04) -- (4.2, 2.4+0.04);
+    \node[anchor=west, scale=0.7] at (4.5, 2.4) {Punto Medición Localizado ($E_{Lx}, E_{Cx}$)};
+
+\end{tikzpicture}

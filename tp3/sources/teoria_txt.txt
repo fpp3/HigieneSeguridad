@@ -1,0 +1,838 @@
+UNIVERSIDAD TECNOLOGICA NACIONAL
+DEPARTAMENTO DE INGENIERIA ELECTRONICA
+SEGURIDAD, HIGIENE Y MEDIO AMBIENTE
+
+Riesgo Ruido Laboral
+Ing. Jorge Perez Villalobo
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Sonido y Ruido.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Sonido y Ruido.
+El ruido puede ser definido como un sonido no deseado.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Sonido y Ruido
+El sonido es la propagación de una perturbación o variación de
+presión en un medio elástico (medio compresible sólido, líquido o
+gaseoso).
+
+Fuerza
+Periódica
+
+3 | Perez Villalobo, Jorge
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+El Ruido
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Parámetros de una onda sonora
+La amplitud (A) es el valor de presión
+máximo relativo al equilibrio.
+El periodo (T) es el tiempo, en
+segundos, transcurrido entre un
+máximo y el siguiente.
+
+La longitud de onda () es la
+distancia, en metros, entre dos
+máximos sucesivos.
+La frecuencia (f) es la cantidad de ciclos o
+períodos (Hertz) ocurridos en un segundo.
+La frecuencia de los sonidos audibles está
+comprendida entre los 20 y los 20.000 Hz.
+
+1
+f 
+T
+
+c
+   c·T
+f
+Calcular la longitud de onda y
+periodo para varias frecuencias
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Parámetros de una onda sonora
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Velocidad de propagación de una onda sonora
+Caire = 331,3 ( 1 + T / 273 )½ [m/s]
+Caire = 331,3 +( 0,606 x T ) [m/s]
+Siendo T en ºC.
+
+En el aire varía 0,606 m/s por cada ºC.
+
+Caire 20º = 344 m/s
+Cagua
+
+= 1.482 m/s
+
+Cmadera = 4.000 m/s
+
+Cacero
+
+= 5.200 m/s
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Medio
+
+Velocidad
+[m/s]
+
+Aire a 0 ºC
+
+331
+
+Aire a 20 ºC
+
+344
+
+Anhídrido
+carbónico
+
+260
+
+Hidrógeno
+
+1294
+
+Agua a 20 ºC
+
+1482
+
+Alcohol etílico
+a 20º
+
+1170
+
+Vapor a 100
+ºC
+
+405
+
+Acero
+
+5200
+
+Aluminio
+
+5000
+
+Bronce
+
+3480
+
+Corcho
+
+500
+
+Hormigón
+
+3500
+
+Granito
+
+3950
+
+Madera
+
+4000
+
+Mármol
+
+3810
+
+Plomo
+
+1190
+
+Vidrio
+
+5000
+
+Definiciones de campos sonoros.
+
+Campo cercano
+El campo cercano de una fuente sonora es la región próxima a la misma y en donde se verifica
+que la presión sonora y la velocidad de la partícula no están en fase.
+
+Campo libre
+El campo libre es una región del espacio en el que el sonido se propaga libre de toda
+obstrucción (no hay reflexiones).
+Campo difuso
+La energía acústica por unidad de volumen es esencialmente constante a través de él. El campo
+difuso es propio de los ambientes cerrados, en los que los obstáculos o barreras pueden
+producir múltiples reflexiones del sonido .
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Ondas sonoras en campo libre
+El sonido en un campo libre viaja sin sufrir reflexiones ni refracciones.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Ondas sonoras en campo libre. Cámara Anecoica
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Interferencias de las ondas sonoras.
+La propagación también se puede ver afectada no solo por el medio y los objetos que
+se encuentran en él, sino también por otras ondas.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Clasificación de los sonidos
+Hasta el momento hemos tratado a los sonidos como si fuesen tonos puros, pero
+en la naturaleza muy pocas veces se encuentran. En general tratamos con sonidos
+complejos, como por ejemplo el de la voz humana.
+0.5
+
+0.4
+
+0.3
+
+Amplitud
+
+0.2
+
+0.1
+
+0
+
+-0.1
+
+-0.2
+
+-0.3
+
+-0.4
+
+0
+
+500
+
+1000
+
+1500
+
+2000
+
+2500
+Tiempo [ms]
+
+3000
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+3500
+
+4000
+
+4500
+
+5000
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Descomposición por Serie de Fourier
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Magnitudes en Acústica. Potencia sonora y Presión sonora
+El nivel de potencia acústica LW de una fuente está dado por:
+Lw [dB]= 10 log W / Wo
+
+siendo Wo = 10-12 Watts = 1pW
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Magnitudes en Acústica. Potencia sonora (o potencia acústica)
+El nivel de potencia sonora es una medida logarítmica de la energía total por unidad
+de tiempo que una fuente sonora emite en forma de ondas sonoras. Se expresa en
+decibeles (dB) y representa una propiedad fija e intrínseca del aparato emisor, por lo
+que no cambia según el lugar ni la distancia.
+
+La potencia acústica W de una fuente sonora puntual en campo libre está dado por:
+Watts acústicos
+
+W[watts] = 4..r2. p2
+ρ.c
+
+siendo r:radio o distancia a la fuente(en m) ; p:presión sonora rms o eficaz en el radio(en Pa); ρ: dens. del
+aire (1,2kg/m3); c: veloc. del sonido (344m/s); ρ.c=Z(impedancia del medio)
+
+A su vez, el nivel de potencia acústica LW de una fuente está dado por:
+
+Lw [dB]= 10.log (W/Wo)
+siendo Wo = 1x10-12 Watts = 1 picoW
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Nivel de presión sonora (Lp) en decibeles (dB)
+El nivel de presión sonora (conocido como Lp) es una medida logarítmica que
+indica la intensidad o el volumen de un sonido en un punto dado. Está
+expresado en dB y varía con la distancia, el lugar, las fuentes presentes, etc.
+
+ Presion.rms 
+
+LpdB  20. log
+ 20Pa 
+
+Cuando se duplica la
+potencia sonora (2 fuentes
+iguales) el nivel de presión
+sonora aumenta 3 dB
+
+1) Una fuente sonora genera a 4 m un nivel de
+presión sonora Lp de 110dB. ¿Cuál es su nivel de
+potencia sonora?
+
+Pres.rms( Pa )  Pres.medida( Pa )  20Pa.10
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+(dB / 20)
+
+Niveles de Presión Sonora
+- Umbral de dolor: 125 dB
+- Avión sobre la ciudad: 130 dB
+- Taladros neumáticos: 120 dB
+- Motocicletas sin silenciador: 115 dB
+- Interior de discotecas: 110 dB
+- Bocina colectivo: 100 dB
+- Bocina automóvil: 90 dB
+- Tráfico rodado: 85 dB
+- Interior fábrica: 80 dB
+- Conversación normal: 55 dB
+- Zonas residenciales: 45 dB
+- Rumor de hojas de árboles: 30 dB
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Magnitudes en Acústica. Resumen:
+- Nivel de Presión sonora (Lp)
+- Nivel de Potencia sonora (Lw)
+- Nivel de Intensidad sonora (LI)
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Operaciones con dB. Suma de decibeles
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Operaciones con dB. Suma de decibeles
+Lp total  (Lpi )
+Lp total =10 log (  10 (Lpi /10) )
+
+Calcular el nivel de presión
+sonora total con varias
+fuentes distintas.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Operaciones con dB. Resta de decibeles
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Operaciones con dB. Resta de decibeles
+
+Calcular el nivel de presión
+sonora para el caso de:
+Lptotal=80dB y Lrfondo=73 dB
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Percepción del sonido. Curvas de igual sonoridad
+¿Cómo responde el sistema auditivo a los diferentes niveles de presión y las distintas
+frecuencias?
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Percepción del sonido.
+¿Cómo responde el sistema auditivo a los diferentes niveles de presión y las distintas
+frecuencias?
+Respuesta del sist. auditivo
+
+Filtros elec. de compensación p/medición
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Percepción
+del
+sonido.
+Filtros de Compensación
+(valores normalizados)
+FRECUENCIA
+[ Hz ]
+
+CURVA “A”
+[ dB ]
+
+CURVA “C”
+[ dB ]
+
+FRECUENCIA
+[ Hz ]
+
+CURVA “A”
+[ dB ]
+
+CURVA “C”
+[ dB ]
+
+10
+
+- 70,4
+
+- 14,3
+
+315
+
+- 6,6
+
+0,0
+
+12,5
+
+- 63,4
+
+- 11,2
+
+400
+
+- 4,8
+
+0,0
+
+16
+
+- 56,7
+
+- 8,5
+
+500
+
+- 3,2
+
+0,0
+
+20
+
+- 50,5
+
+- 6,2
+
+630
+
+- 1,9
+
+0,0
+
+25
+
+- 44,7
+
+- 4,4
+
+800
+
+- 0,8
+
+0,0
+
+31,5
+
+- 39,4
+
+- 3,0
+
+1000
+
+0,0
+
+0,0
+
+40
+
+- 34,6
+
+- 2,0
+
+1250
+
++ 0,6
+
+0,0
+
+50
+
+- 30,5
+
+- 1,3
+
+1600
+
++ 1,0
+
+- 0,1
+
+63
+
+- 26,2
+
+- 0,8
+
+2000
+
++ 1,2
+
+- 0,2
+
+80
+
+- 22,5
+
+- 0,5
+
+2500
+
++ 1,3
+
+- 0,3
+
+100
+
+- 19,1
+
+- 0,3
+
+3150
+
++ 1,2
+
+- 0,5
+
+125
+
+- 16,1
+
+- 0,2
+
+4000
+
++ 1,0
+
+- 0,8
+
+160
+
+- 13,4
+
+- 0,1
+
+5000
+
++ 0,5
+
+- 1,3
+
+200
+
+- 10,9
+
+0,0
+
+6300
+
+- 0,1
+
+- 2,0
+
+250
+
+- 8,6
+
+0,0
+
+8000
+
+- 1,1
+
+- 3,0
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Percepción del sonido.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Tipos de ruido
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Nivel Sonoro Continuo Equivalente (NSCE) o Leq.
+
+Nivel sonoro constante y ficticio que posee la misma energía sonora que el ruido variable medido.
+Se puede decir que es un promedio energético del ruido medido. Lo miden sonómetros integradores.
+
+Donde: Li = Nivel sonoro representativo de cada período parcial ti
+
+Siendo, el período Total de medición :
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Nivel Sonoro Continuo Equivalente. NSCE o Leq.
+
+Nivel sonoro constante y ficticio que posee la misma energía sonora que el ruido variable medido.
+Se puede decir que es un promedio energético del ruido medido. Lo miden sonómetros integradores.
+
+Donde: Li = Nivel sonoro representativo de cada período parcial ti
+Calcular el Leq a partir de un
+medidor de NPS instantáneo
+tomando lecturas cada 1
+segundo
+
+Siendo, el período Total de medición:
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Nivel Sonoro Continuo Equivalente.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Descriptores de ruido. Lmax y Lmin
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Análisis en el espectro de frecuencias. Bandas de octavas, 1/3 octavas y FFT.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Dosis de Ruido. Leq vs. Texposición
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Dosis de Ruido. Leq vs. Texposición
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Dosis de Ruido
+Ley 19587/72 y Decreto 351/79: Higiene y Seguridad en el Trabajo.
+Resolución 295/03 del MTESS. Modificatorio del Dec. 351
+
+NSCE o Leq ≤ 85 dBA para jornadas de 8 hs diarias.
+Por cada 3 dBA de aumento debo disminuir el tiempo de exposición a la mitad
+(criterio de igual energía=índice de conversión de 3dB):
+85 dBA => 8 horas
+88 dBA => 4 horas
+91 dBA => 2 horas
+94 dBA => 1 hora
+97 dBA => ½ hora
+100 dBA => ¼ hora
+103 dBA => 7:30 min.
+106 dBA => 3:45 min.
+109 dBA => 1:52 min.
+112 dBA => 0:56 min.
+115 dBA => 0:28 min.
+..139 dBA => 0:110 seg.
+
+Controles audiométricos periódicos
+
+Ademas, no se permiten exposiciones a niveles
+pico de mas de 140 dBC sin protección auditiva.
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Dosis de Ruido
+En veces:
+
+En porcentaje:
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Dosis de Ruido. Leq vs. Exposición
+
+El Nivel Sonoro Continuo Equivalente (NSCE o LAeq). Ejemplo de cálculo.
+Un operario está expuesto a estos niveles sonoros durante su turno de trabajo de
+8hs. ¿Cual es el NSCE durante la jornada completa?
+ti en horas
+
+Li en dBA
+
+1
+
+85
+
+5
+
+90
+
+2
+
+95
+
+LAeq = 10 log [1/T (Σ 100,1 Li . ti) ]
+= 10 log [ (108,5 x 1) + (109 x 5) + (109,5 x 2) / (1 + 5 + 2) ]
+= 10 log[ 11.640.783.090 / 8 ]
+
+LAeq = 91,6 dBA
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Dosis de Ruido. Leq vs. Texposicion
+
+Ejemplo de cálculo.
+Un operario está expuesto a estos niveles durante su turno de trabajo de 8hs.
+¿Cuál es la dosis de ruido durante la jornada completa?
+ti en horas
+
+Li en dBA
+
+1
+
+85
+
+5
+
+90
+
+2
+
+95
+
+Dosis = 10 0,1 (Leq - 85) .100
+= 10 0,1 (91,6 - 85) .100
+Dosis (en porcentaje) = 457%
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Resolución N° 85/2012, de la S.R.T. DOSIS
+La Superintendencia de Riesgos del Trabajo a través de su Resolución 85/2012, obliga a informar
+las mediciones que se efectúen en los ambientes laborales, siguiendo los lineamientos expresados
+en un instructivo elaborado a medida y para llenar la columna indicada con (32) expresa lo
+siguiente:
+32) Indicar la dosis de ruido (en porcentaje), obtenida mediante un dosímetro fijado para un
+índice de conversión de 3dB y un nivel sonoro equivalente de 85 dBA como criterio para las 8
+horas de jornada laboral. (NOTA: Completar este campo sólo cuando la medición se realice con un
+dosímetro).
+En la actualidad, el uso de la dosis de ruido ha caído casi en desuso en la instrumentación
+moderna. Los dosímetros dan directamente el valor del LAeq y también pueden extrapolar el valor
+a 8 horas cuando la medición cubrió sólo uno o dos ciclos de trabajo (<8hs). Recordemos que a
+partir del LAeq podemos calcular la dosis con la siguiente formula (en %), y viceversa (despejar Leq
+de la fórmula):
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Resolución
+N° 85/2012,
+de la S.R.T.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Resolución N° 85/2012, de la S.R.T.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+Resolución N° 85/2012, de la S.R.T.
+
+SIQA
+Servicios de Ingeniería
+Química y Ambiental
+
+

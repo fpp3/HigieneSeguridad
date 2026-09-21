@@ -1,0 +1,122 @@
+\chapter{Análisis Forense de Siniestros y Casos de Estudio Reales}
+\label{sec.cap8:casos_estudio}
+
+El estudio de siniestros de gran escala constituye una herramienta pedagógica y pericial indispensable en la formación
+de los ingenieros. Una vez desarrollados los fundamentos termodinámicos de la combustión (Capítulo
+\ref{sec.cap2:fenomeno_fisico}), los efectos toxicológicos sobre las personas (Capítulo \ref{sec.cap3:ser_humano}), las
+exigencias de cálculo reglamentario (Capítulo \ref{sec.cap4:aspectos_legales}), las tecnologías de detección (Capítulo
+\ref{sec.cap5:sistemas_deteccion}), los métodos de extinción (Capítulo \ref{sec.cap6:sistemas_extincion}) y las pautas
+de capacitación y brigadas (Capítulo \ref{sec.cap7:capacitacion_emergencias}), resulta posible abordar con rigor analítico
+las causas raíces, los modos de falla de las barreras de protección y las lecciones operativas derivadas de siniestros
+reales documentados.
+
+\section{Caso 1: Depósito Corporativo Iron Mountain (Barracas, Buenos Aires, 2014)}
+\label{sec.cap8:iron_mountain}
+
+El 5 de febrero de 2014 se originó un incendio catastrófico en la planta de resguardo y archivo de documentación bancaria
+y corporativa de la empresa Iron Mountain, ubicada en el barrio de Barracas, Ciudad Autónoma de Buenos Aires.
+
+\begin{itemize}
+    \item Carga de Fuego y Configuración Espacial: La instalación albergaba una carga de fuego extraordinaria ($Q_f \gg
+          150\,\mathrm{kg/m^2}$), estructurada en racks metálicos autoportantes de más de diez metros de altura densamente
+          cargados con cajas de cartón corrugado y papel comprimido. Esta disposición vertical generó chimeneas de tiro
+          térmico ascendente que aceleraron la velocidad de propagación de las llamas hacia la cubierta del edificio.
+    \item Falla de Barreras Activas y Pasivas: Las pericias judiciales determinaron que el sistema de rociadores
+          automáticos (diseñado bajo lineamientos NFPA 13) se encontraba inoperativo al momento del inicio del fuego: las
+          válvulas sectoriales estaban cerradas o carecían de presión hídrica de servicio, y las bombas principales no
+          arrancaron ante la demanda. Simultáneamente, la estructura portante de acero carecía de revestimientos ignífugos
+          pasivos proyectados (pinturas intumescentes o morteros de vermiculita) que garantizaran una resistencia $F120$ o
+          $F180$ acorde a la carga térmica presente.
+    \item Colapso Estructural y Víctimas: Al alcanzarse temperaturas en cabriadas superiores a los $900\Celsius$, el
+          acero experimentó fluencia térmica y pérdida de su límite elástico. El pandeo de los perfiles del techo ejerció
+          fuerzas horizontales de tracción y empuje asimétrico sobre los muros perimetrales de ladrillo macizo. La pared
+          este colapsó íntegramente hacia la calle Jovellanos, sepultando a una dotación de diez rescatistas (ocho bomberos
+          de la Policía Federal Argentina y dos agentes de Defensa Civil).
+    \item Lecciones Aprendidas: El siniestro evidenció que la instalación nominal de sistemas contra incendio carece de
+          validez sin auditorías periódicas, protocolos de inspección inopinada y circuitos cerrados de presurización
+          supervisados por paneles centrales FACP. Asimismo, demostró la necesidad de delimitar zonas de seguridad
+          perimetral (distancia de derrumbe igual a $1.5$ veces la altura del muro) ante incendios en estructuras metálicas
+          desnudas.
+\end{itemize}
+
+\section{Caso 2: Subestación Transformadora Caballito de Edesur (Buenos Aires, 2024)}
+\label{sec.cap8:edesur_caballito}
+
+El 10 de febrero de 2024 se desató un voraz incendio en la subestación Caballito de la compañía distribuidora de energía
+Edesur, dejando sin suministro eléctrico a más de $60000$ usuarios residenciales e industriales y afectando el bombeo de
+agua de la empresa AySA en la Ciudad Autónoma de Buenos Aires.
+
+\begin{itemize}
+    \item Origen de la Falla y Riesgo Asociado: El siniestro se inició durante maniobras de mantenimiento sobre una
+          máquina portátil de filtrado y secado al vacío de aceite aislante conectada a un transformador de potencia de
+          $132/13.2\,\mathrm{kV}$. La rotura de un conducto flexible bajo presión pulverizó aceite mineral caliente sobre
+          partes energizadas o superficies a alta temperatura, desatando una combustión violenta de combustible líquido
+          (fuego Clase B) en estrecha proximidad con equipamiento de alta tensión (riesgo Clase C).
+    \item Propagación por Canalizaciones: Las llamas se extendieron con rapidez a través de las canalizaciones subterráneas
+          de conductores de media y baja tensión. La presencia de aislaciones convencionales de PVC no ignífugas produjo una
+          densa humareda negra cargada de hollín y gas clorhídrico, dificultando el acceso visual y operativo de las
+          fuerzas de rescate.
+    \item Estrategia de Extinción Aplicada: Doce dotaciones de Bomberos de la Ciudad combatieron el siniestro durante más
+          de seis horas. Debido a la naturaleza líquida del hidrocarburo en combustión, el agua directa resultaba inviable
+          por el peligro de dispersión del combustible por flotación. Se desplegaron líneas de ataque con espuma mecánica
+          AFFF (formadora de película acuosa) para sellar la superficie del aceite, sofocar la masa ígnea e inhibir la
+          reignición, complementadas con cortinas de agua pulverizada para refrigerar las cubas de los transformadores
+          adyacentes y evitar su rotura por sobrepresión interna.
+    \item Lecciones para la Ingeniería: El evento remarcó la importancia de construir muros cortafuego $F120$ entre
+          transformadores de potencia contiguos, instalar piletas colectoras de derrame con lechos de grava apagallamas y
+          reemplazar conductores antiguos por cables con aislación libre de halógenos (IRAM 62267) según lo estipulado por
+          la reglamentación AEA 90364.
+\end{itemize}
+
+\section{Caso 3: Fábrica de Semiconductores Renesas Electronics (Naka, Japón, 2021)}
+\label{sec.cap8:renesas_cleanroom}
+
+El 19 de marzo de 2021 se produjo un incendio en la sala limpia (cleanroom de $300\,\mathrm{mm}$) de la planta fabril de
+semiconductores de Renesas Electronics en Naka, Japón, uno de los principales proveedores globales de microcontroladores
+para la industria automotriz.
+
+\begin{itemize}
+    \item Causa Raíz Eléctrica: Una sobrecorriente prolongada en la línea de suministro de un equipo galvánico de
+          galvanoplastia y electrodeposición de cobre generó disipación por efecto Joule en las conexiones de potencia. El
+          calentamiento localizado no fue despejado oportunamente por las protecciones del tablero secundario, alcanzando
+          la temperatura de ignición de las resinas poliméricas que conformaban la envolvente del equipo.
+    \item Dispersión del Humo y Daño a Activos Electrónicos: Aunque la extensión del fuego directo quedó restringida a
+          un área de $600\,\mathrm{m^2}$, el sistema de climatización y presurización de la sala limpia (destinado a mantener
+          el ambiente libre de polvo con filtros HEPA) succionó los subproductos pirolíticos y los recirculó a través de
+          toda la nave de producción. Las partículas submicrónicas de hollín, combinadas con gases clorados y sulfurosos
+          desprendidos de los plásticos, se depositaron sobre las lentes ópticas de los equipos de litografía ultravioleta y
+          las cámaras de deposición química en fase de vapor (CVD).
+    \item Impacto Económico Global: La corrosión y contaminación superficial forzó el desmantelamiento de veintitrés
+          máquinas de producción crítica y demoró tres meses la reactivación fabril, agravando la escasez mundial de chips
+          en la industria automotriz con pérdidas valoradas en cientos de millones de dólares.
+    \item Implicancias Tecnológicas: Este desastre constituye el ejemplo paradigmático de la vulnerabilidad de las
+          instalaciones electrónicas modernas frente al humo. En tales recintos, el combate con agua resulta inadmisible por
+          ruina de los equipos. Resulta imperativo implementar detección por aspiración de alta sensibilidad (ASD/VESDA)
+          interconectada a los ductos de retorno del sistema HVAC para corte automático de ventilación, asociada a sistemas
+          fijos de inundación total con agentes limpios (FK-5-1-12 o Inergen bajo norma NFPA 2001) y relés de arco AFDD.
+\end{itemize}
+
+\section{Matriz Comparativa de Lecciones Forenses}
+\label{sec.cap8:matriz_forense}
+
+En el Cuadro \ref{tab.cap8:matriz_casos} se presenta una síntesis comparativa de los tres casos periciales analizados,
+destacando el origen de la falla, las debilidades observadas en los sistemas de protección y las prescripciones
+ingenieriles requeridas para prevenir su recurrencia.
+
+\begin{table}[!ht]
+\centering
+\caption{Matriz comparativa de siniestros industriales documentados y lecciones de ingeniería.}
+\label{tab.cap8:matriz_casos}
+\small
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.1cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{3.1cm}|>{\raggedright\arraybackslash}p{3.5cm}|}
+\hline
+\textbf{Siniestro} & \textbf{Clase de Fuego} & \textbf{Causa Primaria} & \textbf{Fallas en Barreras} & \textbf{Medidas Correctivas Clave} \\
+\hline
+\textbf{Iron Mountain} (Bs.~As., 2014) & Clase A (celulosa compacta) & Focos múltiples; carga térmica extrema & Rociadores inoperativos sin presión; estructura de acero desnuda sin ignifugado & Auditoría de bombas y válvulas; protección pasiva $F120/F180$; zonas de seguridad perimetral. \\
+\hline
+\textbf{Edesur Caballito} (Bs.~As., 2024) & Clase B y C (aceite mineral en MT) & Rotura de manguera a presión en filtrado de aceite & Ausencia de contención de derrames; cables con aislación propagadora de llama & Espuma AFFF; fosa colectora con apagallamas; conductores libres de halógenos (AEA 90364). \\
+\hline
+\textbf{Renesas Electronics} (Japón, 2021) & Clase C y A (sobrecorriente en cleanroom) & Efecto Joule por sobrecorriente en equipo galvánico & HVAC recirculó humos ácidos en sala limpia; falta de supresión gaseosa & Detección ASD/VESDA; corte de compuertas HVAC; inundación por agente limpio FK-5-1-12. \\
+\hline
+\end{tabular}
+\end{table}

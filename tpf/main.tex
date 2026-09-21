@@ -1,0 +1,67 @@
+\documentclass[]{informeutn}
+
+% Bibliografía y citas
+\usepackage{csquotes}
+\addbibresource{fuentes.bib}
+
+% Permitir cortes en URLs en el índice bibliográfico
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburlnumpenalty}{9000}
+
+% Librerías adicionales de TikZ
+\usetikzlibrary{arrows.meta, shadows}
+
+% Configuración del estilo de listados de código
+\lstdefinestyle{ltspice}{
+  backgroundcolor=\color{gray!10},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  frame=single,
+  breaklines=true,
+  captionpos=b
+}
+
+% Unidades personalizadas adicionales a las provistas por informeutn
+\newcommand{\m}{\,\mathrm{m}}
+\newcommand{\mm}{\,\mathrm{mm}}
+\newcommand{\kg}{\,\mathrm{kg}}
+\newcommand{\kcal}{\,\mathrm{kcal}}
+\newcommand{\UAS}{\,\mathrm{UAS}}
+
+% Datos de la carátula
+\materia{Seguridad, Higiene y Medio Ambiente}
+\titulo{Trabajo Práctico Final}
+\subtitulo{Prevención y Protección contra Incendios en Instalaciones Industriales y Electrónicas}
+\comision{4R2}
+\autores{
+    Gil, Ignacio - 401891\\
+    Grasso, Gaston - 401892\\
+    Palombo, Franco - 401910\\
+    Prieto, Angelo - 401012
+}
+\fecha{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\setcounter{page}{1}
+\thispagestyle{plain}
+
+% Capítulos estructurados según los lineamientos de la materia
+\input{chapters/1-introduccion.tex}
+\input{chapters/2-fenomeno_fisico.tex}
+\input{chapters/3-ser_humano.tex}
+\input{chapters/4-aspectos_legales.tex}
+\input{chapters/5-sistemas_deteccion.tex}
+\input{chapters/6-sistemas_extincion.tex}
+\input{chapters/7-capacitacion_emergencias.tex}
+\input{chapters/8-casos_estudio.tex}
+\input{chapters/9-conclusiones.tex}
+
+% Bibliografía normalizada
+\nocite{*}
+\printbibliography[heading=bibnumbered, title={Fuentes}]
+
+\end{document}

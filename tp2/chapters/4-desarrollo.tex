@@ -1,0 +1,125 @@
+\chapter{Desarrollo del Relevamiento}
+\label{sec.tp2:desarrollo}
+
+En esta sección se detallan las características constructivas de la habitación relevada (compuesta por dos sectores: la
+oficina y el depósito), se definen las especificaciones del sistema de iluminación (general y localizado) y se
+desarrollan los cálculos normativos para el dimensionamiento de las grillas de medición.
+
+\section{Descripción del Local y Geometría}
+\label{sec.tp2:descripcion_local}
+
+El local relevado se encuentra dividido en dos espacios diferenciados de geometría regular: la oficina (área grande) y
+el depósito (área chica). El techo de toda la habitación se encuentra a una altura uniforme de $2{,}50\m$ desde el
+piso. La reflectancia de las paredes es media-alta (blanco mate) y el suelo es de cerámicos claros.
+
+Las dimensiones geométricas de ambos sectores son:
+\begin{itemize}
+    \item \textbf{Oficina (Sector Principal):}
+    \begin{itemize}
+        \item Ancho ($a_{of}$): $3{,}28\m$
+        \item Largo ($b_{of}$): $3{,}52\m$
+    \end{itemize}
+    \item \textbf{Depósito (Sector Secundario):}
+    \begin{itemize}
+        \item Ancho ($a_{dep}$): $1{,}15\m$
+        \item Largo ($b_{dep}$): $1{,}92\m$
+    \end{itemize}
+    \item \textbf{Alturas de Referencia:}
+    \begin{itemize}
+        \item Altura total del techo ($H$): $2{,}50\m$
+        \item Altura del plano de trabajo ($h_p$): $0{,}80\m$ (altura de los escritorios)
+        \item Altura de montaje de luminarias generales ($H_{lum}$): $2{,}50\m$ (montadas directamente al techo)
+    \end{itemize}
+\end{itemize}
+
+En la oficina se encuentran dos escritorios: un escritorio de trabajo principal de dimensiones extensas ($1{,}88\m \times 0{,}50\m$) ubicado contra la pared izquierda, y un escritorio secundario pequeño de ($1{,}20\m \times 0{,}76\m$) ubicado en la esquina superior derecha.
+
+\section{Especificaciones del Sistema de Iluminación}
+\label{sec.tp2:especificaciones_luces}
+
+Todas las fuentes de luz instaladas en los dos sectores corresponden a tecnología LED de temperatura de color blanca fría ($\ge 6000\Kelvin$). El sistema se divide en iluminación general e iluminación localizada:
+
+\subsection{Iluminación General (Techo)}
+\begin{itemize}
+    \item \textbf{Luminaria General Oficina (P1):} Un ($1$) plafón LED de adosar de $18\W$, luz fría, ubicado en el centro geométrico del cielorraso de la oficina.
+    \item \textbf{Luminaria General Depósito (P2):} Un ($1$) plafón LED de adosar de $18\W$, luz fría, ubicado en el centro geométrico del cielorraso del depósito.
+\end{itemize}
+
+\subsection{Iluminación Localizada (Escritorios)}
+\begin{itemize}
+    \item \textbf{Escritorio Largo (Pared Izquierda):} Equipado con una tira LED 5050 monocolor fría de punta a punta ($1{,}88\m$). Presenta una densidad de 3 leds cada $5\cm$ ($60\text{ leds}/\m$, totalizando $113$ leds). Está montada en un perfil de aluminio a $62\cm$ sobre el plano de trabajo (altura respecto al piso $h = 1{,}42\m$). Consumo estimado de $14{,}4\W/\m$ (potencia de la tira $\approx 27\W$) y un flujo total de $\approx 1800\lumen$.
+    \item \textbf{Escritorio Chico (Esquina Superior Derecha):} Equipado con una luminaria de mesa regulable LED, luz fría, con un flujo luminoso máximo de $700\lumen$ y una potencia aproximada de $18\W$, montada de forma centrada a una altura de $65\cm$ sobre el plano de trabajo (altura respecto al piso $h = 1{,}45\m$).
+\end{itemize}
+
+\section{Cálculo del Índice del Local y Puntos de Medición}
+\label{sec.tp2:calculo_grilla}
+
+La altura de montaje de las luminarias generales respecto al plano de trabajo es:
+\begin{equation}
+    h_m = H_{lum} - h_p = 2{,}50\m - 0{,}80\m = 1{,}70\m
+\end{equation}
+
+Se realizan los cálculos del Índice de Local ($k$) y de la cantidad de puntos de medición mínimos ($N$) de forma independiente para cada área:
+
+\subsection{Área de Oficina (Grande)}
+\begin{equation}
+    k_{oficina} = \frac{3{,}28\m \cdot 3{,}52\m}{1{,}70\m \cdot (3{,}28\m + 3{,}52\m)} = \frac{11{,}5456}{11{,}56} \approx 1{,}00
+\end{equation}
+Dado que $k \le 1$, el índice redondeado es $k_{red} = 1$. La cantidad mínima de puntos de medición se calcula como:
+\begin{equation}
+    N_{oficina} = (1 + 2)^2 = 9\text{ puntos (grilla de } 3 \times 3\text{)}
+\end{equation}
+Las celdas resultantes de la división tienen dimensiones de $1{,}173\m$ de largo por $1{,}093\m$ de ancho.
+
+\subsection{Área de Depósito (Chico)}
+\begin{equation}
+    k_{deposito} = \frac{1{,}15\m \cdot 1{,}92\m}{1{,}70\m \cdot (1{,}15\m + 1{,}92\m)} = \frac{2{,}208}{5{,}219} \approx 0{,}42
+\end{equation}
+Dado que $k \le 1$, el índice redondeado es $k_{red} = 1$. El número mínimo de puntos de medición general es:
+\begin{equation}
+    N_{deposito} = (1 + 2)^2 = 9\text{ puntos (grilla de } 3 \times 3\text{)}
+\end{equation}
+Las celdas resultantes de la división tienen dimensiones de $0{,}64\m$ de largo por $0{,}383\m$ de ancho.
+
+\subsection{Puntos de Iluminación Localizada}
+Para verificar el aporte lumínico localizado, se realizaron mediciones directas sobre los escritorios:
+\begin{itemize}
+    \item En el escritorio largo se determinan 3 puntos equidistantes distribuidos a lo largo del mismo ($E_{L1}, E_{L2}, E_{L3}$).
+    \item En el escritorio chico se determina 1 punto centrado en el área de trabajo ($E_{C1}$).
+\end{itemize}
+
+\section{Croquis e Implantación del Local}
+\label{sec.tp2:croquis}
+
+El croquis detallado de planta de la habitación, con la delimitación de ambos sectores (oficina y depósito), la ubicación de los escritorios, las luminarias generales y localizadas, y la grilla de medición resultante, se representa en la Figura~\ref{fig.tp2:croquis_habitacion}.
+
+\begin{figure}[!ht]
+    \centering
+    \input{figures/fig_tp2_croquis.tex}
+    \caption{Croquis de planta en escala.}
+    \label{fig.tp2:croquis_habitacion}
+\end{figure}
+
+\section{Relevamiento Fotográfico del Ambiente}
+\label{sec.tp2:fotos_ambiente}
+
+En las Figuras~\ref{fig.tp2:foto_oficina} y \ref{fig.tp2:foto_deposito} se presentan las fotografías reales tomadas en el local durante las mediciones para constatar el estado general de los sectores, de los puestos y de las luminarias.
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/foto_oficina.jpg}
+        \caption{Fotografía de la oficina técnica.}
+        \label{fig.tp2:foto_oficina}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/foto_deposito.jpg}
+        \caption{Fotografía del depósito.}
+        \label{fig.tp2:foto_deposito}
+    \end{subfigure}
+    \caption{Relevamiento fotográfico de los sectores de la habitación.}
+    \label{fig.tp2:fotos_relevamiento}
+\end{figure}

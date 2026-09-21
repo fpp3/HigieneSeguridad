@@ -1,0 +1,73 @@
+\chapter{Niveles Sonoros Relevados}
+\label{sec:mediciones}
+
+\section{Registro de Datos Temporales Exportados}
+Durante la sesión de ensayo de $306,69\s$, la aplicación Sound Analyzer registró 3302 muestras temporales. En la
+Tabla~\ref{tab.ej1:mediciones} se presentan los niveles sonoros instantáneos $L_{AF}$ y equivalentes acumulados
+$L_{Aeq}$ extraídos en intervalos representativos de $30\s$.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Evolución temporal del nivel sonoro instantáneo $L_{AF}$ y equivalente $L_{Aeq}$.}
+  \label{tab.ej1:mediciones}
+    \begin{tabular}{ccc}
+      \toprule
+      \textbf{Tiempo $t$ [\text{s}]} & \textbf{$L_{AF}$ [\text{dBA}]} & \textbf{$L_{Aeq}$ [\text{dBA}]} \\
+      \midrule
+      0,1 & 66,2 & 68,0 \\
+      30,0 & 83,1 & 83,8 \\
+      60,0 & 86,2 & 84,4 \\
+      90,0 & 87,6 & 84,7 \\
+      120,0 & 86,3 & 84,9 \\
+      150,0 & 86,5 & 85,0 \\
+      180,0 & 86,1 & 85,0 \\
+      210,0 & 85,1 & 84,9 \\
+      240,0 & 85,5 & 84,8 \\
+      270,0 & 85,3 & 84,7 \\
+      306,7 & 65,5 & 84,66 \\
+      \bottomrule
+    \end{tabular}%
+\end{table}
+
+\section{Valores Característicos Registrados}
+Los parámetros estadísticos globales obtenidos al finalizar el procesamiento continuo del archivo de mediciones se
+resumen en la Tabla~\ref{tab.ej1:resumen_valores}.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Resumen de parámetros sonoros característicos del ensayo.}
+  \label{tab.ej1:resumen_valores}
+    \begin{tabular}{lc}
+      \toprule
+      \textbf{Parámetro Acústico} & \textbf{Valor Medido} \\
+      \midrule
+      Nivel Sonoro Mínimo Instantáneo ($L_{AF,min}$) & $55,71\dBA$ \\
+      Nivel Sonoro Máximo Instantáneo ($L_{AF,max}$) & $89,22\dBA$ \\
+      Nivel Sonoro Continuo Equivalente Final ($L_{Aeq,final}$) & $84,66\dBA$ \\
+      Nivel Sonoro Pico Ponderado C ($L_{CF,max}$) & $91,57\dBC$ \\
+      Duración Total de Muestreo ($T_{muestra}$) & $306,69\s$ ($5\text{ min } 6\text{ s}$) \\
+      \bottomrule
+    \end{tabular}%
+\end{table}
+
+\section{Visualización de Resultados y Gráficos Temporales}
+La Figura~\ref{fig.ej1:screenshot_app} exhibe la pantalla final de la aplicación Sound Analyzer al concluir la adquisición,
+confirmando los valores estables de $L_{AF,max} = 89,22\dBA$ y $L_{Aeq} = 84,66\dBA$.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.45\textwidth]{images/screenshot_sound_analyzer.png}
+  \caption{Captura de pantalla final de la aplicación Sound Analyzer v2.7 al concluir el ensayo.}
+  \label{fig.ej1:screenshot_app}
+\end{figure}
+
+Por su parte, en la Figura~\ref{fig.ej1:evolucion_ruido} se representa la totalidad de las variaciones del nivel sonoro
+$L_{AF}$ junto con el proceso de convergencia del $L_{Aeq}$ y el límite legal de $85\dBA$. En el gráfico se observan
+claramente las caídas periódicas de presión sonora correspondientes a los pausas de $5\s$ entre ciclos de trabajo.
+
+\begin{figure}[!ht]
+  \centering
+  \input{figures/plot_evolucion_ruido.tex}
+  \caption{Evolución temporal de $L_{AF}$ y $L_{Aeq}$ durante los $306,69\s$ de ensayo con minitorno Dremel.}
+  \label{fig.ej1:evolucion_ruido}
+\end{figure}

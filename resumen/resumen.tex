@@ -1,0 +1,539 @@
+\documentclass[]{informeutn}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{colortbl}
+
+\tcbset{
+    colback=gray!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    arc=2mm
+}
+
+% Datos del informe / resumen
+\materia{Seguridad, Higiene y Medio Ambiente}
+\comision{2026}
+
+\begin{document}
+
+\tableofcontents
+\setcounter{page}{1}
+\thispagestyle{plain}
+
+\chapter{Aspectos Legales y Marco Normativo en Higiene y Seguridad}
+
+\section{Introducción y Marco Constitucional}
+La Seguridad, Higiene y Medio Ambiente (SHMA) en el trabajo es una disciplina cuyo objetivo fundamental es la protección de la salud, la vida y la integridad psicofísica de los trabajadores, previniendo accidentes laborales y enfermedades profesionales.
+
+En la República Argentina, el derecho a la seguridad e higiene en el trabajo posee jerarquía constitucional:
+\begin{itemize}
+    \item \textbf{Artículo 14 bis de la Constitución Nacional}: Establece que el trabajo en sus diversas formas gozará de la protección de las leyes, las que asegurarán al trabajador «condiciones dignas y equitativas de labor», jornadas limitadas, descanso y vacaciones pagadas, retribución justa, etc.
+    \item \textbf{Artículo 41 de la Constitución Nacional}: Garantiza a todos los habitantes el derecho a un ambiente sano, equilibrado y apto para el desarrollo humano.
+\end{itemize}
+
+\section{Leyes Principales y Decretos Reglamentarios}
+
+\subsection{Ley N° 19.587/72 — Ley de Higiene y Seguridad en el Trabajo}
+Sancionada en 1972, constituye la norma fundamental en materia de prevención de riesgos laborales. Aplica a todo establecimiento y explotación perseguido con o sin fines de lucro en todo el territorio nacional.
+
+\textbf{Objetivos fundamentales (Art. 4°):}
+\begin{enumerate}
+    \item Proteger la vida, preservar y mantener la integridad psicofísica de los trabajadores.
+    \item Prevenir, reducir, eliminar o aislar los riesgos de los distintos centros o puestos de trabajo.
+    \item Estimular y desarrollar una actitud positiva respecto de la prevención de los accidentes o enfermedades que puedan derivarse de la actividad laboral.
+\end{enumerate}
+
+\subsection{Decreto Reglamentario N° 351/79}
+Reglamenta la Ley N° 19.587 para las actividades industriales y comerciales generales. Contiene los anexos técnicos con especificaciones de:
+\begin{itemize}
+    \item Anexo III: Protección contra incendios.
+    \item Anexo IV: Iluminación y color.
+    \item Anexo V: Acústica e iluminación (Ruido laboral).
+    \item Anexo VI: Instalaciones eléctricas y riesgo eléctrico.
+\end{itemize}
+
+\subsection{Ley N° 24.557/95 — Ley de Riesgos del Trabajo (LRT)}
+Establece el marco de cobertura ante siniestros laborales y crea el sistema de aseguradoras públicas/privadas.
+\begin{itemize}
+    \item \textbf{Organismos}: Crea la \textbf{SRT} (Superintendencia de Riesgos del Trabajo) como órgano de control estatal y regula a las \textbf{ART} (Aseguradoras de Riesgos del Trabajo).
+    \item \textbf{Objetivos}: Reducir la siniestralidad laboral mediante la prevención; reparar los daños derivados de accidentes de trabajo y enfermedades profesionales; promover la recalificación y reubicación laboral del trabajador damnificado.
+\end{itemize}
+
+\section{Conceptos Fundamentales de Riesgo Ocupacional}
+
+\subsection{Accidente de Trabajo e In Itinere}
+\begin{tcolorbox}[title=Definición Legal de Accidente de Trabajo (Ley 24.557 - Art. 6)]
+Se considera accidente de trabajo a todo acontecimiento súbito y violento ocurrido por el hecho o en ocasión del trabajo, o en el trayecto entre el domicilio del trabajador y el lugar de trabajo (\textbf{Accidente In Itinere}), siempre y cuando el damnificado no hubiere interrumpido o alterado dicho trayecto por causas ajenas al trabajo.
+\end{tcolorbox}
+
+\textbf{Modificación del trayecto In Itinere}: El trabajador podrá declarar por escrito ante el empleador (y este comunicarlo a la ART) la modificación del trayecto habitual por tres razones justificadas tabuladas por ley:
+\begin{enumerate}
+    \item Razones de estudio.
+    \item Concurrencia a otro empleo / pluriempleo.
+    \item Atención de un familiar directo enfermo no conviviente.
+\end{enumerate}
+
+\subsection{Enfermedad Profesional}
+Es aquella patología causada de forma directa por el ejercicio de la profesión u oficio y la exposición a factores de riesgo presentes en el medio ambiente laboral (químicos, físicos, biológicos, ergonómicos). 
+\begin{itemize}
+    \item Se encuentran tabuladas en el \textbf{Listado de Enfermedades Profesionales} (Decreto 658/96).
+    \item Las patologías no tabuladas pueden ser reconocidas en casos individuales ante las Comisiones Médicas de la SRT.
+\end{itemize}
+
+\subsection{Concepto de Puesto de Trabajo}
+A los efectos de la Ley 19.587: Se designa como puesto o lugar de trabajo a todo espacio donde se realicen tareas con presencia \textbf{permanente, circunstancial, transitoria o eventual} de personas.
+
+\subsection{Responsabilidad Solidaria del Dador Principal}
+\begin{tcolorbox}[title=Art. 4° Ley 19.587 - Tercerizaciones]
+Cuando la prestación de trabajo se ejecute por terceros (contratistas, subcontratistas) en establecimientos, centros o puestos de trabajo del dador principal o con maquinarias, elementos o dispositivos por él suministrados, el dador principal \textbf{ES SOLIDARIAMENTE RESPONSABLE} del cumplimiento de las disposiciones de la Ley de Higiene y Seguridad.
+\end{tcolorbox}
+\textit{Nota de estudio}: En exámenes se suele evaluar afirmando falsamente que el dador «no será solidariamente responsable». Esta afirmación es totalmente FALSA.
+
+\section{Exámenes Médicos Obligatorios (Res. SRT 37/10 y Ley 24.557)}
+Los exámenes médicos en el sistema de riesgos del trabajo tienen por objetivo verificar la aptitud de los trabajadores y detectar tempranamente afecciones derivadas del trabajo.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4.5cm}|p{6.5cm}|p{3.5cm}|}
+\hline
+\rowcolor{blue!15}\textbf{Examen Médico} & \textbf{Objetivo y Momento} & \textbf{Responsable} \\ \hline
+\textbf{Preocupacional / Ingreso} & Determinar aptitud psicofísica previa al puesto. Detectar afecciones preexistentes. Obligatorio. & Empleador / ART \\ \hline
+\textbf{Periódicos} & Detección precoz de afecciones por exposición a agentes de riesgo tabulados. Obligatorio. & ART \\ \hline
+\textbf{Previos a transferencia de actividad} & Evaluaciones por cambio de puesto con exposición a nuevos o distintos agentes de riesgo. & Empleador / ART \\ \hline
+\textbf{Posteriores a ausencias prolongadas} & Tras licencias médicas extensas para verificar la capacidad de reintegro. & ART / Empleador \\ \hline
+\textbf{Posocupacionales / Cesación de actividad} & Comprobar el estado de salud al momento del egreso o desvinculación laboral. & ART / Empleador \\ \hline
+\end{tabular}
+\caption{Exámenes médicos previstos en el sistema de riesgos del trabajo.}
+\end{table}
+
+\section{Prestaciones del Sistema de Riesgos del Trabajo}
+La Ley 24.557 clasifica las prestaciones a cargo de la ART en:
+\begin{itemize}
+    \item \textbf{Prestaciones en especie}: 
+    \begin{itemize}
+        \item Asistencia médica y farmacéutica.
+        \item Prótesis y ortopedia.
+        \item Rehabilitación física y kinesiológica.
+        \item Recalificación profesional.
+        \item Servicio funerario.
+    \end{itemize}
+    \item \textbf{Prestaciones dinerarias}: Indemnizaciones y pagos periódicos por Incapacidad Laboral Temporaria (ILT), Incapacidad Laboral Permanente (ILP) parcial o total, y Muerte.
+\end{itemize}
+
+
+\chapter{Protección contra Incendios y Evacuación}
+
+\section{Teoría de la Combustión y Clases de Fuego}
+El fuego es una reacción química de oxidación rápida con desprendimiento de luz y calor (Tetraedro del fuego: Combustible, Comburente, Calor y Reacción en cadena).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|p{4.5cm}|p{6cm}|}
+\hline
+\rowcolor{blue!15}\textbf{Clase} & \textbf{Material Combustible} & \textbf{Agente Extintor Recomendado} \\ \hline
+\textbf{Clase A} & Sólidos orgánicos que forman brasas (madera, papel, cartón, telas, plásticos). & Agua presurizada, Espuma AFFF, Polvo químico triclase ABC. \\ \hline
+\textbf{Clase B} & Liquidos inflamables y gases (nafta, aceites, solventes, gas propano/butano). & Polvo químico seco (ABC / BC), $CO_2$ (Dióxido de Carbono), Espuma. \\ \hline
+\textbf{Clase C} & Equipos e instalaciones eléctricas \textbf{energizadas}. & $CO_2$ (Dióxido de Carbono), Polvo ABC (evitando agua por conductividad). \\ \hline
+\textbf{Clase D} & Metales combustibles (Magnesio, Titanio, Sodio, Potasio, Litio). & Polvo seco especial a base de cloruro de sodio / sales de bario. \\ \hline
+\textbf{Clase K} & Aceites y grasas vegetales/animales en cocinas comerciales. & Acetato de potasio (químico húmedo). \\ \hline
+\end{tabular}
+\caption{Clasificación normalizada de fuegos y sus agentes de extinción.}
+\end{table}
+
+\section{Carga de Fuego}
+\begin{tcolorbox}[title=Definición Oficial de Carga de Fuego (Dec. 351/79 Anexo III)]
+Se define como la masa de madera equivalente por unidad de \textbf{superficie} ($\text{kg}/m^2$) capaz de desarrollar una cantidad de calor equivalente a la de los materiales combustibles contenidos en el sector de incendio.
+\end{tcolorbox}
+\begin{equation}
+\text{Carga de Fuego } (Q_f) = \frac{\sum (M_i \cdot P_{Ci})}{P_{C,\text{madera}} \cdot A} \quad \left[\frac{\text{kg}}{\text{m}^2}\right]
+\end{equation}
+donde $P_{C,\text{madera}} \approx 4400\,\text{kcal/kg} \approx 18.4\,\text{MJ/kg}$, $M_i$ es la masa del material $i$ y $A$ es la superficie del sector en $m^2$.
+\textit{Atención para exámenes}: Si una opción define la carga de fuego por unidad de \textbf{volumen} ($\text{kg}/m^3$), es FALSA.
+
+\section{Detección y Extinción de Incendios}
+\begin{itemize}
+    \item \textbf{Sensores / Detectores de Incendio}:
+    \begin{enumerate}
+        \item \textit{Detectores Ópticos de Humo}: Oscurecimiento o dispersión de luz (efecto Tyndall) por presencia de partículas de humo.
+        \item \textit{Detectores Térmicos}: Termostáticos (actúan al superar una temperatura umbral, ej. $68^\circ\text{C}$) o Termovelocimétricos (actúan ante una velocidad rápida de elevación de temperatura).
+        \item \textit{Detectores de Llama / Radiación}: Sensibles a la radiación Ultravioleta (UV) o Infrarroja (IR) emitida por la llama.
+    \end{enumerate}
+    \item \textbf{Sistemas de Extinción}:
+    \begin{itemize}
+        \item Portátiles: Extintores de incendio de accionamiento manual.
+        \item Fijos: Redes de hidrantes, rociadores automáticos (\textit{sprinklers}), instalaciones fijas de $CO_2$ o gases limpios.
+    \end{itemize}
+\end{itemize}
+
+\section{Salidas de Emergencia y Factor de Ocupación}
+\begin{itemize}
+    \item \textbf{Factor de Ocupación ($X$)}: Superficie de piso por persona ($\text{m}^2/\text{persona}$) para determinar el número máximo teóricos de ocupantes en un sector ($N = \text{Superficie} / X$).
+    \item \textbf{Unidad de Ancho de Salida ($n$)}: Espacio requerido para que las personas circulen en una fila. 
+    \begin{itemize}
+        \item Una unidad de ancho de salida ($1n$) = $0.55\,\text{m}$.
+        \item El ancho mínimo permitido para la primera unidad de ancho de salida en salidas generales es de \textbf{$1.10\,\text{m}$} (equivalente a $2n$).
+        \item Ninguna puerta de salida de emergencia o pasaje tendrá un ancho libre inferior a $0.90\,\text{m}$.
+    \end{itemize}
+\end{itemize}
+
+
+\chapter{Riesgo por Iluminación Ocupacional}
+
+\section{Naturaleza de la Luz y Visión Humana}
+La luz es la porción del espectro electromagnético comprendida entre las longitudes de onda de $380\,\text{nm}$ (violeta) y $780\,\text{nm}$ (rojo).
+
+\subsection{Tipos de Visión}
+\begin{itemize}
+    \item \textbf{Visión Fotópica}: Es la visión que se da con \textbf{altos niveles de iluminación} (iluminación diurna o superior a $10\,\text{cd/m}^2$). Entran en funcionamiento los \textbf{conos} de la retina. Permite la percepción del color y detalles finos. Sensibilidad espectral máxima a $\lambda = 555\,\text{nm}$.
+    \item \textbf{Visión Escotópica}: Es la visión en la oscuridad o con muy bajos niveles de iluminación (inferiores a $10^{-3}\,\text{cd/m}^2$). Intervienen únicamente los \textbf{bastones}. Es visión acromática (tonos de gris), de alta sensibilidad pero baja agudeza visual. Sensibilidad máxima a $\lambda = 507\,\text{nm}$.
+    \item \textbf{Visión Mesópica}: Zona intermedia de adaptación luminosa ($10^{-3}$ a $10\,\text{cd/m}^2$), operan conos y bastones simultáneamente.
+\end{itemize}
+
+\section{Magnitudes y Unidades Fotométricas}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3.8cm}|c|c|p{5.5cm}|}
+\hline
+\rowcolor{blue!15}\textbf{Magnitud} & \textbf{Símbolo} & \textbf{Unidad} & \textbf{Definición y Expresión} \\ \hline
+\textbf{Flujo Luminoso} & $\Phi$ & Lumen ($\text{lm}$) & Potencia emitida por una fuente en forma de luz visible. \\ \hline
+\textbf{Intensidad Luminosa} & $I$ & Candela ($\text{cd}$) & Flujo luminoso por unidad de ángulo sólido: $I = \frac{d\Phi}{d\Omega}$. \\ \hline
+\textbf{Iluminancia} & $E$ & Lux ($\text{lx} = \text{lm/m}^2$) & Flujo luminoso incidente por unidad de superficie: $E = \frac{d\Phi}{dA}$. Exigida por Ley 19.587. \\ \hline
+\textbf{Luminancia} & $L$ & $\text{cd/m}^2$ (nit) & Intensidad luminosa emitida/reflejada por unidad de superficie aparente: $L = \frac{dI}{dA \cos\theta}$. Brillo percibido. \\ \hline
+\textbf{Eficiencia Luminosa} & $\eta$ & $\text{lm/W}$ & Relación entre el flujo luminoso emitido y la potencia eléctrica consumida: $\eta = \frac{\Phi}{P_{\text{elec}}}$. \\ \hline
+\end{tabular}
+\caption{Magnitudes fotométricas fundamentales.}
+\end{table}
+
+\subsection{Temperatura de Color y Rendimiento Cromático}
+\begin{itemize}
+    \item \textbf{Temperatura de Color ($T_c$ en Kelvin)}: Expresa la \textbf{apariencia de color} de la luz emitida por una fuente lumínica comparada con la temperatura absoluta a la que se debe calentar un cuerpo negro ideal para emitir luz similar.
+    \begin{itemize}
+        \item Cálida: $T_c < 3300\,\text{K}$ (tonos amarillentos/rojizos).
+        \item Neutra: $3300\,\text{K} \le T_c \le 5300\,\text{K}$.
+        \item Fría: $T_c > 5300\,\text{K}$ (tonos azulados).
+    \end{itemize}
+    \item \textbf{Índice de Reproducción Cromática (IRC / $R_a$)}: Mide la capacidad de una fuente de luz para reproducir fielmente los colores reales de un objeto comparada con una fuente patrón (escala de 0 a 100).
+
+\end{itemize}
+
+\section{Leyes de Iluminación Puntual}
+
+\subsection{Ley de la Inversa del Cuadrado de la Distancia}
+Para una fuente puntual que emite en una dirección dada con intensidad $I$:
+\begin{equation}
+E = \frac{I}{d^2} \quad [\text{lx}]
+\end{equation}
+
+\subsection{Ley del Coseno}
+Cuando el plano receptor forma un ángulo $\theta$ con la perpendicular a los rayos de luz:
+\begin{align}
+\text{Iluminancia Horizontal: } E_{ph} &= \frac{I(\theta) \cdot \cos\theta}{d^2} = \frac{I(\theta) \cdot \cos^3\theta}{h^2} \quad [\text{lx}] \\
+\text{Iluminancia Vertical: } E_{pv} &= \frac{I(\theta) \cdot \sin\theta}{d^2} = \frac{I(\theta) \cdot \sin\theta \cdot \cos^2\theta}{h^2} \quad [\text{lx}]
+\end{align}
+donde $h$ es la altura de montaje de la luminaria sobre el plano de trabajo y $d = \sqrt{h^2 + x^2}$.
+
+\section{Medición de Iluminación en el Trabajo (Dec. 351/79 Anexo IV y Res. SRT 84/12)}
+\begin{itemize}
+    \item \textbf{Instrumento}: Luxómetro (debe contar con celda fotosensible con respuesta espectral corregida $V(\lambda)$ según CIE y corrección cosenoidal).
+    \item \textbf{Iluminancia media ($E_{\text{med}}$)}: Promedio aritmético de los valores medidos en una grilla de puntos del local:
+    \begin{equation}
+    E_{\text{med}} = \frac{\sum_{i=1}^N E_i}{N}
+    \end{equation}
+    \item \textbf{Uniformidad ($U$)}: Relación entre la iluminancia mínima medida y la iluminancia media:
+    \begin{equation}
+    U = \frac{E_{\text{min}}}{E_{\text{med}}} \ge U_{\text{exigido}} \quad (\text{típicamente } 0.5 \text{ a } 0.7)
+    \end{equation}
+\end{itemize}
+
+
+\chapter{Riesgo por Ruido Laboral}
+
+\section{Naturaleza del Sonido y Ruido}
+El sonido es una variación periódica de presión en un medio elástico. El \textbf{ruido} se define como todo sonido no deseado, molesto, intempestivo o que genera riesgo de pérdida auditiva (hipoacusia profesional) u otros efectos fisiológicos y psicológicos (estrés, hipertensión, fatiga).
+
+\section{Magnitudes Acústicas e Indicadores Logarítmicos}
+El oído humano responde de forma logarítmica a la intensidad del sonido.
+
+\begin{itemize}
+    \item \textbf{Presión Sonora ($p$ en Pa)}: Variación eficaz de presión respecto a la atmosférica. Presión de referencia: $p_0 = 20\,\mu\text{Pa} = 2 \times 10^{-5}\,\text{Pa}$ (umbral de audición a $1000\,\text{Hz}$).
+    \item \textbf{Potencia Sonora ($W$ en Watts)}: Energía acústica total emitida por la fuente por unidad de tiempo. Potencia de referencia: $W_0 = 10^{-12}\,\text{W}$.
+    \item \textbf{Intensidad Sonora ($I$ en $\text{W/m}^2$)}: Energía acústica que atraviesa la unidad de área en un segundo. Intensidad de referencia: $I_0 = 10^{-12}\,\text{W/m}^2 = 1\,\text{pW/m}^2$.
+\end{itemize}
+
+\subsection{Ecuaciones de Niveles en Decibeles ($dB$)}
+\begin{align}
+\text{Nivel de Presión Sonora (NPS o } L_p\text{)} &= 20 \log_{10} \left( \frac{p_{\text{rms}}}{p_0} \right) \quad [\text{dB}] \\
+\text{Nivel de Potencia Sonora (NPW o } L_w\text{)} &= 10 \log_{10} \left( \frac{W}{W_0} \right) \quad [\text{dB}] \\
+\text{Nivel de Intensidad Sonora (NIS o } L_I\text{)} &= 10 \log_{10} \left( \frac{I}{I_0} \right) \quad [\text{dB ref. } 1\,\text{pW/m}^2]
+\end{align}
+
+\begin{tcolorbox}[title=Dependencia del Nivel de Presión Sonora en un Punto]
+El Nivel de Presión Sonora ($L_p$) en un determinado punto depende de:
+\begin{enumerate}
+    \item La energía / potencia sonora de la fuente de ruido.
+    \item La distancia a la fuente de ruido ($1/r^2$ en campo libre).
+    \item El ambiente / características acústicas del recinto (reflexiones, absorción).
+\end{enumerate}
+\end{tcolorbox}
+
+\section{Suma Logarítmica de Fuentes Sonoras Incoherentes}
+Dado que las presiones sonoras de fuentes independientes no se suman aritméticamente sino energéticamente:
+\begin{equation}
+L_{p,\text{total}} = 10 \log_{10} \left( \sum_{i=1}^n 10^{\frac{L_{p,i}}{10}} \right) \quad [\text{dB}]
+\end{equation}
+
+\textbf{Reglas prácticas de suma de 2 fuentes}:
+\begin{itemize}
+    \item Si $\Delta L = 0\,\text{dB}$ ($L_1 = L_2$): $L_{\text{total}} = L_1 + 3\,\text{dB}$.
+    \item Si $\Delta L = 1\,\text{dB}$: sumar $2.5\,\text{dB}$ a la mayor.
+    \item Si $\Delta L \ge 10\,\text{dB}$: la fuente menor no incrementa sensiblemente el nivel total ($+0\,\text{dB}$).
+\end{itemize}
+
+\section{Escalas de Ponderación y Nivel Sonoro Continuo Equivalente ($NSCE$)}
+
+\subsection{Redes de Ponderación Frecuencial}
+\begin{itemize}
+    \item \textbf{Filtro A ($\text{dBA}$)}: Modula las frecuencias emulando la curva de sensibilidad del oído humano a niveles moderados ($40\,\text{phons}$). Es el estándar legal obligatorio (Res. SRT 85/12) para evaluar riesgos auditivos.
+    \item \textbf{Filtro C ($\text{dBC}$)}: Respuesta casi plana. Se utiliza para medir picos de ruido, impactos o evaluar la atenuación de protectores auditivos.
+\end{itemize}
+
+\subsection{Nivel Sonoro Continuo Equivalente (\texorpdfstring{$NSCE$}{NSCE} / \texorpdfstring{$L_{\text{Aeq},T}$}{LAeq,T})}
+\begin{tcolorbox}[title=Definición de NSCE / $L_{\text{Aeq},T}$]
+Es el nivel de presión sonora constante en $\text{dBA}$ que, en un mismo intervalo de tiempo $T$, contiene la misma energía sonora acumulada que el ruido real fluctuante o variable registrado en ese período.
+\end{tcolorbox}
+\begin{equation}
+L_{\text{Aeq},T} = 10 \log_{10} \left[ \frac{1}{T} \sum_{i=1}^n t_i \cdot 10^{\frac{L_{A,i}}{10}} \right] \quad [\text{dBA}]
+\end{equation}
+
+\section{Límites Normativos y Dosis de Ruido (Res. SRT 85/12 y Dec. 351/79)}
+\begin{itemize}
+    \item \textbf{Nivel Límite Permisible}: \textbf{$85\,\text{dBA}$} para una jornada laboral de \textbf{8 horas diarias} ($40\,\text{horas semanales}$).
+    \item \textbf{Tasa de Intercambio (Regla del cambio de $3\,\text{dBA}$)}: Al aumentar el nivel de ruido en $3\,\text{dBA}$, se debe reducir el tiempo máximo de exposición permitido a la mitad.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c||c|c|}
+\hline
+\rowcolor{blue!15}\textbf{NPS ($\text{dBA}$)} & \textbf{Tiempo Máx. $T_i$} & \textbf{NPS ($\text{dBA}$)} & \textbf{Tiempo Máx. $T_i$} \\ \hline
+85 & 8 horas & 94 & 1 hora \\ \hline
+88 & 4 horas & 97 & 30 minutos \\ \hline
+91 & 2 horas & 100 & 15 minutos \\ \hline
+\end{tabular}
+\caption{Tiempos máximos de exposición permisibles por norma.}
+\end{table}
+
+\subsection{Cálculo de la Dosis Diaria de Ruido (\texorpdfstring{$D$}{D})}
+\begin{equation}
+D = \left( \sum_{i=1}^n \frac{C_i}{T_i} \right) \times 100\%
+\end{equation}
+donde $C_i$ es la duración real de exposición al nivel $L_i$, y $T_i$ es el tiempo máximo permitido para ese nivel ($T_i = \frac{8}{2^{(L_i - 85)/3}}$ horas).
+Si $D \le 100\%$, el trabajador está expuesto dentro del límite legal. Si $D > 100\%$, se requiere la implementación de medidas correctivas e ingeniería o EPP auditivo obligatorio.
+
+
+\chapter{Riesgo Eléctrico y Seguridad en Instalaciones}
+
+\section{Efectos de la Corriente Eléctrica sobre el Cuerpo Humano}
+El peligro eléctrico radica en la posibilidad de que la corriente eléctrica circule a través del cuerpo humano. Los daños principales dependen de:
+
+\begin{enumerate}
+    \item \textbf{Intensidad de corriente ($I$)}: Es el parámetro más determinante.
+    \begin{itemize}
+        \item $1\,\text{mA}$: Umbral de percepción.
+        \item $5\,\text{mA}$: Calambre leve.
+        \item $10 - 20\,\text{mA}$: Umbral de tetanización muscular (incapacidad de soltar el conductor).
+        \item $25 - 50\,\text{mA}$: Asfixia / tetanización de músculos respiratorios.
+        \item $50 - 100\,\text{mA}$: Fibrilación ventricular cardiaca (mortal si no se aplica desfibrilación inmediata).
+        \item $> 1\,\text{A}$: Paro cardiaco directo y severas quemaduras térmicas internas.
+    \end{itemize}
+    \item \textbf{Tiempo de exposición ($t$)}: La energía disipada depende de $I^2 \cdot t$.
+    \item \textbf{Trayectoria de la corriente}: La máxima gravedad ocurre cuando la corriente atraviesa el corazón o el cerebro (Mano izquierda -- Tórax -- Pie derecho).
+    \item \textbf{Resistencia del cuerpo humano ($R$)}: Varía entre $1000\,\Omega$ y $5000\,\Omega$ según la humedad de la piel, superficie de contacto y nivel de tensión.
+    \item \textbf{Frecuencia}: La corriente alterna industrial ($50\,\text{Hz}$) es de 3 a 5 veces más peligrosa que la corriente continua para inducir fibrilación ventricular.
+\end{enumerate}
+
+\section{Clasificación de Niveles de Tensión (Anexo VI Dec. 351/79)}
+\begin{itemize}
+    \item \textbf{Muy Baja Tensión (MBT)}: Tensiones hasta $50\,\text{V}$ en C.A. o $75\,\text{V}$ en C.C. (En ambientes muy húmedos o mojados el valor de seguridad es $\le 24\,\text{V}$).
+    \item \textbf{Baja Tensión (BT)}: Tensiones mayores a $50\,\text{V}$ hasta $1000\,\text{V}$ en C.A. (o $1500\,\text{V}$ en C.C.).
+    \item \textbf{Media Tensión (MT)}: Tensiones superiores a $1\,\text{kV}$ hasta $33\,\text{kV}$.
+    \item \textbf{Alta Tensión (AT)}: Tensiones superiores a $33\,\text{kV}$.
+\end{itemize}
+
+\section{Tipos de Contactos Eléctricos y Medidas de Protección}
+
+\subsection{Contactos Directos e Indirectos}
+\begin{itemize}
+    \item \textbf{Contacto Directo}: Contacto de personas con partes activas de la instalación eléctrica que normalmente se encuentran bajo tensión.
+    \item \textbf{Contacto Indirecto}: Contacto de personas con partes metálicas (masas) que han quedado accidentalmente bajo tensión a causa de un fallo de aislamiento.
+\end{itemize}
+
+\subsection{Medidas de Protección}
+\begin{itemize}
+    \item \textbf{Contra Contactos Directos}: Aislamiento de partes activas, barreras/envolventes con índice de protección (IP), alejamiento de partes energizadas, utilización de MBTS ($\le 24\,\text{V}$).
+    \item \textbf{Contra Contactos Indirectos}: 
+    \begin{itemize}
+        \item \textbf{Puesta a Tierra (PAT)} de todas las masas metálicas coordinada con \textbf{Interruptor Diferencial} (RCD o disyuntor) de alta sensibilidad ($\le 30\,\text{mA}$).
+        \item Uso de equipos con doble aislamiento (Clase II).
+        \item Separación de circuitos mediante transformadores de aislamiento.
+    \end{itemize}
+\end{itemize}
+
+\section{Las 5 Reglas de Oro de la Seguridad Eléctrica}
+Para trabajar en instalaciones eléctricas sin tensión se deben aplicar estrictamente y en orden las siguientes 5 reglas:
+
+\begin{tcolorbox}[title=Las 5 Reglas de Oro (Procedimiento Obligatorio)]
+\begin{enumerate}
+    \item \textbf{Corte visible} o desconexión efectiva de todas las fuentes de tensión.
+    \item \textbf{Enclavamiento, bloqueo y señalización} de los aparatos de corte (candados y tarjetas de advertencia).
+    \item \textbf{Verificación de ausencia de tensión} en todos los conductores activos con instrumento comprobado.
+    \item \textbf{Puesta a tierra y en cortocircuito} de todas las posibles fuentes de tensión.
+    \item \textbf{Delimitación y señalización} de la zona de trabajo.
+\end{enumerate}
+\end{tcolorbox}
+
+\section{Resoluciones SRT Obligatorias en Riesgo Eléctrico}
+\begin{itemize}
+    \item \textbf{Resolución SRT 900/15}: Aprueba el protocolo obligatorio para la medición del valor de resistencia de la Puesta a Tierra (PAT) y la verificación del correcto funcionamiento de los interruptores diferenciales en los lugares de trabajo.
+    \item \textbf{Resolución SRT 3068/14}: Reglamento para la ejecución de trabajos con tensión en instalaciones eléctricas de Baja Tensión (BT).
+    \item \textbf{Resolución SRT 592/04}: Reglamento para la ejecución de trabajos con tensión en instalaciones de Media y Alta Tensión.
+\end{itemize}
+
+
+\chapter{Resolución Rigurosa de Modelos de Parcial (Guía Práctica)}
+
+\section{Preguntas Teóricas Resueltas y Justificadas}
+
+\subsection{Pregunta 1: Concepto de Accidente de Trabajo}
+\textbf{Enunciado}: Concepto legal de accidente de trabajo. \\
+\textbf{Respuesta Correcta}: Todo acontecimiento súbito y violento ocurrido por el hecho o en ocasión del trabajo, o en el trayecto entre el domicilio del trabajador y el lugar de trabajo, siempre y cuando el damnificado no hubiere interrumpido o alterado dicho trayecto por causas ajenas al trabajo. \\
+\textbf{Justificación}: La definición formal del Art. 6° de la Ley 24.557 exige expresamente la salvedad de no haber alterado el trayecto in itinere por razones ajenas al trabajo.
+
+\subsection{Pregunta 2: Magnitud Recomendada para Analizar la Luz}
+\textbf{Enunciado}: La magnitud recomendada por la Ley 19.587 y el Dec. 351/79 para analizar la luz en un ambiente laboral es: \\
+\textbf{Respuesta Correcta}: Ninguna de las opciones listadas (la magnitud exigida es la \textbf{Iluminancia}, expresada en Lux). \\
+\textbf{Justificación}: Las opciones de la lista incluían Luminancia, Rendimiento luminoso, Intensidad luminosa y Flujo luminoso. Ninguna de ellas es la iluminancia; por lo tanto corresponde elegir "Ninguna de todas" e indicar $E = \text{Iluminancia } [\text{Lux}]$.
+
+\subsection{Pregunta 3: Eficiencia Luminosa}
+\textbf{Enunciado}: La eficiencia luminosa de una lámpara es: \\
+\textbf{Respuesta Correcta}: La relación entre el flujo luminoso (o potencia luminosa emitida) y la potencia eléctrica consumida ($\text{lm/W}$).
+
+\subsection{Pregunta 4: Ancho Mínimo de Salida de Emergencia}
+\textbf{Enunciado}: Definir el ancho mínimo de una salida de emergencia. \\
+\textbf{Respuesta Correcta}: Ninguna de todas las opciones fijas (1.30m, 1.20m, 1.15m son incorrectas). \\
+\textbf{Justificación}: El ancho mínimo reglamentario para la primera unidad de ancho de salida es de \textbf{$1.10\,\text{m}$} y el ancho libre mínimo de cualquier puerta de escape es de $0.90\,\text{m}$.
+
+\subsection{Pregunta 5: Exámenes Médicos Previstos por Ley 24.557}
+\textbf{Respuesta Correcta}: Todas son correctas (Preocupacionales, Periódicos, Previos a transferencias de puesto, Posteriores a ausencias prolongadas y Posocupacionales/retiro).
+
+\subsection{Pregunta 6: Tipos de Fuego según el Material}
+\begin{itemize}
+    \item Gases y líquidos combustibles $\rightarrow$ \textbf{Clase B}.
+    \item Equipamiento eléctrico energizado $\rightarrow$ \textbf{Clase C}.
+    \item Madera, papel, tela o plástico $\rightarrow$ \textbf{Clase A}.
+    \item Metales combustibles $\rightarrow$ \textbf{Clase D}.
+\end{itemize}
+
+\subsection{Pregunta 7: Carga de Fuego}
+\textbf{Enunciado}: ¿Verdadero o Falso? - Carga de Fuego: Peso en madera por unidad de volumen ($\text{kg/m}^3$) capaz de desarrollar una cantidad de calor equivalente... \\
+\textbf{Respuesta Correcta}: \textbf{Falso}. \\
+\textbf{Justificación}: La carga de fuego se mide por unidad de \textbf{superficie} ($\text{kg/m}^2$), no de volumen.
+
+\subsection{Pregunta 8: Responsabilidad Solidaria}
+\textbf{Enunciado}: ¿Verdadero o Falso? - Cuando la prestación de trabajo se ejecute por terceros, el dador principal no será solidariamente responsable. \\
+\textbf{Respuesta Correcta}: \textbf{Falso}. \\
+\textbf{Justificación}: El Art. 4° de la Ley 19.587 establece que el dador principal \textbf{es solidariamente responsable}.
+
+\subsection{Pregunta 9: Parámetro para Determinar Ruido Ocupacional}
+\textbf{Respuesta Correcta}: \textbf{Nivel Sonoro Continuo Equivalente en dBA} ($NSCE$ o $L_{\text{Aeq},T}$).
+
+\subsection{Pregunta 10: Temperatura de Color}
+\textbf{Respuesta Correcta}: Expresa únicamente la \textbf{apariencia de color} de una fuente comparada con un cuerpo negro calentado a esa temperatura absoluta. (No representa la temperatura física que toma la lámpara ni el filamento).
+
+\section{Problemas Numéricos Resueltos Paso a Paso}
+
+\subsection{Problema 1: Suma de Fuentes Sonoras en NPS}
+\textbf{Enunciado}: Calcular la suma de las siguientes fuentes sonoras independientes: $75\,\text{dB}$, $66\,\text{dB}$, $83\,\text{dB}$, $86\,\text{dB}$.
+
+\textbf{Desarrollo}:
+\begin{equation}
+L_{\text{total}} = 10 \log_{10} \left( 10^{\frac{75}{10}} + 10^{\frac{66}{10}} + 10^{\frac{83}{10}} + 10^{\frac{86}{10}} \right)
+\end{equation}
+Calculamos cada término energético:
+\begin{align*}
+10^{7.5} &= 31.622.776.6 \\
+10^{6.6} &= 3.981.071.7 \\
+10^{8.3} &= 199.526.231.5 \\
+10^{8.6} &= 398.107.170.6
+\end{align*}
+Suma energética $= 633.237.250.4$.
+
+Aplicando el logaritmo decimal:
+\begin{equation}
+L_{\text{total}} = 10 \log_{10}(633.237.250.4) = 10 \times 8.80156 = \mathbf{88.02\,\text{dB}} \approx \mathbf{88.0\,\text{dB}}
+\end{equation}
+
+\subsection{Problema 2: Cálculo de Dosis de Ruido Diaria y \texorpdfstring{$L_{\text{Aeq},8\text{h}}$}{LAeq,8h}}
+\textbf{Enunciado}: Un operario está expuesto durante una jornada laboral de $8\,\text{h}$ a los siguientes niveles de ruido parciales:
+\begin{itemize}
+    \item $75\,\text{dBA}$ durante $2\,\text{h}$
+    \item $85\,\text{dBA}$ durante $2\,\text{h}$
+    \item $87\,\text{dBA}$ durante $1\,\text{h}$
+    \item $93\,\text{dBA}$ durante $3\,\text{h}$
+\end{itemize}
+Calcular la Dosis Diaria de Ruido ($D$) y el nivel sonoro continuo equivalente para $8\,\text{h}$ ($L_{\text{Aeq},8\text{h}}$).
+
+\textbf{Desarrollo}:
+1. Determinación de los tiempos máximos permisibles ($T_i = \frac{8}{2^{(L_i - 85)/3}}$):
+\begin{itemize}
+    \item $L_1 = 75\,\text{dBA} < 85\,\text{dBA} \implies T_1 = \infty \implies C_1/T_1 = 0$
+    \item $L_2 = 85\,\text{dBA} \implies T_2 = 8\,\text{h} \implies C_2/T_2 = 2/8 = 0.25$
+    \item $L_3 = 87\,\text{dBA} \implies T_3 = \frac{8}{2^{2/3}} = \frac{8}{1.5874} = 5.04\,\text{h} \implies C_3/T_3 = 1/5.04 = 0.1984$
+    \item $L_4 = 93\,\text{dBA} \implies T_4 = \frac{8}{2^{8/3}} = \frac{8}{6.3496} = 1.26\,\text{h} \implies C_4/T_4 = 3/1.26 = 2.3811$
+\end{itemize}
+
+2. Cálculo de la Dosis Total:
+\begin{equation}
+D = (0 + 0.25 + 0.1984 + 2.3811) \times 100\% = \mathbf{282.95\%}
+\end{equation}
+\textit{Conclusión}: La dosis supera ampliamente el $100\%$ legal permitido ($282.95\%$), lo que indica una condición de exposición hiper-riesgosa que exige el uso inmediato de protección auditiva y control de ingeniería.
+
+3. Cálculo del Nivel Sonoro Continuo Equivalente ($L_{\text{Aeq},8\text{h}}$):
+\begin{equation}
+L_{\text{Aeq},8\text{h}} = 10 \log_{10} \left[ \frac{1}{8} \left( 2 \cdot 10^{7.5} + 2 \cdot 10^{8.5} + 1 \cdot 10^{8.7} + 3 \cdot 10^{9.3} \right) \right] = \mathbf{89.53\,\text{dBA}}
+\end{equation}
+
+\subsection{Problema 3: Cálculo de Iluminación Puntual (\texorpdfstring{$E_{ph1}$}{Eph1})}
+\textbf{Enunciado}: Calcular el nivel de iluminación en el punto $Ph1$ sobre un plano horizontal producido por una luminaria montada a $h = 2.1\,\text{m}$ de altura. La luminaria posee 3 tubos fluorescentes de $18\,\text{W}$ y $2300\,\text{lm}$ cada uno ($\Phi_{\text{total}} = 6900\,\text{lm}$). El punto $Ph1$ se sitúa a una distancia horizontal $x = 1.2\,\text{m}$ de la vertical de la luminaria.
+
+\textbf{Desarrollo}:
+1. Distancia directa $d$ de la luminaria a $Ph1$:
+\begin{equation}
+d = \sqrt{h^2 + x^2} = \sqrt{2.1^2 + 1.2^2} = \sqrt{4.41 + 1.44} = \sqrt{5.85} = 2.4187\,\text{m}
+\end{equation}
+
+2. Ángulo $\theta$ con la vertical:
+\begin{equation}
+\cos\theta = \frac{h}{d} = \frac{2.1}{2.4187} = 0.8682 \implies \theta \approx 29.74^\circ \approx 30^\circ
+\end{equation}
+\begin{equation}
+\cos^3\theta = (0.8682)^3 = 0.6545
+\end{equation}
+
+3. Lectura de la curva de intensidad polar de la luminaria a $\theta = 30^\circ$:
+De la curva fotométrica patrón a $30^\circ$, la intensidad es de $I_{\text{rel}} = 305\,\text{cd/1000 lm}$.
+\begin{equation}
+I(30^\circ) = 305 \times \frac{6900}{1000} = 2104.5\,\text{cd}
+\end{equation}
+
+4. Aplicación de la Ley del Coseno:
+\begin{equation}
+E_{ph1} = \frac{I(30^\circ) \cdot \cos^3\theta}{h^2} = \frac{2104.5 \times 0.6545}{2.1^2} = \frac{1377.39}{4.41} = \mathbf{312.3\,\text{lux}} \approx \mathbf{311\,\text{lux}}
+\end{equation}
+
+\end{document}

@@ -1,0 +1,218 @@
+\chapter{Sistemas de Detección y Alarma de Incendios}
+\label{sec.cap5:sistemas_deteccion}
+
+El tiempo transcurrido entre la ignición incipiente y la detección efectiva determina el éxito o fracaso de cualquier
+estrategia de protección contra incendios. Los sistemas automáticos de detección y alarma, normalizados bajo los
+lineamientos de las normas NFPA 72 e IRAM 3554, tienen por finalidad identificar el siniestro en su fase embrionaria,
+alertar a los ocupantes para permitir su evacuación antes de que se alcancen concentraciones letales de gases tóxicos, y
+comandar las acciones automáticas de supresión y compartimentación.
+
+\section{Arquitectura y Topología de los Sistemas de Detección}
+
+Un sistema integral de detección se compone de paneles de control, sensores
+automáticos de campo, pulsadores manuales de alarma y dispositivos de notificación acústico-óptica. Según la topología de
+comunicación y la granularidad de la información transmitida, se distinguen dos arquitecturas principales:
+
+\begin{itemize}
+    \item Sistemas Convencionales: Agrupan los detectores y avisadores en circuitos o zonas físicas cableadas en
+          configuración radial con resistencia de fin de línea. Cuando un detector conmuta a estado de alarma, la central
+          detecta un incremento de corriente provocado por la baja impedancia del dispositivo activado. Este esquema
+          presenta un costo inicial reducido, pero posee la severa limitación operativa de no individualizar el sensor en
+          falla o alarma dentro de la zona, requiriendo una búsqueda visual en todo el sector comprometido. Su aplicación se
+          restringe a locales de reducida superficie o naves de ambiente único.
+    \item Sistemas Analógicos-Direccionables: Emplean lazos de comunicación digital bidireccional en configuración de
+          anillo cerrado (Lazos Clase A) o abiertos (Clase B). Cada dispositivo de campo dispone de una dirección binaria
+          propia asignada por microinterruptores o programación electrónica. Los sensores no operan como simples
+          conmutadores de umbral, sino que reportan periódicamente a la central un valor analógico continuo proporcional a
+          la magnitud física monitoreada (porcentaje de oscurecimiento por metro, temperatura puntual, concentración de
+          partículas). Esta tecnología permite que el panel ejecute algoritmos de compensación automática por suciedad
+          acumulada, genere prealarmas programables y localice con exactitud milimétrica el punto del siniestro,
+          reduciendo drásticamente las falsas alarmas y facilitando el mantenimiento predictivo.
+\end{itemize}
+
+\section{Detectores Ópticos de Humo (Fotoeléctricos)}
+
+Los detectores ópticos puntuales constituyen la tecnología más difundida en instalaciones comerciales y corporativas. Su
+principio de funcionamiento se sustenta en una cámara de muestreo laberíntica oscura que impide el ingreso de la luz
+ambiental pero permite la libre circulación del aire. En el interior de la cámara se ubica un diodo emisor de luz
+infrarroja (LED) y un fotodiodo receptor colocado en ángulo diedro (típicamente entre $90^\circ$ y $120^\circ$) respecto
+al eje óptico de emisión.
+
+En condiciones de aire limpio, el haz luminoso se propaga en línea recta sin incidir sobre el fotodiodo receptor,
+manteniendo la corriente de reposo en valores prácticamente nulos. Cuando las partículas de humo ingresan al laberinto,
+interactúan con el haz luminoso produciendo el fenómeno de dispersión óptica de la luz (efecto Tyndall). Una porción de
+los fotones dispersados impacta sobre el fotodiodo sensible, generando una corriente proporcional a la densidad óptica
+del aerosol.
+
+Esta tecnología resulta altamente idónea para detectar incendios de combustión lenta, incompleta o latente, los cuales
+generan aerosoles con partículas visibles de diámetro medio a grande (entre $0.3\,\mu\mathrm{m}$ y $10\,\mu\mathrm{m}$),
+tales como los generados por el sobrecalentamiento de cables con aislación de PVC o la pirolización de espumas y
+celulosas. Sus limitaciones radican en la vulnerabilidad al vapor de agua, condensaciones y acumulación de polvillo
+industrial, requiriendo mantenimiento periódico de limpieza de cámara.
+
+\section{Detectores Iónicos de Humo}
+
+Los detectores iónicos basan su principio físico en la conducción eléctrica de gases ionizados. Disponen de una cámara de
+muestreo que aloja una diminuta fuente radiactiva encapsulada de Americio-241 ($^{241}\mathrm{Am}$), con una actividad
+del orden de $1\,\mu\mathrm{Ci}$, emisora de partículas alfa ($\alpha$). Estas partículas ionizan las moléculas neutras de
+nitrógeno y oxígeno del aire circundante, escindiéndolas en pares de iones positivos y electrones libres.
+
+Bajo la acción de una diferencia de potencial aplicada entre dos electrodos metálicos polarizados, los iones migran hacia
+las placas opuestas, estableciendo una corriente iónica continua de reposo sumamente pequeña, en el rango de los
+picoamperes ($p\A$). Cuando partículas de combustión submicrónicas invisibles (con diámetros inferiores a
+$0.3\,\mu\mathrm{m}$) penetran en la cámara, los iones se adhieren a la masa de las partículas carbonosas debido a su mayor
+inercia y menor movilidad electroforética. Esto reduce la velocidad de recombinación y disminuye drásticamente la
+corriente eléctrica de la cámara. Al caer la corriente por debajo del umbral de disparo, la electrónica activa la
+señal de alarma.
+
+Los detectores iónicos poseen una velocidad de respuesta superior ante fuegos rápidos con llama abierta y escaso humo
+visible. No obstante, en la actualidad su uso se encuentra prácticamente descontinuado a escala global debido a las
+restricciones ambientales y regulatorias asociadas a la gestión, transporte y disposición final de fuentes radiactivas,
+siendo sustituidos por sensores ópticos avanzados de longitud de onda dual.
+
+\section{Detectores Lineales de Humo por Haz Proyectado (Barreras Ópticas)}
+
+En naves industriales de gran altura, centros logísticos, plantas de producción y hangares donde los techos superan los
+$6\m$ a $12\m$, los detectores puntuales de techo pierden eficacia debido al fenómeno de estratificación térmica. La masa
+ascendente de humo y gases calientes pierde flotabilidad a medida que se mezcla con el aire ambiental más frío,
+formando una capa horizontal de estratificación suspendida que no alcanza la cumbrera del techo.
+
+Para resolver este desafío de ingeniería se implementan los detectores lineales de haz proyectado . El sistema está
+integrado por un emisor de radiación infrarroja y un receptor fotosensible colocados en muros opuestos a distancias
+operativas de entre $10\m$ y $100\m$, o bien un transceptor monobloque que emite y recibe el haz reflejado desde un
+prisma catadióptrico retrorreflector.
+
+El principio de detección es el oscurecimiento óptico a lo largo de una trayectoria extendida: el sensor mide de manera
+continua la atenuación del flujo luminoso recibido respecto al calibrado en reposo. Cuando la capa de humo estratificado
+cruza la trayectoria del haz, el porcentaje de atenuación sobrepasa el umbral programado (e.g., entre $20\percent$ y
+$50\percent$ de absorción) durante un tiempo de integración fijado, disparando la condición de incendio. Asimismo, estos
+equipos disponen de algoritmos de discriminación que identifican el bloqueo súbito y total del haz (provocado por una grúa
+puente o carretilla elevadora), catalogándolo como señal de avería técnica y no como un falso positivo de incendio.
+
+\section{Sistemas de Detección por Aspiración de Alta Sensibilidad (ASD / VESDA)}
+
+Los sistemas de detección por aspiración de muy alta sensibilidad (conocidos ampliamente bajo el estándar VESDA,
+representan el escalón tecnológico más avanzado en la protección de ambientes críticos, tales como salas de servidores,
+salas limpias de semiconductores, centros de conmutación telefónica y tableros de distribución de media y baja tensión.
+
+El equipamiento consta de una red de cañerías plásticas no propagadoras de llama (CPVC o ABS) que recorre el volumen
+protegido, con orificios de muestreo de diámetro calibrado perforados según un cálculo fluido-dinámico previo. Un
+aspirador centrífugo de alto rendimiento succiona continuamente muestras de aire de toda la red y las conduce hacia un
+módulo central de análisis. Antes de ingresar a la cámara de sensado, el flujo de aire atraviesa un filtro de dos etapas: la
+primera retiene partículas de polvo ambiental de gran tamaño, mientras que la segunda inyecta aire ultrafiltrado y seco
+para mantener limpios los componentes ópticos internos.
+
+La cámara de detección emplea un láser de estado sólido de alta precisión acoplado a un arreglo de fotodiodos capaces de
+realizar el conteo individual de partículas a través de dispersión Mie. Estos equipos alcanzan umbrales de sensibilidad
+extraordinarios, regulables en rangos de oscurecimiento de $0.001\percent/\m$ a $20\percent/\m$, lo que equivale a una
+sensibilidad varios órdenes de magnitud superior a la de un detector óptico convencional. Esto permite detectar las
+primeras moléculas desprendidas durante la pirólisis de aislamientos de cables o sobrecalentamiento de circuitos impresos
+horas antes de que se observe humo a simple vista o se produzcan llamas abiertas.
+
+\section{Detectores Térmicos y de Temperatura}
+
+Los detectores térmicos responden a la transferencia de energía calórica liberada por el fuego hacia el sensor por
+convección o conducción. Si bien presentan un tiempo de respuesta más lento comparado con los detectores de humo
+(requiriendo que el incendio adquiera cierta masa calórica), ofrecen una inmunidad sobresaliente en ambientes con presencia
+habitual de vapores de agua, polvos en suspensión, humos de escape de motores o procesos térmicos de fabricación. Se
+clasifican en tres modalidades:
+
+\begin{itemize}
+    \item Detectores Termostáticos (Temperatura Fija): Se activan cuando la temperatura del ambiente o del elemento
+          sensor alcanza un valor umbral predeterminado de fábrica (típicamente $57\Celsius$, $68\Celsius$ o $74\Celsius$).
+          Operan mecánicamente mediante discos bimetálicos de resorte de salto repentino, cápsulas con aleaciones metálicas
+          eutécticas fusibles que se funden liberando un contacto bajo resorte, o electrónicamente mediante termistores NTC.
+    \item Detectores Termovelocimétricos: Responden a la velocidad o tasa temporal de elevación de
+          la temperatura, con total independencia del valor inicial. En su concepción electromecánica, constan de una cámara
+          de aire sellada por un diafragma flexible de contacto que posee una fuga o escape calibrado. Cuando la temperatura
+          se eleva de forma suave (debido a climatización diurna), el aire se expande y escapa por la fuga sin deformar el
+          diafragma. Ante un incendio donde la temperatura crece rápidamente a razón de más de $8\Celsius/\mathrm{min}$ a
+          $9\Celsius/\mathrm{min}$, la presión interna no alcanza a disiparse por la fuga, venciendo el diafragma y cerrando
+          el circuito de alarma. En variantes electrónicas, se emplean dos termistores con constantes de tiempo térmicas
+          diferentes procesados por un microcontrolador.
+    \item Detectores Térmicos Combinados: Integran en una misma cápsula el sensado termovelocimétrico para detectar fuegos
+          de rápida propagación y el sensado de temperatura fija como respaldo ante fuegos de desarrollo térmico gradual.
+\end{itemize}
+
+\section{Cable Sensor Térmico Lineal (LHD)}
+
+Para la protección de activos continuos y alargados donde la instalación de detectores puntuales resulta impracticable, se
+utiliza el cable sensor térmico lineal. Se presentan dos variantes tecnológicas:
+
+\begin{itemize}
+    \item Cable LHD Digital: Formado por dos conductores elásticos de acero trenzados bajo tensión y
+          recubiertos por polímero termosensible con punto de fusión calibrado (e.g., $68\Celsius$,
+          $88\Celsius$ o $105\Celsius$). El conjunto posee una cubierta exterior de protección mecánica.
+          Cuando la temperatura en cualquier punto alcanza el valor de fusión, el polímero funde y los
+          conductores entran en cortocircuito. El módulo de control mide la resistencia hasta el punto
+          del contacto, determinando la distancia exacta del foco con precisión métrica.
+    \item Cable LHD Analógico y de Fibra Óptica: Los analógicos miden la variación resistiva del aislamiento en función
+          de la temperatura. Por su parte, los sensores de fibra óptica emplean Reflectometría Óptica
+          en el Dominio del Tiempo (OTDR) analizando el esparcimiento inelástico Raman producido por oscilaciones
+          moleculares del vidrio, brindando un perfil térmico continuo en tiempo real sobre distancias de hasta
+          $10\unit{\kilo\meter}$.
+\end{itemize}
+Su campo de aplicación primordial comprende las bandejas portacables de potencia en subestaciones, túneles de servicios,
+fajas transportadoras de carbón o cereales, transformadores de distribución e interior de tableros eléctricos.
+
+\section{Detectores de Radiación y Llama}
+
+Los detectores de llama responden a la energía electromagnética emitida en las longitudes de onda ópticas (ultravioleta,
+visible e infrarroja) por las especies atómicas y moleculares excitadas en el cono de una llama. Operan con una velocidad de
+respuesta sumamente rápida, típicamente inferior a $100\ms$, resultando insustituibles en zonas donde un escape de gases o
+líquidos inflamables puede provocar una combustión súbita sin generación previa de humo.
+
+\begin{itemize}
+    \item Detectores Ultravioleta (UV): Emplean tubos de descarga fotosensibles al rango espectral de $185\,\mathrm{nm}$ a
+          $260\,\mathrm{nm}$. La radiación solar que alcanza la superficie terrestre en esta banda es filtrada por la capa de
+          ozono atmosférico, lo que otorga al sensor inmunidad a la luz solar directa. Son capaces de detectar llamas de
+          hidrocarburos, hidrógeno y metales con gran velocidad. No obstante, son vulnerables a falsas alarmas provocadas por
+          arcos eléctricos de soldadura, descargas de rayos y arcos de alta tensión en seccionadores.
+    \item Detectores Infrarrojos (IR): Sintonizan fotocélulas piroeléctricas en la banda de absorción y emisión de
+          resonancia del dióxido de carbono caliente a $4.3\,\mu\mathrm{m}$, complementada con un filtro pasabanda óptico y
+          circuitos que reconocen la frecuencia de parpadeo característica del fuego (frecuencias de modulación de llama
+          entre $1\Hz$ y $10\Hz$).
+    \item Detectores Multiespectro UV/IR y Triple Infrarrojo (IR3): Para evitar disparos espurios en ambientes industriales
+          complejos, los detectores IR3 incorporan tres sensores infrarrojos independientes que monitorean diferentes
+          longitudes de onda: la banda activa de emisión de $CO_2$ ($4.3\,\mu\mathrm{m}$) y dos bandas de referencia
+          colaterales ($4.0\,\mu\mathrm{m}$ y $4.6\,\mu\mathrm{m}$). Mediante procesamiento digital de señales, el algoritmo
+          compara las relaciones de intensidad y las características de modulación temporal, permitiendo discriminar con
+          certeza absoluta una llama real frente a fuentes de calor radiante estacionarias, reflectores halógenos o radiación
+          solar reflejada en espejos de agua.
+\end{itemize}
+
+\section{Detectores de Gases de Combustión}
+
+Constituyen una herramienta complementaria de monitoreo en recintos confinados. Emplean celdas electroquímicas catalíticas
+sensibles a concentraciones de monóxido de carbono (CO) en rangos de $0$ a $500\,\text{ppm}$. Dado que la pirólisis de la
+mayoría de los materiales orgánicos libera CO antes de que las corrientes de convección térmica tengan la fuerza de elevar
+partículas pesadas de humo, estos detectores posibilitan una detección anticipada en conductos de aire y estacionamientos
+subterráneos.
+
+En la Tabla \ref{tab.cap5:deteccion} se resume el análisis comparativo de las diferentes tecnologías de detección.
+
+\begin{table}[!ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}p{4cm}|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{4.5cm}|}
+        \hline
+        \textbf{Tecnología} & \textbf{Principio Físico} & \textbf{Velocidad} & \textbf{Inmunidad a Fallas} & \textbf{Aplicación Recomendada} \\ \hline
+        Óptico Fotoeléctrico & Dispersión Tyndall en cámara oscura. & Media & Media (afectado por polvillo y vapor). &
+        Oficinas, pasillos, locales comerciales, salas de reunión. \\ \hline
+        Iónico & Disminución de corriente iónica por $^{241}\mathrm{Am}$. & Rápida en llama abierta & Baja (sensible a corrientes de aire). &
+        Uso en desuso por restricciones ambientales. \\ \hline
+        Haz Proyectado (Barrera) & Atenuación infrarroja en trayectoria larga ($10\text{--}100\m$). & Media & Alta con discriminación de bloqueo. &
+        Naves industriales de gran altura, depósitos, hangares. \\ \hline
+        Aspiración (ASD/VESDA) & Conteo láser Mie de partículas con red de muestreo activa. & Muy rápida (incipiente) & Muy alta con doble filtrado. &
+        Centros de datos, salas limpias, racks electrónicos cerrados. \\ \hline
+        Térmico Fijo / Velocimétrico & Deformación bimetálica o diferencial termistor. & Lenta a moderada & Excelente (inmune a humo/polvillo). &
+        Cocinas, salas de calderas, talleres con humos de proceso. \\ \hline
+        Cable LHD & Fusión polimérica o esparcimiento Raman en fibra. & Moderada a lo largo del tendido & Alta ante agresiones químicas y agua. &
+        Bandejas de cables, transformadores, túneles de cables. \\ \hline
+        Llama (IR3 / UV-IR) & Espectrometría óptica multicanal y parpadeo de llama. & Instantánea ($< 100\ms$) & Muy alta en configuración IR3. &
+        Almacenamiento de combustibles, hangares, petroquímica. \\ \hline
+    \end{tabular}
+    }
+    \caption{Matriz comparativa de tecnologías de detección de incendios.}
+    \label{tab.cap5:deteccion}
+\end{table}

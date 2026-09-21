@@ -1,0 +1,62 @@
+\chapter{Fundamentos Teóricos Acotados}
+\label{sec.tp2:teoria}
+
+En esta sección se presentan resumidas las magnitudes y fórmulas luminotécnicas fundamentales aplicadas en el desarrollo
+y evaluación del informe.
+
+\section{Magnitudes y Fórmulas Fundamentales}
+\label{sec.tp2:magnitudes}
+
+Las magnitudes y relaciones matemáticas utilizadas para caracterizar el ambiente de trabajo son:
+
+\begin{itemize}
+    \item \textbf{Flujo Luminoso ($\Phi$):} Potencia luminosa visible emitida por una fuente. Su unidad es el lumen ($\lm$).
+    
+    \item \textbf{Intensidad Luminosa ($I$):} Flujo emitido por unidad de ángulo sólido ($\omega$) en una dirección dada. Unidad: candela ($\cd$).
+    \begin{equation}
+        I = \frac{d\Phi}{d\omega}
+        \label{eq.tp2:intensidad}
+    \end{equation}
+    
+    \item \textbf{Iluminancia ($E$):} Densidad de flujo luminoso que incide sobre una superficie ($S$). Unidad: lux ($\lx = \lm/\m^2$).
+    \begin{equation}
+        E = \frac{\Phi}{S}
+        \label{eq.tp2:iluminancia}
+    \end{equation}
+    
+    \item \textbf{Eficacia Lumínica ($\eta$):} Relación entre el flujo emitido y la potencia eléctrica ($P$) consumida. Unidad: $\lm/\W$.
+    \begin{equation}
+        \eta = \frac{\Phi}{P}
+        \label{eq.tp2:eficacia}
+    \end{equation}
+\end{itemize}
+
+\section{Leyes de la Luminotecnia}
+\label{sec.tp2:leyes}
+
+\begin{itemize}
+    \item \textbf{Ley de la Inversa de los Cuadrados:} Determina la iluminancia producida por una fuente puntual sobre un plano perpendicular a una distancia ($d$):
+    \begin{equation}
+        E = \frac{I}{d^2}
+        \label{eq.tp2:inversa_cuadrados}
+    \end{equation}
+    
+    \item \textbf{Ley del Coseno (Lambert):} Calcula la iluminancia sobre un plano horizontal ($E_H$) cuando el haz incide con un ángulo $\theta$ respecto a la normal del plano, a una altura de montaje ($h$):
+    \begin{equation}
+        E_H = \frac{I_\theta \cdot \cos^3\theta}{h^2}
+        \label{eq.tp2:ley_coseno}
+    \end{equation}
+\end{itemize}
+
+\section{Marco Legal Aplicable}
+\label{sec.tp2:marco_legal}
+
+\begin{itemize}
+    \item \textbf{Decreto N° 351/79 (Anexo IV):} Exige intensidades medias de iluminación mínimas según la tarea visual, además de fijar el criterio de uniformidad para la iluminancia mínima ($E_{min}$) e iluminancia media ($E_{media}$):
+    \begin{equation}
+        E_{min} \ge \frac{E_{media}}{2}
+        \label{eq.tp2:uniformidad_lim}
+    \end{equation}
+    
+    \item \textbf{Resolución SRT N° 84/2012:} Define el protocolo obligatorio y la metodología de grilla para evaluar el nivel general de iluminación en los ambientes de trabajo.
+\end{itemize}

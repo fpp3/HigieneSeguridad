@@ -1,0 +1,42 @@
+\chapter{Cálculos y Análisis de Resultados}
+\label{sec:analisis}
+
+\section{Contrastación con la Res. 295/03 MTEySS}
+El valor de Nivel Sonoro Continuo Equivalente final determinado tras la estabilización de los $306,69\s$ de ensayo
+es de $L_{Aeq} = 84,66\dBA$. Al comparar este valor con el límite máximo permisible de $85,00\dBA$ establecido por la
+Resolución N° 295/2003 para una jornada laboral de $8\h$, se verifica que el nivel equivalente se encuentra $0,34\dBA$ por
+debajo del umbral legal de acción.
+
+\section{Cálculo del Tiempo Máximo Permisible de Exposición ($T_{max}$)}
+Aplicando la tasa de intercambio de $3\dBA$ regulada por la Res. 295/03 (Ecuación~\ref{eq.ej1:tmax}), el tiempo máximo
+que un trabajador puede permanecer expuesto de manera continua a $84,66\dBA$ sin riesgo higiénico se determina mediante:
+
+\begin{equation}
+T_{max} = \frac{8}{2^{(84,66 - 85)/3}} = \frac{8}{2^{-0,1133}} \approx 8,65\h \approx 8\h \; 39\text{ min}
+\end{equation}
+
+El resultado indica que el trabajador podría operar bajo este régimen continuo hasta un máximo de $8\h \; 39\text{ min}$
+diarias sin superar la dosis admisible.
+
+\section{Cálculo de la Dosis Diaria de Ruido ($D\%$)}
+Bajo el supuesto de una jornada laboral de $8\h$ continuas ($T_{exp} = 8\h$) dedicada al mantenimiento de electrodomésticos
+con el minitorno Dremel, la dosis porcentual de ruido se calcula aplicando la Ecuación~\ref{eq.ej1:dosis}:
+
+\begin{equation}
+D(\%) = 100 \times \frac{T_{exp}}{T_{max}} = 100 \times \frac{8\h}{8,65\h} \approx 92,5\%
+\end{equation}
+
+Alternativamente, aplicando la expresión exponencial directa:
+
+\begin{equation}
+D(\%) = 100 \times 10^{0,1 \cdot (84,66 - 85)} = 100 \times 10^{-0,034} \approx 92,5\%
+\end{equation}
+
+\section{Justificación del Muestreo y Evaluación de Riesgo}
+El muestreo de $306,69\s$ resultó suficiente para caracterizar energéticamente los ciclos repetitivos de $30\s$ de encendido y
+$5\s$ de pausa en los regímenes de $15\text{ kRPM}$ y $25\text{ kRPM}$. La dosis diaria resultante ($92,5\%$) se ubica por
+debajo del límite máximo del $100\%$, por lo que el puesto califica formalmente como \textbf{Conforme} a la legislación.
+
+Sin embargo, debido a que la dosis alcanza un valor muy elevado ($92,5\%$ del margen permitido), se determina que el puesto
+se halla en un umbral de precaución preventiva, haciendo aconsejable la entrega preventiva de protectores auditivos y la
+verificación periódica del estado mecánico del minitorno.

@@ -1,0 +1,87 @@
+\begin{tikzpicture}[scale=0.95, line join=round, line cap=round]
+  % Paleta de colores normalizada
+  \definecolor{colorCalor}{RGB}{205, 35, 25}          % Rojo fuego
+  \definecolor{colorCombustible}{RGB}{30, 135, 50}     % Verde
+  \definecolor{colorComburente}{RGB}{20, 100, 190}     % Azul
+  \definecolor{colorCadena}{RGB}{220, 120, 10}         % Ámbar / Naranja
+
+  % Vértices espaciales del tetraedro en proyección axonométrica
+  \coordinate (T) at (0, 2.2);       % Ápex superior (Calor)
+  \coordinate (L) at (-2.2, -0.2);   % Vértice izquierdo (Combustible)
+  \coordinate (R) at (2.2, -0.2);    % Vértice derecho (Comburente)
+  \coordinate (F) at (0, -1.5);      % Vértice frontal inferior (Reacción en Cadena)
+
+  % 1. Cara posterior (Calor / Fondo): T - L - R
+  \fill[colorCalor!16] (T) -- (L) -- (R) -- cycle;
+  \draw[colorCalor!60!black, line width=0.7pt, dashed] (L) -- (R);
+
+  % 2. Cara inferior / Base (Reacción en Cadena): L - F - R
+  \fill[colorCadena!24] (L) -- (F) -- (R) -- cycle;
+  \draw[colorCadena!85!black, line width=1.1pt] (L) -- (F) -- (R);
+
+  % 3. Cara lateral izquierda (Combustible): T - L - F
+  \fill[colorCombustible!22] (T) -- (L) -- (F) -- cycle;
+  \draw[colorCombustible!85!black, line width=1.1pt] (T) -- (L);
+
+  % 4. Cara lateral derecha (Comburente): T - F - R
+  \fill[colorComburente!22] (T) -- (F) -- (R) -- cycle;
+  \draw[colorComburente!85!black, line width=1.1pt] (T) -- (R);
+
+  % Arista central frontal
+  \draw[black!70, line width=1.2pt] (T) -- (F);
+
+  % Llama central estilizada
+  \begin{scope}[shift={(0, 0.35)}, scale=0.55]
+    \shade[inner color=yellow!90!white, outer color=orange!95!red, opacity=0.9]
+      (0,-0.6) .. controls (-0.7,-0.2) and (-0.6,0.6) .. (0,1.4)
+               .. controls (0.6,0.6) and (0.7,-0.2) .. (0,-0.6);
+    \shade[inner color=white, outer color=yellow!85!orange, opacity=0.95]
+      (0,-0.4) .. controls (-0.35,-0.1) and (-0.3,0.3) .. (0,0.8)
+               .. controls (0.3,0.3) and (0.35,-0.1) .. (0,-0.4);
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % Tarjetas laterales simétricas (2 a la izquierda, 2 a la derecha)
+  % -------------------------------------------------------------
+
+  % SUPERIOR IZQUIERDA: CALOR
+  \node[anchor=east, align=flush right, text width=4.7cm, fill=white, draw=colorCalor!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardCalor) at (-2.5, 1.55) {
+    \textcolor{colorCalor!90!black}{\bfseries Calor / Activación}\\[1.5pt]
+    \scriptsize Energía para ignición y pirólisis.\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorCalor!90!black}{\textbf{Enfriamiento}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorCalor!85!black, line width=0.85pt] (cardCalor.east) -- (-0.2, 1.95);
+
+  % INFERIOR IZQUIERDA: COMBUSTIBLE
+  \node[anchor=east, align=flush right, text width=4.7cm, fill=white, draw=colorCombustible!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardComb) at (-2.5, -0.85) {
+    \textcolor{colorCombustible!90!black}{\bfseries Combustible}\\[1.5pt]
+    \scriptsize Materia reductora susceptible de oxidación.\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorCombustible!90!black}{\textbf{Desalimentación}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorCombustible!85!black, line width=0.85pt] (cardComb.east) -- (-1.1, -0.3);
+
+  % SUPERIOR DERECHA: COMBURENTE
+  \node[anchor=west, align=flush left, text width=4.7cm, fill=white, draw=colorComburente!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardOx) at (2.5, 1.55) {
+    \textcolor{colorComburente!90!black}{\bfseries Comburente}\\[1.5pt]
+    \scriptsize Agente oxidante ($O_2$ ambiental $\ge 14\text{--}15\%$).\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorComburente!90!black}{\textbf{Sofocación}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorComburente!85!black, line width=0.85pt] (cardOx.west) -- (1.0, 0.6);
+
+  % INFERIOR DERECHA: REACCIÓN EN CADENA
+  \node[anchor=west, align=flush left, text width=4.7cm, fill=white, draw=colorCadena!80, rounded corners=3pt,
+        inner sep=4pt, line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=1pt, shadow yshift=-1pt}]
+        (cardCadena) at (2.5, -0.85) {
+    \textcolor{colorCadena!95!black}{\bfseries Reacción en Cadena}\\[1.5pt]
+    \scriptsize Radicales libres activos ($H^\bullet, OH^\bullet$).\\[1.5pt]
+    \scriptsize\textbf{Extinción:} \textcolor{colorCadena!95!black}{\textbf{Inhibición Química}}
+  };
+  \draw[-{Stealth[length=2.2mm]}, colorCadena!85!black, line width=0.85pt] (cardCadena.west) -- (0.5, -0.9);
+
+\end{tikzpicture}

@@ -1,0 +1,49 @@
+\documentclass[]{informeutn}
+
+% Bibliografía
+\usepackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
+\addbibresource{fuentes.bib}
+
+% Paquetes adicionales
+\usepackage{subcaption}
+
+% Unidades personalizadas adicionales a las de la clase
+\newcommand{\lux}{\,\mathrm{lx}}
+\newcommand{\lumen}{\,\mathrm{lm}}
+\newcommand{\cd}{\,\mathrm{cd}}
+\newcommand{\m}{\,\mathrm{m}}
+\newcommand{\lx}{\,\mathrm{lx}}
+\newcommand{\lm}{\,\mathrm{lm}}
+\newcommand{\nm}{\,\mathrm{nm}}
+\newcommand{\cm}{\,\mathrm{cm}}
+
+% Configuración de datos del informe
+\materia{Seguridad, Higiene y Medio Ambiente}
+\titulo{Trabajo Práctico Nº 2}
+\subtitulo{Medición y Evaluación de Iluminación en el Ambiente Laboral}
+\comision{4R2} % Puede modificarse según la comisión real
+\autores{Franco Palombo - 401910}
+\fecha{3 de Julio de 2026}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\setcounter{page}{1}
+\thispagestyle{plain}
+\usetikzlibrary{patterns}.
+
+% Capítulos del informe
+\input{chapters/1-introduccion.tex}
+\input{chapters/2-teoria.tex}
+\input{chapters/3-metodologia.tex}
+\input{chapters/4-desarrollo.tex}
+\input{chapters/5-mediciones.tex}
+\input{chapters/6-analisis.tex}
+\input{chapters/7-conclusiones.tex}
+
+\nocite{*}
+\printbibliography[heading=bibnumbered, title={Fuentes}]
+
+\end{document}

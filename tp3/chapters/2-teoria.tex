@@ -1,0 +1,84 @@
+\chapter{Marco Teórico}
+\label{sec:teoria}
+
+\section{Naturaleza del Sonido y Ruido}
+El sonido es la propagación de una perturbación o variación de presión en un medio elástico (gaseoso,
+líquido o sólido). El ruido se define técnicamente como todo sonido no deseado que puede
+interferir en las actividades humanas o producir efectos nocivos sobre la salud.
+
+\section{Magnitudes Acústicas y Escala Decibélica}
+Dado que el oído humano responde a variaciones de presión sonora comprendidas entre los $20\us\mathrm{Pa}$
+(umbral de audición) y los $20\mathrm{Pa}$ (umbral de dolor), se adopta una escala logarítmica para expresar el
+Nivel de Presión Sonora ($L_p$) en decibeles ($\dB$):
+
+\begin{equation}
+\label{eq.ej1:nps}
+L_p = 20 \log_{10} \left( \frac{p}{p_0} \right) \quad [\dB]
+\end{equation}
+
+donde $p$ es la presión sonora eficaz del fenómeno y $p_0 = 20\us\mathrm{Pa}$ es la presión de referencia.
+
+\section{Ponderación Frecuencial y Respuesta Temporal}
+Para adecuar la respuesta instrumental a la sensibilidad no lineal del oído humano en las distintas frecuencias,
+se aplica el filtro de ponderación A ($\dBA$).
+
+\section{Nivel Sonoro Continuo Equivalente ($L_{Aeq}$)}
+El Nivel Sonoro Continuo Equivalente ($L_{Aeq}$) es el nivel sonoro constante y ficticio expresado en $\dBA$
+que posee la misma energía sonora total que el ruido variable registrado durante el mismo período $T$:
+
+\begin{equation}
+\label{eq.ej1:laeq}
+L_{Aeq} = 10 \log_{10} \left( \frac{1}{T} \sum_{i=1}^{N} t_i \cdot 10^{0,1 L_{A,i}} \right) \quad [\dBA]
+\end{equation}
+
+En muestreos discretos periódicos de intervalo constante $\Delta t$, la expresión se simplifica a:
+
+\begin{equation}
+\label{eq.ej1:laeq_discreto}
+L_{Aeq} = 10 \log_{10} \left( \frac{1}{N} \sum_{i=1}^{N} 10^{0,1 L_{A,i}} \right) \quad [\dBA]
+\end{equation}
+
+\section{Proyección Energética y Muestreo por Ciclos Representativos ($L_{Aeq,8h}$)}
+En la práctica de la higiene laboral (conforme a las normas ISO 9612 y la Res. SRT 85/2012), no es necesario
+medir de forma ininterrumpida las 8 horas de la jornada si el ruido proviene de una tarea o máquina cuyo patrón
+operativo es estacionario o repetitivo.
+
+Un muestreo realizado durante un ciclo de trabajo representativo $T_{muestra}$ permite determinar con precisión
+el nivel equivalente $L_{Aeq,muestra}$ de esa tarea. Si el trabajador realiza dicha actividad de manera continua
+durante su turno de 8 horas ($T_{exp} = 8\h$), el Nivel Sonoro Continuo Equivalente proyectado a la jornada
+coincide directamente con el nivel equivalente de la muestra:
+
+\begin{equation}
+\label{eq.ej1:laeq8h_igual}
+L_{Aeq,8h} = L_{Aeq,muestra} \quad [\dBA]
+\end{equation}
+
+Si el tiempo efectivo de exposición $T_{exp}$ a la fuente fuere menor a las $8\h$ de la jornada (permaneciendo el
+resto del tiempo en ambientes con niveles sonoros despreciables), la energía sonora total equivalente ponderada
+a las 8 horas se proyecta mediante la relación logarítmica:
+
+\begin{equation}
+\label{eq.ej1:laeq8h_parcial}
+L_{Aeq,8h} = L_{Aeq,muestra} + 10 \log_{10} \left( \frac{T_{exp}}{8\h} \right) \quad [\dBA]
+\end{equation}
+
+\section{Marco Normativo Argentino: Res. 295/03 MTEySS y Res. 85/12 SRT}
+La Resolución 295/2003 establece un valor límite permisible de $85\dBA$ para una exposición diaria de $8\h$.
+Utiliza el criterio de igual energía con una tasa de intercambio de $3\dBA$, lo cual implica que por cada incremento
+de $3\dBA$ en el nivel equivalente, el tiempo máximo permisible de exposición se reduce a la mitad:
+
+\begin{equation}
+\label{eq.ej1:tmax}
+T_{max} = \frac{8}{2^{(L_{Aeq} - 85)/3}} \quad [\h]
+\end{equation}
+
+La dosis diaria de ruido $D(\%)$ proyectada para un tiempo de exposición $T_{exp}$ se evalúa mediante:
+
+\begin{equation}
+\label{eq.ej1:dosis}
+D(\%) = 100 \times \frac{T_{exp}}{T_{max}} = 100 \times \left( \frac{T_{exp}}{8} \right) \cdot 10^{0,1 (L_{Aeq} - 85)}
+\end{equation}
+
+Por su parte, la Resolución SRT 85/2012 norma con carácter obligatorio la estructura del protocolo técnico para
+el volcado de datos y la certificación del cumplimiento legal en higiene laboral.
+

@@ -1,0 +1,80 @@
+\chapter{Metodología de Medición}
+\label{sec.tp2:metodologia}
+
+Para determinar el nivel de iluminación general de un local interior de forma representativa, la Resolución SRT N°
+84/2012 adopta la metodología de la grilla (o método de la cuadrícula). Este método consiste en dividir la superficie
+del suelo en zonas cuadradas o rectangulares de igual área y realizar mediciones en el centro de cada una de ellas a la
+altura del plano de trabajo (usualmente a $0{,}8\m$ sobre el nivel del piso).
+
+\section{Determinación del Número de Puntos de Muestreo}
+\label{sec.tp2:determinacion_puntos}
+
+El número mínimo de puntos de medición necesarios para una adecuada caracterización depende de la relación dimensional del
+ambiente, la cual está expresada a través del Índice del Local ($k$). Este índice se calcula mediante la relación:
+\begin{equation}
+    k = \frac{a \cdot b}{h_m \cdot (a + b)}
+    \label{eq.tp2:indice_k}
+\end{equation}
+Donde:
+\begin{itemize}
+    \item $a$: ancho del local (medido en metros, $\m$).
+    \item $b$: largo del local (medido en metros, $\m$).
+    \item $h_m$: altura de montaje de las luminarias con respecto al plano de trabajo (medida en metros, $\m$). Se calcula como la altura total de las luminarias ($H$) menos la altura del plano de trabajo ($h_p = 0{,}8\m$).
+\end{itemize}
+
+Posteriormente, el valor del índice $k$ se redondea al entero superior inmediato ($k_{red}$), considerando que:
+\begin{itemize}
+    \item Si $k \le 1$, entonces $k_{red} = 1$.
+    \item Si $1 < k \le 2$, entonces $k_{red} = 2$.
+    \item Si $2 < k \le 3$, entonces $k_{red} = 3$.
+    \item Si $k > 3$, entonces $k_{red} = 4$.
+\end{itemize}
+
+Con el valor de $k_{red}$ determinado, el número mínimo de puntos de medición ($N$) a relevar se calcula con la
+siguiente fórmula:
+\begin{equation}
+    N = (k_{red} + 2)^2
+    \label{eq.tp2:num_puntos}
+\end{equation}
+
+El resultado determina una grilla regular de medición, cuyas configuraciones típicas son:
+\begin{itemize}
+    \item Para $k_{red} = 1$: grilla de $3 \times 3$ ($N = 9$ puntos).
+    \item Para $k_{red} = 2$: grilla de $4 \times 4$ ($N = 16$ puntos).
+    \item Para $k_{red} = 3$: grilla de $5 \times 5$ ($N = 25$ puntos).
+    \item Para $k_{red} = 4$: grilla de $6 \times 6$ ($N = 36$ puntos).
+\end{itemize}
+
+Cuando el local analizado posee una planta de geometría irregular, este se subdivide en sectores rectangulares o
+cuadrados individuales y se aplica el método de la grilla de forma independiente para cada sector.
+
+\section{Procedimiento para el Relevamiento}
+\label{sec.tp2:procedimiento}
+
+Una vez calculada la grilla de medición y la cantidad de puntos, se procede de la siguiente manera en el local:
+\begin{enumerate}
+    \item Se proyecta la cuadrícula sobre el piso del ambiente y se localizan los centros geométricos de cada área elemental.
+    \item Las mediciones se ejecutan a la altura del plano de trabajo ($0{,}8\m$ sobre el suelo para tareas generales).
+    \item Para evitar interferencias en el sensor del instrumento (luxómetro o sensor móvil), el operador debe evitar proyectar sombras propias sobre el elemento sensor y vestir ropa de color neutro u oscuro en la medida de lo posible.
+    \item Se registra la iluminancia en cada punto en un horario de actividad normal del local (contemplando la combinación de luz artificial y luz natural si aplica, o exclusivamente artificial de noche).
+\end{enumerate}
+
+\section{Cálculos de Evaluación}
+\label{sec.tp2:calculos_evaluacion}
+
+A partir de los niveles de iluminancia obtenidos ($E_1, E_2, \dots, E_N$), se realizan los siguientes cálculos:
+
+\subsection{Iluminancia Media \texorpdfstring{($E_{media}$)}{(E\_media)}}
+Es el promedio aritmético simple de los valores registrados en los $N$ puntos de la cuadrícula:
+\begin{equation}
+    E_{media} = \frac{1}{N} \sum_{i=1}^{N} E_i
+    \label{eq.tp2:iluminancia_media}
+\end{equation}
+
+\subsection{Uniformidad de la Iluminación}
+Se identifica el valor mínimo absoluto registrado ($E_{min}$). Para verificar el cumplimiento del criterio de uniformidad exigido por el Decreto N° 351/79, se evalúa si:
+\begin{equation}
+    E_{min} \ge \frac{E_{media}}{2}
+    \label{eq.tp2:verificacion_uniformidad}
+\end{equation}
+Si la desigualdad se cumple, la distribución de luz en el local se considera uniforme.
