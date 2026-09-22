@@ -1,0 +1,83 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+\usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shadows, shapes, positioning, calc, backgrounds, decorations.pathmorphing, fit}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{multicol}
+
+% Paleta institucional UTN / Seguridad contra incendios
+\definecolor{utnblue}{HTML}{003366}
+\definecolor{utncyan}{HTML}{006699}
+\definecolor{fireorange}{HTML}{E67E22}
+\definecolor{firered}{HTML}{C0392B}
+\definecolor{darkcharcoal}{HTML}{222831}
+\definecolor{lightbg}{HTML}{FAFAFA}
+\definecolor{cardbg}{HTML}{FFFFFF}
+\definecolor{grayborder}{HTML}{DDDDDD}
+\definecolor{successgreen}{HTML}{27AE60}
+\definecolor{amberyellow}{HTML}{F39C12}
+
+% Configuración de colores de Beamer
+\setbeamercolor{normal text}{fg=darkcharcoal, bg=lightbg}
+\setbeamercolor{frametitle}{fg=white, bg=utnblue}
+\setbeamercolor{progress bar}{fg=fireorange, bg=utnblue!40}
+\setbeamercolor{alerted text}{fg=firered}
+\setbeamercolor{title separator}{fg=fireorange}
+
+% Bloques personalizados
+\setbeamercolor{block title}{bg=utnblue, fg=white}
+\setbeamercolor{block body}{bg=utnblue!6, fg=darkcharcoal}
+\setbeamercolor{block title alerted}{bg=firered, fg=white}
+\setbeamercolor{block body alerted}{bg=firered!6, fg=darkcharcoal}
+\setbeamercolor{block title example}{bg=utncyan, fg=white}
+\setbeamercolor{block body example}{bg=utncyan!6, fg=darkcharcoal}
+
+% Pie de página personalizado y continuo
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.32\paperwidth,ht=2.4ex,dp=0.8ex,leftskip=0.8em]{footline}%
+    \usebeamerfont{author in head/foot}\fontsize{5.5pt}{6.5pt}\selectfont\textbf{UTN-FRC} $\vert$ Higiene y Seguridad
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.50\paperwidth,ht=2.4ex,dp=0.8ex,center]{footline}%
+    \usebeamerfont{title in head/foot}\fontsize{5.5pt}{6.5pt}\selectfont Prevención y Protección contra Incendios en Instalaciones
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.18\paperwidth,ht=2.4ex,dp=0.8ex,rightskip=0.8em]{footline}%
+    \usebeamerfont{date in head/foot}\hfill\fontsize{5.5pt}{6.5pt}\selectfont\insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamercolor{footline}{bg=lightbg!80!black, fg=darkcharcoal}
+
+% Unidades y macros
+\newcommand{\m}{\,\mathrm{m}}
+\newcommand{\mm}{\,\mathrm{mm}}
+\newcommand{\kg}{\,\mathrm{kg}}
+\newcommand{\Celsius}{^\circ\mathrm{C}}
+\newcommand{\percent}{\%}
+
+\title[Prevención y Protección contra Incendios]{Prevención y Protección contra Incendios en Instalaciones Industriales y Electrónicas}
+\subtitle{Trabajo Práctico Final --- Cátedra de Seguridad, Higiene y Medio Ambiente}
+\author{Ignacio Gil \and Gaston Grasso \and Franco Palombo \and Angelo Prieto}
+\institute{Universidad Tecnológica Nacional --- Facultad Regional Córdoba}
+\date{Comisión 4R2 --- Ciclo Lectivo 2026}
+\titlegraphic{\hfill\includegraphics[height=1.0cm]{images/UTN_logo.png}}
+
+\begin{document}
+
+\input{sections/0-portada_agenda.tex}
+\input{sections/1-fundamentos_combustion.tex}
+\input{sections/2-efectos_marco_legal.tex}
+\input{sections/3-sistemas_deteccion_extincion.tex}
+\input{sections/4-prevencion_casos_estudio.tex}
+\input{sections/5-cierre.tex}
+
+\end{document}

@@ -1,0 +1,404 @@
+% =============================================================================
+% PARTE III: TECNOLOGÍAS DE DETECCIÓN AUTOMÁTICA Y SISTEMAS DE EXTINCIÓN
+% =============================================================================
+
+% --- SLIDE 29: ARQUITECTURA DE DETECCIÓN ---
+\begin{frame}{Topologías de Detección: Convencional frente a Direccionable}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Sistema Convencional (Zonas Radiales)}}
+        \scriptsize
+        $\bullet$ Detectores enlazados en circuitos radiales de 2 hilos con resistencia de fin de línea ($R_{\mathrm{EOL}}$).\\
+        $\bullet$ La conmutación de cualquier sensor altera la impedancia de toda la zona.\\
+        $\bullet$ \textbf{Severa limitación:} No individualiza el detector activado; requiere búsqueda visual en toda la nave.
+      \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.8\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \draw[line width=1.5pt, utnblue] (0,0) node[left, font=\tiny\bfseries] {Panel} -- (3.2,0);
+          \node[circle, fill=darkcharcoal, inner sep=2pt] at (1,0) {};
+          \node[circle, fill=darkcharcoal, inner sep=2pt] at (2,0) {};
+          \draw[line width=1pt] (3.2,-0.2) rectangle (3.6,0.2) node[midway, font=\tiny] {$R$};
+        \end{tikzpicture}
+      }
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Sistema Analógico-Direccionable (Anillo)}}
+        \scriptsize
+        $\bullet$ Lazos en anillo cerrado Clase A bidireccional.\\
+        $\bullet$ Cada sensor posee dirección binaria y microprocesador propio.\\
+        $\bullet$ Reporta valores cuantitativos analógicos continuos de temperatura y oscurecimiento óptico.\\
+        $\bullet$ \textbf{Ventaja:} Localización puntual milimétrica, autodiagnóstico de suciedad y anulación de falsas alarmas.
+      \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.8\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \draw[line width=1.5pt, successgreen!80!black] (0,0) rectangle (2.8,1.2);
+          \node[circle, fill=successgreen!80!black, inner sep=2.5pt] at (0.7,0) {};
+          \node[circle, fill=successgreen!80!black, inner sep=2.5pt] at (2.1,0) {};
+          \node[circle, fill=successgreen!80!black, inner sep=2.5pt] at (1.4,1.2) {};
+          \node[font=\tiny\bfseries] at (1.4,0.6) {Lazo Clase A};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 30: DETECTOR ÓPTICO ---
+\begin{frame}{Detector Óptico Puntual de Humo (Efecto Tyndall)}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \small
+      Principio físico de dispersión de la luz en cámara oscura:
+      \begin{itemize}
+        \scriptsize
+        \item Dispone de una cámara laberíntica que bloquea la luz ambiental exterior pero permite la libre circulación del aire.
+        \item Aloja un LED emisor infrarrojo y un fotodiodo receptor colocado en ángulo diedro ($90^\circ\text{ a }120^\circ$).
+        \item \textbf{En reposo:} El haz se propaga en línea recta sin incidir sobre el fotodiodo receptor (corriente nula).
+        \item \textbf{En alarma:} Las partículas de humo dispersan los fotones hacia el fotodiodo por efecto Tyndall.
+        \item \textbf{Especialidad:} Incendios lentos o latentes con partículas visibles de $0.3\text{ a }10\,\mu\mathrm{m}$ (PVC, celulosa).
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \resizebox{0.9\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.9]
+          \draw[line width=1.5pt, darkcharcoal] (0,0) circle (2.0);
+          \node[draw, fill=utnblue, inner sep=3pt, font=\tiny\bfseries, white] (LED) at (-1.3,0) {LED};
+          \node[draw, fill=fireorange, inner sep=3pt, font=\tiny\bfseries, white] (PD) at (0,-1.3) {Sensor};
+          \draw[->, >=stealth, line width=1.5pt, red!80] (LED) -- (1.5,0);
+          \draw[dashed, ->, >=stealth, line width=1pt, fireorange] (0,0) -- (PD);
+          \fill[gray!60] (-0.2,-0.2) circle (0.3);
+          \node[above, font=\tiny\bfseries] at (0,0.2) {Humo (Tyndall)};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 31: DETECTOR IÓNICO ---
+\begin{frame}{Detector Iónico de Humo por Americio-241 ($^{241}\mathrm{Am}$)}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \small
+      Principio de conducción eléctrica en gases ionizados:
+      \begin{itemize}
+        \scriptsize
+        \item Contiene una microfuente radiactiva encapsulada de $^{241}\mathrm{Am}$ emisora de partículas alfa ($\alpha$).
+        \item Las partículas $\alpha$ ionizan las moléculas de aire ($N_2, O_2$), separándolas en iones positivos y electrones libres.
+        \item Se establece una \textbf{corriente basal de reposo} entre dos placas cargadas a una diferencia de potencial fija.
+        \item Al ingresar partículas submicrónicas de humo ($<0.3\,\mu\mathrm{m}$), los iones se adhieren a ellas, disminuyendo drásticamente la corriente y disparando la alarma.
+        \item \textbf{Especialidad:} Fuegos vivos de rápida combustión con llama abierta y aerosoles invisibles.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \resizebox{0.85\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \draw[line width=1.5pt, darkcharcoal] (0,0) rectangle (3.5,2.4);
+          \draw[line width=2pt, firered] (0.5,2.1) -- (3.0,2.1) node[right, font=\tiny\bfseries] {$+V$};
+          \draw[line width=2pt, utnblue] (0.5,0.3) -- (3.0,0.3) node[right, font=\tiny\bfseries] {GND};
+          \node[circle, fill=amberyellow, inner sep=3pt, font=\tiny\bfseries] at (1.75,1.7) {$\alpha$};
+          \node[font=\tiny, align=center] at (1.75,1.0) {Flujo de iones\\capturados por humo};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 32: BARRERA ÓPTICA LINEAL ---
+\begin{frame}{Detección Lineal por Haz Proyectado (Barreras Ópticas)}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \small
+      Tecnología orientada a naves industriales y depósitos de gran altura:
+      \begin{itemize}
+        \scriptsize
+        \item Se compone de un emisor óptico infrarrojo colimado y un receptor fotosensible (o prisma catadióptrico retrorreflector).
+        \item Cubre distancias lineales de hasta $\mathbf{100\,\m}$ y anchos de cobertura lateral de $\mathbf{14\,\m}$.
+        \item \textbf{Mecanismo de Detección:} Oscurecimiento porcentual acumulado a lo largo de todo el haz lumínico.
+        \item Inmune al fenómeno de estratificación térmica que frena el humo antes de alcanzar detectores de techo.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.50\textwidth}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.9]
+          \draw[line width=1.5pt, darkcharcoal] (0,0) rectangle (5,2.8);
+          \node[draw, fill=utnblue, font=\tiny\bfseries, white] at (0.5,2.3) {Emisor};
+          \node[draw, fill=utnblue, font=\tiny\bfseries, white] at (4.5,2.3) {Receptor};
+          \draw[line width=2pt, red!80, dashed] (0.8,2.3) -- (4.2,2.3) node[midway, above, font=\tiny\bfseries] {Haz IR Colimado};
+          \fill[gray!50, opacity=0.7] (2.0,1.2) ellipse (1.2 and 0.8);
+          \node[font=\tiny\bfseries] at (2.0,1.4) {Nube de Humo};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 33: ASPIRACIÓN ASD / VESDA ---
+\begin{frame}{Detección por Aspiración de Alta Sensibilidad (ASD / VESDA)}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \small
+      El estándar de detección ultraprecoz en infraestructuras críticas:
+      \begin{itemize}
+        \scriptsize
+        \item Red de tuberías de muestreo con orificios calibrados distribuidos en racks y pasillos.
+        \item Aspirador de alta eficiencia que succiona continuamente el aire ambiental hacia el detector.
+        \item Filtro de doble etapa para eliminar polvo grueso y fibras.
+        \item \textbf{Cámara de análisis láser:} Detección por dispersión de partículas submicrónicas con sensibilidad de hasta $\mathbf{0.005\%\,\mathrm{obs/m}}$ (1000 veces superior a detectores ópticos convencionales).
+        \item Brinda una ventana temporal de respuesta de hasta 30 a 60 minutos antes del inicio de llamas visibles.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \resizebox{0.75\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.85]
+          \draw[line width=1.5pt, fill=lightbg] (0,0) rectangle (3.8,4.0);
+          \node[font=\scriptsize\bfseries, utnblue] at (1.9,3.6) {Módulo VESDA};
+          \draw[line width=1.2pt, fill=cardbg] (0.4,2.2) rectangle (3.4,3.1) node[midway, font=\tiny\bfseries] {Cámara Láser};
+          \draw[line width=1.2pt, fill=cardbg] (0.4,1.1) rectangle (3.4,1.8) node[midway, font=\tiny\bfseries] {Filtro de Partículas};
+          \draw[line width=1.2pt, fill=cardbg] (0.4,0.3) rectangle (3.4,0.8) node[midway, font=\tiny\bfseries] {Aspirador Continuo};
+          \draw[<-<, line width=1.5pt, firered] (1.9,0.3) -- (1.9,-0.3) node[below, font=\tiny\bfseries] {Red de Tuberías};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 34: TÉRMICA, CABLE SENSOR Y LLAMA ---
+\begin{frame}{Detección Térmica, Cable Sensor Lineal y Detectores de Llama}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Detectores Térmicos y Cable Lineal}}
+        \scriptsize
+        $\bullet$ \textbf{Termostáticos y Termovelocimétricos:} Disparo por umbral fijo ($57\,\Celsius$) o tasa de elevación rápida ($>8\,\Celsius/\mathrm{min}$).\\
+        $\bullet$ \textbf{Cable Sensor Lineal Térmico:} Dos conductores bajo tensión mecánica separados por polímero termosensible; el aislante se funde ante sobrecalentamiento produciendo cortocircuito supervisado.\\
+        $\bullet$ \textbf{Aplicación:} Bandejas portacables, túneles y subestaciones.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Detectores Ópticos de Llama}}
+        \scriptsize
+        $\bullet$ Sensores optoelectrónicos sintonizados al espectro infrarrojo ($\mathrm{IR}$ a $4.3\,\mu\mathrm{m}$, emisión de $CO_2$) y ultravioleta ($\mathrm{UV}$ a $0.2\,\mu\mathrm{m}$).\\
+        $\bullet$ Algoritmos de parpadeo (\textit{flicker}) para descartar radiación solar.\\
+        $\bullet$ Tiempo de respuesta inferior a \textbf{segundos}.\\
+        $\bullet$ \textbf{Aplicación:} Depósitos de solventes y turbinas.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 35: MATRIZ DE DETECTORES ---
+\begin{frame}{Matriz de Selección Tecnológica de Detección}
+  \small
+  Criterio de ingeniería para la selección idónea del sistema según el riesgo ambiental:
+
+  \vspace{0.2cm}
+  \begin{table}[h]
+    \centering
+    \scriptsize
+    \begin{tabular}{p{2.8cm} p{2.4cm} p{3.2cm} p{3.2cm}}
+      \toprule
+      \textbf{Recinto / Sector} & \textbf{Tecnología Primaria} & \textbf{Ventaja Operativa} & \textbf{Foco de Riesgo Mitigado} \\
+      \midrule
+      \textbf{Centros de Cómputo / Data Centers} & Aspiración ASD (VESDA) láser & Detección en fase latente sin humo visible & Degradación pirolítica de plaquetas y servidores. \\
+      \addlinespace
+      \textbf{Naves de Producción y Depósitos} & Barreras de haz óptico proyectado & Cobertura lineal de grandes áreas abiertas & Estratificación térmica de humos en techos altos. \\
+      \addlinespace
+      \textbf{Bandejas de Cables Subterráneas} & Cable sensor lineal térmico & Detección continua a lo largo del tendido & Fallas por efecto Joule y cortocircuitos en PVC. \\
+      \addlinespace
+      \textbf{Almacén de Solventes y Combustibles} & Detectores de llama ópticos UV/IR & Respuesta casi instantánea ante conatos & Inflamación violenta de vapores hidrocarburados. \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+% --- SLIDE 36: ANATOMÍA DEL EXTINTOR ---
+\begin{frame}{Anatomía y Mecánica del Extintor Portátil}
+  \begin{columns}[c]
+    \begin{column}{0.54\textwidth}
+      \small
+      Componentes mecánicos (presión permanente):
+      \begin{enumerate}
+        \scriptsize
+        \item \textbf{Cilindro metálico:} Chapa de acero ensayada a presión.
+        \item \textbf{Gas impulsor:} Nitrógeno seco ($N_2$) presurizado.
+        \item \textbf{Tubo sifón:} Conduce el agente del fondo a la tobera.
+        \item \textbf{Válvula de gatillo:} Apertura manual instantánea.
+        \item \textbf{Manómetro indicador:} Aguja en zona verde ($\sim 14\,\mathrm{bar}$).
+        \item \textbf{Pasador y precinto:} Seguro contra aperturas accidentales.
+      \end{enumerate}
+    \end{column}
+
+    \begin{column}{0.44\textwidth}
+      \centering
+      \resizebox{0.55\columnwidth}{!}{%
+        \begin{tikzpicture}
+          % Cilindro
+          \draw[fill=firered!85, draw=darkcharcoal, line width=1.5pt, rounded corners=5pt] (0,0) rectangle (2.4,3.5);
+          % Tubo sifón interior
+          \draw[dashed, line width=1.5pt, darkcharcoal!50] (1.2,0.2) -- (1.2,3.5);
+          % Cabezal
+          \draw[fill=darkcharcoal!80, line width=1.2pt] (0.8,3.5) rectangle (1.6,4.0);
+          % Manija de transporte y palanca
+          \draw[line width=2.5pt, darkcharcoal] (0.5,3.9) -- (1.8,4.3);
+          \draw[line width=2.5pt, darkcharcoal] (0.5,3.7) -- (1.8,3.7);
+          % Manómetro
+          \draw[circle, fill=cardbg, draw=darkcharcoal, line width=1pt] (2.0,3.8) circle (0.24);
+          \draw[line width=1pt, successgreen] (2.0,3.8) -- (2.0,4.0);
+          % Manguera
+          \draw[line width=2.5pt, darkcharcoal] (0.8,3.7) .. controls (-0.5,3.0) and (-0.4,1.8) .. (-0.1,1.0);
+          % Etiqueta central
+          \node[fill=white, draw=darkcharcoal, line width=0.8pt, font=\tiny\bfseries, align=center, inner sep=2pt] at (1.2,1.8) {Carga PQS /\\$\mathrm{CO_2}$};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 37: PQS ABC Y BC ---
+\begin{frame}{Extintores de Polvo Químico Seco (PQS ABC y BC)}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{PQS Triclase ABC (Fosfato Monoamónico)}}
+        \scriptsize
+        $\bullet$ Base de $\mathrm{NH_4H_2PO_4}$ finamente micronizado con agentes hidrofugantes siliconados.\\
+        $\bullet$ \textbf{En fuegos Clase A:} Descompone a $>180\,\Celsius$ formando una capa vidriada de ácido metafosfórico que obtura los poros y aísla el oxígeno.\\
+        $\bullet$ \textbf{En fuegos Clase B:} Captura radicales libres e interrumpe la reacción en cadena.\\
+        $\bullet$ \textbf{Efecto adverso severo:} Altamente corrosivo e higroscópico; arruina circuitos electrónicos delicados.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{PQS Clase BC (Bicarbonato de Sodio/Potasio)}}
+        \scriptsize
+        $\bullet$ Formulado a base de $\mathrm{NaHCO_3}$ o bicarbonato de potasio $\mathrm{KHCO_3}$.\\
+        $\bullet$ No forma costra vidriada adherente; limpieza más sencilla en motores y maquinaria mecánica.\\
+        $\bullet$ Excelente eficacia en derrames de líquidos hidrocarburos y gases a presión.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 38: CO2 Y AGENTES LIMPIOS ---
+\begin{frame}{Dióxido de Carbono ($CO_2$) y Agentes Limpios en Electrónica}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \small
+      Los agentes limpios preservan los circuitos sin dejar residuos:
+      \begin{itemize}
+        \scriptsize
+        \item \textbf{Dióxido de Carbono ($CO_2$):}
+        \begin{itemize}
+          \tiny
+          \item Almacenado a $50\text{--}60\,\mathrm{bar}$ en cilindros sin costura; se descarga en nieve carbónica a $\mathbf{-78.5\,\Celsius}$.
+          \item Gas inerte, no conductor de electricidad y de evaporación limpia sin humedad.
+          \item Tobera difusora cónica no metálica para evitar descargas estáticas.
+        \end{itemize}
+        \item \textbf{Fluidos Fluorados (FK-5-1-12 / Novec 1230):}
+        \begin{itemize}
+          \tiny
+          \item Líquido vaporizante con cero potencial de agotamiento de ozono.
+          \item Absorbe calor e interrumpe la combustión sin provocar choque térmico extremo en microprocesadores.
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \resizebox{0.85\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \node[draw=utnblue, fill=cardbg, rounded corners=6pt, line width=1.5pt, inner sep=8pt, text width=4.5cm, align=center] {
+            \textbf{\textcolor{utnblue}{AGENTES LIMPIOS}}\\[4pt]
+            \scriptsize Cero residuos químicos $\cdot$ Dieléctricos\\
+            \scriptsize Sin daño en salas de servidores\\
+            \scriptsize Compatibles con ocupantes
+          };
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 39: POTENCIAL EXTINTOR ENSAYOS ---
+\begin{frame}{Potencial Extintor y Ensayos de Homologación (IRAM 3517-2)}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Rating Clase A ($1\mathrm{A}$ a $40\mathrm{A}$)}}
+        \scriptsize
+        $\bullet$ Ensayado sobre una pira normalizada de listones de madera de pino secados en estufa y dispuestos en capas cruzadas.\\
+        $\bullet$ \textbf{Definición de 1A:} Capacidad de extinguir una pira de madera equivalente a $1.25\,\mathrm{gal}$ ($5\,\mathrm{L}$) de agua aplicada por un operador calificado.\\
+        $\bullet$ Un matafuego con rating $4\mathrm{A}$ apaga cuatro veces más madera que uno de $1\mathrm{A}$.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Rating Clase B ($1\mathrm{B}$ a $120\mathrm{B}$)}}
+        \scriptsize
+        $\bullet$ Ensayado sobre bateas de acero cuadradas con nafta heptano y combustión libre.\\
+        $\bullet$ \textbf{Definición:} El número indica el área en pies cuadrados ($1\,\mathrm{ft^2} \approx 0.09\,\m^2$) de líquido inflamable que un operador no experto es capaz de sofocar con seguridad.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 40: RED DE HIDRANTES ---
+\begin{frame}{Sistemas Fijos: Red Interior de Hidrantes (R.I.A.)}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \small
+      Instalación fija de suministro hídrico para combate de siniestros mayores:
+      \begin{itemize}
+        \scriptsize
+        \item \textbf{Reserva Exclusiva de Incendio (REI):} Volumen de agua independiente calculado para abastecer la red durante un tiempo mínimo de 60 a 120 minutos.
+        \item \textbf{Grupo de Presurización:} Bomba principal eléctrica, bomba de respaldo diésel y bomba jockey presurizadora para compensar fugas menores.
+        \item \textbf{Nichos de Incendio:} Mangueras sintéticas de $45\mm$ o $63.5\mm$, devanaderas semirrígidas de $25\mm$ y lanzas con efecto de chorro pleno y niebla protectora.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \resizebox{0.9\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.85]
+          \draw[line width=1.5pt, fill=utncyan!20] (0,0) rectangle (2.0,1.5) node[midway, font=\tiny\bfseries] {Reserva REI};
+          \draw[line width=1.5pt, utnblue, ->] (2.0,0.75) -- (2.8,0.75);
+          \draw[line width=1.2pt, fill=firered!30] (2.8,0.3) rectangle (3.6,1.2) node[midway, font=\tiny\bfseries] {Bombas};
+          \draw[line width=1.5pt, utnblue, ->] (3.2,1.2) -- (3.2,2.8) -- (4.2,2.8) node[right, font=\tiny\bfseries] {Bocas R.I.A.};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 41: SPRINKLERS E INUNDACIÓN GASEOSA ---
+\begin{frame}{Rociadores Automáticos (\textit{Sprinklers}) e Inundación Gaseosa}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Rociadores Automáticos (NFPA 13)}}
+        \scriptsize
+        $\bullet$ Red de cañerías presurizadas permanentemente bajo techo.\\
+        $\bullet$ \textbf{Ampolla termosensible de cuarzo:} Contiene un líquido con burbuja de vapor que expande por calor y estalla al alcanzar la temperatura nominal ($68\,\Celsius$ rojo, $79\,\Celsius$ amarillo, $93\,\Celsius$ verde).\\
+        $\bullet$ \textbf{Acción puntual:} Se abre únicamente el rociador ubicado sobre el foco, evitando anegamientos innecesarios.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Inundación Total por Gas Limpio}}
+        \scriptsize
+        $\bullet$ Batería de cilindros de alta presión vinculada a toberas de descarga volumétrica en recinto cerrado.\\
+        $\bullet$ Activación cruzada de dos zonas de detectores para evitar disparos accidentales.\\
+        $\bullet$ Descarga integral en menos de $\mathbf{10\,\mathrm{s}}$, extinguiendo el fuego por inhibición química o desplazamiento controlado sin daño en servidores ni peligro letal para operarios.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
