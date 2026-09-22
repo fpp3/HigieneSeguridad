@@ -39,32 +39,47 @@ incombustibles), determina la resistencia al fuego mínima de muros y los requer
 
 \subsection{Unidades de Ancho de Salida (UAS) y Medios de Evacuación}
 
-El dimensionamiento de las vías de escape responde a criterios deterministas basados en el concepto de Unidades de Ancho
-de Salida (UAS). Una UAS representa el espacio libre requerido para que circule una hilera de personas en marcha
-ordenada. La reglamentación fija que las dos primeras unidades equivalen a $0.55\m$ de ancho útil cada una (totalizando un
-ancho mínimo de acceso de $1.10\m$), mientras que cada unidad adicional subsecuente añade $0.45\m$. Ninguna puerta de
-emergencia o pasaje podrá tener un ancho libre inferior a $0.90\m$.
+El dimensionamiento de las vías de escape responde a los criterios deterministas establecidos en el Inciso 3 del Anexo VII
+del Decreto Reglamentario 351/79. Una Unidad de Ancho de Salida (UAS) representa el espacio libre requerido para que circule
+una hilera de personas en marcha ordenada. Para edificios nuevos, la reglamentación fija que las dos primeras unidades equivalen a
+$0.55\m$ de ancho útil cada una (fijando un ancho mínimo inderogable de $2\UAS = 1.10\m$), mientras que cada unidad adicional
+subsecuente añade $0.45\m$. Dicho ancho debe ser medido estrictamente entre zócalos, considerándose la cota más restrictiva del
+pasaje. Ninguna puerta de escape o pasaje secundario podrá tener un ancho libre inferior a $0.90\m$. En edificios existentes
+(previos a abril de 1979), se admiten anchos reducidos transitorios únicamente si resulta técnicamente imposible la ampliación,
+conforme al artículo 2 del Anexo I del decreto.
 
-Para calcular la población teórica ($N$) a evacuar, se divide la superficie del sector por el factor de ocupación
-($f_o$), conforme a la ecuación \ref{eq.cap4:ocupantes}:
+Para calcular la población teórica ($N$) a evacuar, se computa la superficie de piso ($S$) descontando las áreas ocupadas por
+los propios medios de escape, sanitarios y locales comunes (para evitar una sobreocupación ficticia del sector), y se divide
+por el factor de ocupación ($f_o$), conforme a la ecuación \ref{eq.cap4:ocupantes}:
 
 \begin{equation}
 \label{eq.cap4:ocupantes}
 N = \frac{S}{f_o}
 \end{equation}
 
-El factor $f_o$ depende del destino edilicio. Determinado $N$, el número requerido de unidades de ancho de salida ($n$)
-se calcula mediante la ecuación \ref{eq.cap4:uas}:
+El factor $f_o$ ($m^2/\text{persona}$) se determina según el destino edilicio conforme a la tabla del Inciso 3.1.2.
+Determinado $N$, el número teórico de unidades de ancho de salida ($n$) se calcula mediante la ecuación \ref{eq.cap4:uas}:
 
 \begin{equation}
 \label{eq.cap4:uas}
 n = \frac{N}{100}
 \end{equation}
 
-Toda fracción igual o superior a $0.5$ se redondea al entero superior más próximo. Por disposición legal, el ancho
-mínimo permitido para cualquier salida colectiva corresponde a $2\UAS$ ($1.10\m$).
+Toda fracción igual o superior a $0.5$ se redondea al entero superior más próximo. Así, una salida de $2\UAS$ ($1.10\m$) tiene
+capacidad reglamentaria para evacuar entre $1$ y $149$ personas teóricas, y una de $3\UAS$ ($1.55\m$) hasta $349$ personas.
 
-En vías de evacuación que incluyan escaleras, los peldaños deben responder a la fórmula ergonómica de paso de Blondel,
+En cuanto a la cantidad de medios de escape independientes ($ME$), la reglamentación estipula que cuando por cálculo corresponda
+$n \le 3$, bastará con un único medio de escape o escalera ($ME = 1$). En cambio, cuando corresponda $n \ge 4$, el flujo debe
+fraccionarse obligatoriamente en medios de escape y escaleras independientes según la expresión legal \ref{eq.cap4:escape_indep}:
+
+\begin{equation}
+\label{eq.cap4:escape_indep}
+ME = \frac{n}{4} + 1
+\end{equation}
+
+Donde las fracciones iguales o mayores a $0.50$ se redondean a la unidad siguiente. Adicionalmente, rigen las condiciones de
+distancia máxima de recorrido: desde el punto más desfavorable de trabajo hasta un medio de escape o salida al exterior no
+pueden superarse los $40\m$. En escaleras, los peldaños deben responder a la fórmula ergonómica de paso de Blondel,
 establecida en la inecuación \ref{eq.cap4:escalera}:
 
 \begin{equation}
@@ -72,15 +87,7 @@ establecida en la inecuación \ref{eq.cap4:escalera}:
 2a + p = 0.60\m \text{ a } 0.63\m
 \end{equation}
 
-Donde la alzada ($a$) no puede superar los $0.18\m$ y la pedada ($p$) no debe ser inferior a $0.26\m$. La distancia
-máxima desde el punto más desfavorable de trabajo hacia una caja de escaleras o salida al exterior no puede exceder los
-$40\m$. Si el cálculo arroja que $n \ge 4$, el flujo de personas debe dividirse obligatoriamente en medios de escape
-independientes ($ME$), según la ecuación \ref{eq.cap4:escape_indep}:
-
-\begin{equation}
-\label{eq.cap4:escape_indep}
-ME = \frac{n}{4} + 1
-\end{equation}
+Donde la alzada ($a$) no puede superar los $0.18\m$ y la pedada ($p$) no debe ser inferior a $0.26\m$.
 
 \section{Reglamentación de la Asociación Electrotécnica Argentina (AEA 90364)}
 
