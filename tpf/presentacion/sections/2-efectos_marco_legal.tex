@@ -1,19 +1,19 @@
 % =============================================================================
-% PARTE II: TOXICOLOGÍA DE GASES, DINÁMICA DE HUMOS Y MARCO LEGAL ARGENTINO
+% PARTE II: GASES DE COMBUSTIÓN, HUMOS Y MARCO LEGAL ARGENTINO
 % =============================================================================
 
 % --- SLIDE 16: MONÓXIDO DE CARBONO ---
-\begin{frame}{Toxicología de Gases Asfixiantes: Monóxido de Carbono ($CO$)}
+\begin{frame}{Gases Asfixiantes: Monóxido de Carbono ($CO$)}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \small
-      El $CO$ es el causante primario de letalidad en siniestros estructurales:
+      El $CO$ es el causante principal de muertes en incendios estructurales:
       \begin{itemize}
         \scriptsize
-        \item Gas inodoro, incoloro e insípido; no advierte sensorialmente.
-        \item Posee una afinidad química por el hierro de la hemoglobina férrica aproximadamente \textbf{250 veces superior} a la del oxígeno.
-        \item Forma \textbf{Carboxihemoglobina ($COHb$)}, desplazando al $O_2$ y bloqueando su entrega a los tejidos.
-        \item \textbf{Efecto físico fulminante:} Pérdida rápida de agudeza visual, confusión y debilidad muscular en miembros inferiores que impide la bipedestación.
+        \item Gas sin olor, color ni sabor; no da ningún aviso sensorial.
+        \item Se une al hierro de la sangre unas \textbf{250 veces más rápido} que el oxígeno.
+        \item Desplaza al oxígeno en los glóbulos rojos y bloquea su entrega a los órganos vitales.
+        \item \textbf{Efecto físico fulminante:} Pérdida rápida de agudeza visual, confusión y debilidad severa en piernas que impide caminar hacia las salidas.
       \end{itemize}
     \end{column}
 
@@ -22,8 +22,8 @@
       \resizebox{0.9\columnwidth}{!}{%
         \begin{tikzpicture}
           \node[draw=utnblue, fill=utnblue!10, rounded corners=6pt, line width=1.2pt, inner sep=6pt, text width=4.5cm, align=center] (Hb) {
-            \textbf{Molécula de Hemoglobina}\\[2pt]
-            \scriptsize Capacidad de transporte bloqueada
+            \textbf{Hemoglobina en Sangre}\\[2pt]
+            \scriptsize Capacidad de transporte de $O_2$ bloqueada
           };
           \node[draw=firered, fill=firered!20, circle, line width=1.2pt, font=\scriptsize\bfseries, above=0.6cm of Hb] (CO) {CO};
           \draw[->, >=stealth, line width=2pt, firered] (CO) -- node[right, font=\tiny\bfseries, firered] {Afinidad $\times 250$} (Hb);
@@ -34,17 +34,17 @@
 \end{frame}
 
 % --- SLIDE 17: CIANURO DE HIDRÓGENO ---
-\begin{frame}{Toxicología Celular: Cianuro de Hidrógeno ($HCN$)}
+\begin{frame}{Asfixia a Nivel Celular: Cianuro de Hidrógeno ($HCN$)}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \small
-      El $HCN$ actúa como un veneno respiratorio a escala intracelular:
+      El $HCN$ actúa como un veneno respiratorio directo sobre las células:
       \begin{itemize}
         \scriptsize
-        \item Se desprende durante la descomposición térmica de materiales que contienen nitrógeno: espumas de poliuretano de aislamiento, tapizados, nylon y lanas.
-        \item Difunde a través de la membrana plasmática e \textbf{inhibe irreversiblemente la enzima citocromo c oxidasa} en la mitocondria.
-        \item La célula se vuelve incapaz de captar y utilizar el oxígeno transportado por la sangre, deteniendo la síntesis de ATP.
-        \item \textbf{Sinergia letal con $CO$:} El $CO$ bloquea la entrega y el $HCN$ bloquea la absorción celular.
+        \item Se libera al quemarse espumas de poliuretano, aislaciones acústicas y térmicas, tapizados y plásticos con nitrógeno (nylon).
+        \item Bloquea la capacidad de las células de absorber y utilizar el oxígeno disponible en sangre.
+        \item Aunque la sangre transporte oxígeno, la célula se ahoga y muere en minutos.
+        \item \textbf{Efecto combinado con el $CO$:} El monóxido anula el transporte en sangre y el cianuro bloquea el consumo celular. Provoca desmayo en menos de 2 a 3 minutos.
       \end{itemize}
     \end{column}
 
@@ -53,9 +53,9 @@
       \resizebox{0.9\columnwidth}{!}{%
         \begin{tikzpicture}
           \node[draw=darkcharcoal, fill=cardbg, rounded corners=6pt, line width=1.2pt, inner sep=8pt, text width=4.5cm, align=center] {
-            \textbf{\textcolor{firered}{ANPOXIA HISTOTÓXICA}}\\[4pt]
-            \scriptsize Colapso de la cadena de fosforilación oxidativa mitocondrial.\\[3pt]
-            \scriptsize Pérdida de conciencia en menos de 2 a 3 minutos.
+            \textbf{\textcolor{firered}{BLOQUEO CELULAR}}\\[4pt]
+            \scriptsize Las células no pueden utilizar el oxígeno en sangre.\\[3pt]
+            \scriptsize Pérdida de conocimiento en menos de 2 a 3 minutos.
           };
         \end{tikzpicture}
       }
@@ -69,27 +69,27 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Cloruro de Hidrógeno ($HCl$)}}
         \small
-        $\bullet$ Generado en la pirólisis de aislamientos de cables de \textbf{PVC}.\\
-        $\bullet$ En contacto con el vapor de agua y las mucosas forma ácido clorhídrico concentrado.\\
-        $\bullet$ Provoca quemaduras químicas inmediatas en tráquea y alvéolos.\\
-        $\bullet$ \textbf{Impacto electrónico:} Corroe pistas de cobre y uniones de silicio de circuitos impresos vecinos.
+        $\bullet$ Se libera al quemarse el aislante de \textbf{PVC} de cañerías y cables.\\
+        $\bullet$ Con la humedad del aire o los pulmones forma ácido clorhídrico concentrado.\\
+        $\bullet$ Causa quemaduras químicas inmediatas en vías respiratorias.\\
+        $\bullet$ \textbf{Efecto en electrónica:} El gas ácido corroe pistas de cobre y componentes de placas electrónicas contiguas.
       \end{block}
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Óxidos de Nitrógeno y Azufre}}
         \small
-        $\bullet$ \textbf{Dióxido de nitrógeno ($NO_2$):} Desencadena edema pulmonar diferido a las 24 horas del siniestro.\\
-        $\bullet$ \textbf{Dióxido de azufre ($SO_2$) y acroleína:} Irritantes sensoriales agudos que provocan \textbf{blefaroespasmo involuntario} (cierre de ojos forzado) y anulación visual del escape.
+        $\bullet$ \textbf{Dióxido de nitrógeno ($NO_2$):} Provoca acumulación tardía de líquido en pulmones (edema) hasta 24 horas después.\\
+        $\bullet$ \textbf{Dióxido de azufre ($SO_2$) y acroleína:} Irritación ocular extrema, lagrimeo masivo y \textbf{cierre involuntario de párpados} que anula la visión en el escape.
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
 % --- SLIDE 19: CONCENTRACIÓN DE OXÍGENO ---
-\begin{frame}{Umbrales Fisiológicos de Caída del Oxígeno Ambiental}
+\begin{frame}{Efectos de la Caída del Oxígeno Ambiental}
   \small
-  La combustión en recintos cerrados consume vorazmente el comburente disponible en el aire:
+  El fuego en recintos cerrados consume rápidamente el oxígeno del aire:
 
   \vspace{0.2cm}
   \centering
@@ -100,19 +100,19 @@
 
       % Niveles
       \draw[fill=successgreen!20, draw=successgreen!80!black, line width=1pt] (0.5,4.5) rectangle (9.5,5.3) 
-            node[midway, font=\scriptsize] {\textbf{20.9\% (Normal):} Respiración y funciones psicomotrices plenamente estables.};
+            node[midway, font=\scriptsize] {\textbf{20.9\% (Normal):} Respiración y capacidades motrices plenamente normales.};
 
       \draw[fill=amberyellow!25, draw=amberyellow!90!black, line width=1pt] (0.5,3.3) rectangle (9.5,4.1) 
-            node[midway, font=\scriptsize] {\textbf{16.0\% (Umbral de Alerta):} Taquicardia refleja, desorientación espacial y merma de juicio.};
+            node[midway, font=\scriptsize] {\textbf{16.0\% (Alerta):} Taquicardia, mareos, desorientación y menor noción del peligro.};
 
       \draw[fill=fireorange!25, draw=fireorange!90!black, line width=1pt] (0.5,2.1) rectangle (9.5,2.9) 
-            node[midway, font=\scriptsize] {\textbf{14.0\% (Falla Motriz):} Pérdida de fuerza muscular en piernas; el operador cae al piso.};
+            node[midway, font=\scriptsize] {\textbf{14.0\% (Falla Motriz):} Pérdida de fuerza en piernas; la persona cae al suelo.};
 
       \draw[fill=firered!25, draw=firered!90!black, line width=1pt] (0.5,0.9) rectangle (9.5,1.7) 
-            node[midway, font=\scriptsize] {\textbf{10.0\% (Crítico):} Náuseas violentas, vómitos, pérdida de reflejos y coma profundo.};
+            node[midway, font=\scriptsize] {\textbf{10.0\% (Crítico):} Náuseas violentas, pérdida de reflejos y estado de coma.};
 
       \draw[fill=darkcharcoal!30, draw=darkcharcoal, line width=1.2pt] (0.5,-0.3) rectangle (9.5,0.5) 
-            node[midway, font=\scriptsize\bfseries, firered] {\textbf{$<$ 6.0\% (Letal Fulminante):} Cese total de respiración espontánea en $< 40\,\mathrm{s}$.};
+            node[midway, font=\scriptsize\bfseries, firered] {\textbf{$<$ 6.0\% (Letal):} Paro respiratorio en menos de 40 segundos.};
     \end{tikzpicture}
   }
 \end{frame}
@@ -122,13 +122,13 @@
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \small
-      Evolución espacial del penacho térmico en un recinto:
+      Comportamiento de la masa de humo en un recinto cerrado:
       \begin{itemize}
         \scriptsize
-        \item Los humos sobrecalentados ascienden por flotabilidad y chocan con el techo (\textit{ceiling jet}).
-        \item Se acumulan en una \textbf{capa superior de gases calientes y hollín}.
-        \item Se genera un \textbf{Plano Neutro}: límite dinámico de separación entre la masa de humo caliente superior y el aire limpio respirable inferior.
-        \item \textbf{Criterio de Evacuación:} Desplazamiento gateando o agachado por debajo del plano neutro para conservar visión y oxígeno.
+        \item Los gases calientes suben por ser más livianos y chocan contra el techo (\textit{ceiling jet}).
+        \item Se acumulan arriba formando una \textbf{capa caliente de humo denso y tóxico}.
+        \item Se forma un \textbf{Plano Neutro}: límite que separa el colchón de humo caliente superior del aire limpio inferior.
+        \item \textbf{Criterio de Evacuación:} Desplazamiento gateando por debajo del plano neutro para conservar visibilidad y respirar aire fresco.
       \end{itemize}
     \end{column}
 
@@ -159,28 +159,28 @@
 \end{frame}
 
 % --- SLIDE 21: DIAGNÓSTICO VISUAL DE HUMOS ---
-\begin{frame}{Diagnóstico Pericial del Humo según su Coloración}
+\begin{frame}{Diagnóstico del Fuego según el Color del Humo}
   \small
-  El color del humo revela de manera inmediata la química del combustible y el nivel de ventilación:
+  El color del humo indica el tipo de material que arde y el nivel de ventilación:
 
   \vspace{0.2cm}
   \centering
   \resizebox{0.98\textwidth}{!}{%
     \begin{tikzpicture}[yscale=0.7]
       \draw[fill=white, draw=grayborder, line width=1pt] (0,4) rectangle (10,4.8)
-            node[midway, font=\scriptsize] {\textbf{Blanco:} Combustión completa de celulosa seca / Presencia abundante de vapor de agua.};
+            node[midway, font=\scriptsize] {\textbf{Blanco:} Madera seca con aire abundante o presencia de vapor de agua.};
 
       \draw[fill=amberyellow!30, draw=amberyellow!90!black, line width=1pt] (0,3) rectangle (10,3.8)
-            node[midway, font=\scriptsize] {\textbf{Amarillo:} Sustancias químicas con azufre o ácidos nítrico/clorhídrico; gases letales.};
+            node[midway, font=\scriptsize] {\textbf{Amarillo:} Químicos con azufre o ácidos clorhídrico y nítrico; atmósfera muy tóxica.};
 
       \draw[fill=gray!30, draw=gray, line width=1pt] (0,2) rectangle (10,2.8)
-            node[midway, font=\scriptsize] {\textbf{Gris:} Celulosa, paja y tejidos en combustión incompleta con deficiencia de aire.};
+            node[midway, font=\scriptsize] {\textbf{Gris:} Celulosa, papel o madera quemándose con poco aire (brasas).};
 
       \draw[fill=darkcharcoal!35, draw=darkcharcoal!80, line width=1pt] (0,1) rectangle (10,1.8)
-            node[midway, font=\scriptsize] {\textbf{Negro Claro:} Cauchos sintéticos, carbón mineral y polímeros de cadena simple.};
+            node[midway, font=\scriptsize] {\textbf{Negro Claro:} Caucho o carbón.};
 
       \draw[fill=darkcharcoal!85, draw=black, line width=1pt] (0,0) rectangle (10,0.8)
-            node[midway, font=\scriptsize, white] {\textbf{Negro Oscuro:} Hidrocarburos pesados, naftas, plásticos espumados y fibras acrílicas.};
+            node[midway, font=\scriptsize, white] {\textbf{Negro Oscuro:} Combustibles líquidos, aceites, solventes y plásticos; mucho hollín y falta de aire.};
     \end{tikzpicture}
   }
 \end{frame}
@@ -190,18 +190,19 @@
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \small
-      El ordenamiento jurídico en higiene y seguridad industrial se asienta en tres niveles normativos:
+      El marco normativo de higiene y seguridad laboral se asienta en tres niveles:
       \begin{enumerate}
         \scriptsize
-        \item \textbf{Ley Nacional 19.587 (1972):} Marco general obligatorio de condiciones de higiene y seguridad en todo el territorio argentino.
+        \item \textbf{Ley Nacional 19.587 (1972):} Marco general obligatorio de condiciones de seguridad en todo el país.
         \item \textbf{Ley 24.557 (1995):} Régimen de Prevención y Reparación de Riesgos del Trabajo (SRT y ART).
         \item \textbf{Decreto Reglamentario 351/79:}
         \begin{itemize}
           \tiny
           \item \textbf{Capítulo 18:} Protección activa, pasiva y extintores.
-          \item \textbf{Anexo VII:} Cálculos de carga de fuego y medios de escape.
+          \item \textbf{Anexo VII:} Carga de fuego y medios de escape.
           \item \textbf{Capítulo 21:} Capacitación obligatoria registrada.
         \end{itemize}
+        \item \textbf{Normas complementarias:} Normas IRAM y reglamentación AEA 90364.
       \end{enumerate}
     \end{column}
 
@@ -211,7 +212,7 @@
         \begin{tikzpicture}[scale=0.9]
           \draw[fill=utnblue!90, draw=black, line width=1pt] (0,3.2) rectangle (4,4.2) node[midway, white, font=\scriptsize\bfseries] {Ley 19.587 / Ley 24.557};
           \draw[fill=utncyan!80, draw=black, line width=1pt] (0,1.6) rectangle (4,2.6) node[midway, white, font=\scriptsize\bfseries] {Decreto 351/79 (Anexo VII)};
-          \draw[fill=lightbg!80!black, draw=black, line width=1pt] (0,0) rectangle (4,1.0) node[midway, darkcharcoal, font=\scriptsize\bfseries] {Normas IRAM / AEA / NFPA};
+          \draw[fill=lightbg!80!black, draw=black, line width=1pt] (0,0) rectangle (4,1.0) node[midway, darkcharcoal, font=\scriptsize\bfseries] {Normas IRAM y AEA 90364};
 
           \draw[->, >=stealth, line width=1.5pt, firered] (2,3.2) -- (2,2.6);
           \draw[->, >=stealth, line width=1.5pt, firered] (2,1.6) -- (2,1.0);
@@ -222,7 +223,7 @@
 \end{frame}
 
 % --- SLIDE 23: CARGA DE FUEGO FÓRMULA ---
-\begin{frame}{Determinación Analítica de la Carga de Fuego ($Q_f$)}
+\begin{frame}{Determinación de la Carga de Fuego ($Q_f$)}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \begin{block}{\textbf{Fórmula Oficial del Anexo VII}}
@@ -231,9 +232,9 @@
         \end{equation*}
       \end{block}
       \scriptsize
-      $\bullet$ $M_i$: Masa inventariada de cada sustancia combustible ($\kg$).\\
-      $\bullet$ $PC_i$: Poder Calorífico Inferior de cada material ($\mathrm{kcal/kg}$).\\
-      $\bullet$ $S$: Superficie útil de piso del sector de incendio ($\m^2$).\\
+      $\bullet$ $M_i$: Masa inventariada de cada combustible ($\kg$).\\
+      $\bullet$ $PC_i$: Poder calorífico de cada material ($\mathrm{kcal/kg}$).\\
+      $\bullet$ $S$: Superficie de piso del sector considerado ($\m^2$).\\
       $\bullet$ $4400\,\mathrm{kcal/kg}$: Poder calorífico de la madera patrón de referencia ($\approx 18.4\,\mathrm{MJ/kg}$).
     \end{column}
 
@@ -243,17 +244,18 @@
         $\bullet$ Madera de referencia: $4400\,\mathrm{kcal/kg}$.\\
         $\bullet$ Papel y cartón: $4000\,\mathrm{kcal/kg}$.\\
         $\bullet$ Plásticos (PVC, nylon): $8000\text{ a }10000\,\mathrm{kcal/kg}$.\\
-        $\bullet$ Hidrocarburos y aceites: $10000\text{ a }11500\,\mathrm{kcal/kg}$.\\[3pt]
-        \textbf{Significado físico:} Representa cuántos kilos de madera por metro cuadrado equivalen térmicamente a todos los combustibles del recinto.
+        $\bullet$ Aceites y solventes: $10000\text{ a }11500\,\mathrm{kcal/kg}$.\\[3pt]
+        \textbf{Significado:} Representa cuántos kilos de madera por metro cuadrado equivalen al calor de todos los combustibles del lugar.\\
+        \textbf{Cálculo del informe:} Depósito de $600\,\m^2$ con embalajes y plásticos $\rightarrow Q_f = 12.77\,\kg/\m^2$ (Riesgo 3, Muy Combustible).
       \end{exampleblock}
     \end{column}
   \end{columns}
 \end{frame}
 
 % --- SLIDE 24: RESISTENCIA F TABLA ---
-\begin{frame}{Carga de Fuego y Resistencia Estructural al Fuego ($F$)}
+\begin{frame}{Carga de Fuego y Resistencia al Fuego de Muros ($F$)}
   \small
-  El valor resultante de $Q_f$ determina taxativamente la resistencia al fuego mínima de los muros divisorios:
+  El valor de $Q_f$ determina por ley la resistencia al fuego mínima de los muros divisorios:
 
   \vspace{0.2cm}
   \begin{table}[h]
@@ -273,30 +275,34 @@
   \end{table}
 
   \vspace{0.1cm}
-  \begin{alertblock}{\textbf{Criterio de Resistencia $F$}}
-    \scriptsize El valor numérico ($F30, F60, F120$) indica los minutos durante los cuales el muro o cerramiento conserva su estanqueidad a gases, estabilidad mecánica y aislamiento térmico bajo ensayo de curva de fuego normalizada ISO 834.
+  \begin{alertblock}{\textbf{Qué Significa la Resistencia $F$}}
+    \scriptsize El valor numérico ($F30, F60, F120$) indica los minutos que la pared soporta el fuego (curva normalizada ISO 834) cumpliendo tres condiciones:\\
+    1. No se derrumba ni colapsa mecanicamente.\\
+    2. No deja pasar llamas ni humo al otro lado.\\
+    3. No calienta el recinto vecino (la cara fría no supera los $140\,^\circ\mathrm{C}$ de aumento medio).
   \end{alertblock}
 \end{frame}
 
 % --- SLIDE 25: MEDIOS DE ESCAPE Y UAS ---
-\begin{frame}{Dimensionamiento de Medios de Escape: Unidades de Ancho (UAS)}
+\begin{frame}{Medios de Escape: Unidades de Ancho de Salida (UAS)}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Definición de UAS}}
         \small
-        Espacio libre requerido para que circule una hilera de personas en marcha ordenada:
+        Espacio libre necesario para que circule una hilera de personas en marcha ordenada:
         \begin{itemize}
           \scriptsize
-          \item Primeras $2\,\mathrm{UAS} = 1.10\,\m$ (ancho mínimo de cualquier salida).
+          \item Primeras $2\,\mathrm{UAS} = 1.10\,\m$ (ancho mínimo de cualquier salida colectiva).
           \item Cada unidad adicional suma $+0.45\,\m$.
           \item Ninguna puerta individual medirá $< 0.90\,\m$.
         \end{itemize}
       \end{block}
       \vspace{0.1cm}
-      \begin{block}{\textbf{Fórmulas Deterministas}}
+      \begin{block}{\textbf{Fórmulas de Cálculo}}
         \scriptsize
-        Población teórica: $N = \frac{S}{f_o}$ ($f_o$ según uso edilicio)\\[2pt]
-        Unidades requeridas: $n = \frac{N}{100}$ (redondeo $\ge 0.5$ arriba)
+        Población a evacuar: $N = \frac{S}{f_o}$ ($f_o = 16\,\m^2/\text{persona}$ en naves y talleres)\\[2pt]
+        Unidades requeridas: $n = \frac{N}{100}$ (redondeo $\ge 0.5$ hacia arriba)\\[2pt]
+        \textbf{Cálculo del informe:} Nave de $1600\,\m^2 \rightarrow N = 100$ operarios $\rightarrow n = 1\,\mathrm{UAS}$. Por ley se adoptan obligatoriamente \textbf{$2\,\mathrm{UAS} = 1.10\,\m$}.
       \end{block}
     \end{column}
 
@@ -316,7 +322,7 @@
 \end{frame}
 
 % --- SLIDE 26: ERGONOMÍA DE ESCALERAS ---
-\begin{frame}{Geometría Ergonómica de Vías y Cajas de Escaleras}
+\begin{frame}{Geometría de Escaleras y Vías de Evacuación}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Fórmula de Paso de Blondel}}
@@ -324,16 +330,18 @@
           2a + p = 0.60\,\m \text{ a } 0.63\,\m
         \end{equation*}
         \scriptsize
-        $\bullet$ Alzada ($a$): Altura vertical del escalón ($\le 0.18\,\m$).\\
-        $\bullet$ Pedada ($p$): Profundidad horizontal ($\ge 0.26\,\m$).
+        $\bullet$ Alzada ($a$): Altura del escalón ($\le 0.18\,\m$).\\
+        $\bullet$ Pedada ($p$): Ancho de pisada ($\ge 0.26\,\m$).\\
+        $\bullet$ \textbf{Cálculo del informe:} $a = 0.17\,\m$, $p = 0.28\,\m \rightarrow 2(0.17) + 0.28 = 0.62\,\m$ (dentro de norma).
       \end{block}
-      \begin{block}{\textbf{Límites Espaciales de Evacuación}}
+      \begin{block}{\textbf{Límites de Evacuación}}
         \scriptsize
-        $\bullet$ Distancia máxima a salida exterior: $\le 40\,\m$.\\
-        $\bullet$ Medios de escape independientes si $n \ge 4\,\mathrm{UAS}$:
+        $\bullet$ Recorrido máximo a salida exterior: $\le 40\,\m$.\\
+        $\bullet$ Si $n \ge 4\,\mathrm{UAS}$, se exigen salidas independientes:
         \begin{equation*}
           ME = \frac{n}{4} + 1
         \end{equation*}
+        Distribuidas en extremos opuestos para no quedar atrapados por un mismo foco.
       \end{block}
     \end{column}
 
@@ -351,31 +359,30 @@
 \end{frame}
 
 % --- SLIDE 27: AEA 90364 SECCIÓN 42 ---
-\begin{frame}{Norma AEA 90364 Sección 42: Efectos Térmicos y Cables LS0H}
+\begin{frame}{Reglamentación AEA 90364 Sección 42: Cables LS0H}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Condiciones Ambientales BD2 / BD3 / BD4}}
+      \begin{block}{\textbf{Locales BD2 / BD3 / BD4}}
         \small
-        $\bullet$ Locales con alta concentración de personas o riesgo de incendio.\\
-        $\bullet$ Prohibición estricta de cables con aislaciones propagadoras de llama o emisoras de humo opaco.\\
-        $\bullet$ \textbf{Cables LS0H obligatorios:} Formulados bajo norma \textbf{IRAM 62267} e \textbf{IEC 60332-3}.
+        $\bullet$ Lugares con alta afluencia de personas o riesgo de incendio.\\
+        $\bullet$ Prohibición estricta de cables con aislación de PVC común.\\
+        $\bullet$ \textbf{Cables obligatorios:} LS0H (baja emisión de humos, sin halógenos) bajo norma \textbf{IRAM 62267} e \textbf{IEC 60332}.
       \end{block}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Ventajas Químicas del Compuesto LS0H}}
+      \begin{block}{\textbf{Comportamiento ante el Fuego}}
         \small
-        $\bullet$ Poliolefinas con hidróxidos metálicos (alúmina trihidratada o hidróxido de magnesio).\\
-        $\bullet$ Reacción endotérmica que absorbe calor.\\
-        $\bullet$ \textbf{Emisión única de vapor de agua no tóxico.}\\
-        $\bullet$ Mantiene la visibilidad en pasillos y anula la corrosión ácida sobre circuitos impresos.
+        $\bullet$ Formulados con poliolefinas e hidróxidos metálicos que absorben calor de la llama.\\
+        $\bullet$ \textbf{Solo emiten vapor de agua no tóxico.}\\
+        $\bullet$ No desprenden ácido clorhídrico: conservan la visibilidad para evacuar y no dañan placas electrónicas contiguas.
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
 % --- SLIDE 28: AEA 90364 SECCIÓN 43 ---
-\begin{frame}{Norma AEA 90364 Sección 43: Verificación Térmica Adiabática}
+\begin{frame}{Reglamentación AEA 90364 Sección 43: Protección ante Cortocircuitos}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \begin{block}{\textbf{Inecuación de Energía Pasante}}
@@ -384,16 +391,19 @@
         \end{equation*}
       \end{block}
       \scriptsize
-      $\bullet$ $I_{cc}$: Corriente eficaz de cortocircuito en el punto considerado ($\mathrm{A}$).\\
-      $\bullet$ $t$: Tiempo de despeje de la protección termomagnética o fusible ($\mathrm{s}$).\\
-      $\bullet$ $k$: Constante del material ($115\,\mathrm{A\cdot s^{1/2}/mm^2}$ para Cu/PVC; $143$ para Cu/XLPE).\\
-      $\bullet$ $S$: Sección transversal nominal del conductor ($\mm^2$).
+      $\bullet$ $I_{cc}$: Corriente eficaz de cortocircuito ($\mathrm{A}$).\\
+      $\bullet$ $t$: Tiempo de corte de la protección ($\mathrm{s}$).\\
+      $\bullet$ $k$: Constante del conductor ($115$ para Cu/PVC; $143$ para Cu/XLPE).\\
+      $\bullet$ $S$: Sección transversal del cable ($\mm^2$).\\[3pt]
+      \textbf{Significado:} El cortocircuito es tan rápido que el calor no escapa. La protección debe cortar antes de que el calor alcance la temperatura de descomposición del aislante ($160\,\Celsius$).
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{alertblock}{\textbf{Significado Físico del Límite}}
-        \small
-        Garantiza que la energía térmica liberada durante el cortocircuito no alcance la temperatura de pirolización del polímero aislante, evitando la ignición del cable antes de la desconexión del interruptor.
+      \begin{alertblock}{\textbf{Cálculo del Informe}}
+        \tiny
+        Alimentador de $25\,\mm^2$ con falla de $8.5\,\mathrm{kA}$:\\
+        $\bullet$ \textbf{Corte en $30\,\mathrm{ms}$ (normal):} Energía disipada $2.17 \times 10^6\,\mathrm{A^2 s} \le 8.27 \times 10^6\,\mathrm{A^2 s}$ (opera al $26\%$ del límite, seguro).\\
+        $\bullet$ \textbf{Corte en $250\,\mathrm{ms}$ (falla):} Energía disipada $18.1 \times 10^6\,\mathrm{A^2 s}$ (+218\% sobre el límite). Funde el aislante y prende fuego la bandeja de cables.
       \end{alertblock}
     \end{column}
   \end{columns}
