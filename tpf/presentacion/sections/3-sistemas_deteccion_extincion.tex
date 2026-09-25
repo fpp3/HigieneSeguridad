@@ -595,7 +595,7 @@
 % --- SLIDE 40: RED DE HIDRANTES ---
 \begin{frame}{Sistemas Fijos: Red Interior de Hidrantes}
   \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.47\textwidth}
       Instalación fija de suministro hídrico presurizado:
       \begin{itemize}
         \small
@@ -616,38 +616,61 @@
       \end{itemize}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.51\textwidth}
       \centering
-      \resizebox{0.95\columnwidth}{!}{%
-        \begin{tikzpicture}[scale=0.85]
-          % Cisterna REI
-          \draw[fill=utncyan!25, draw=utnblue, line width=1.2pt, rounded corners=2pt] (0,0) rectangle (1.7,1.6);
-          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, utnblue, align=center] at (0.85,0.8) {Cisterna REI\\(Agua Exclusiva)};
-          \draw[line width=1.5pt, utnblue] (1.7,0.5) -- (2.2,0.5);
-
-          % Sala de Bombas
-          \draw[fill=cardbg, draw=darkcharcoal, line width=1pt, rounded corners=2pt] (2.2,0.1) rectangle (4.2,2.1);
-          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, darkcharcoal] at (3.2,1.85) {Sala de Bombas};
+      \resizebox{0.96\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.95]
+          % --- NIVEL 3: PLANTA / EDIFICIO (Gabinete R.I.A.) ---
+          % Gabinete R.I.A.
+          \draw[fill=firered!10, draw=firered, line width=1.1pt, rounded corners=3pt] (0.3,4.65) rectangle (3.6,6.05);
+          \node[font=\footnotesize\bfseries, firered] at (1.95,5.8) {Gabinete R.I.A.};
           
-          % Bomba eléctrica
-          \draw[fill=firered!20, draw=firered, line width=0.8pt, rounded corners=1pt] (2.35,1.05) rectangle (4.05,1.55);
-          \node[font=\fontsize{4}{5}\selectfont\bfseries, firered] at (3.2,1.3) {Bomba Principal};
-          
-          % Bomba jockey
-          \draw[fill=amberyellow!20, draw=amberyellow!80!black, line width=0.8pt, rounded corners=1pt] (2.35,0.35) rectangle (4.05,0.85);
-          \node[font=\fontsize{4}{5}\selectfont\bfseries, amberyellow!80!black] at (3.2,0.6) {Bomba Jockey};
+          % Carretel / Manguera dentro del gabinete
+          \draw[fill=firered, draw=darkcharcoal, line width=0.8pt, rounded corners=2pt] (0.5,4.75) rectangle (1.75,5.5);
+          \node[font=\fontsize{5.5}{6.5}\selectfont\bfseries, text=white, align=center] at (1.12,5.12) {Manguera\\$45\,\mathrm{mm}$};
+          \node[font=\fontsize{5.5}{6.5}\selectfont, darkcharcoal, align=left] at (2.65,5.12) {Válvula teatro\\Lanza 3 efectos\\(niebla / pleno)};
 
-          % Colector y Columna montante
-          \draw[line width=2pt, utnblue, ->, >=stealth] (4.05,1.3) -- (4.6,1.3) -- (4.6,3.3) node[above, font=\fontsize{4.5}{5.5}\selectfont\bfseries, utnblue] {Montante};
+          % Conexión montante a gabinete
+          \draw[line width=2pt, utnblue] (3.6,5.15) -- (4.3,5.15);
 
-          % Gabinete R.I.A. en planta
-          \draw[fill=firered!15, draw=firered, line width=1pt, rounded corners=2pt] (4.6,2.4) -- (5.0,2.4) -- (5.0,1.8) -- (6.0,1.8) -- (6.0,2.8) -- (5.0,2.8) -- (5.0,2.4);
-          \draw[fill=firered, draw=darkcharcoal, line width=0.8pt] (5.2,2.0) rectangle (5.8,2.6);
-          \node[font=\fontsize{4}{5}\selectfont\bfseries, text=white] at (5.5,2.3) {R.I.A.};
-          \node[font=\fontsize{4}{5}\selectfont, darkcharcoal, right] at (5.0,1.6) {Manguera $45\mm$};
+          % --- COLUMNA MONTANTE VERTICAL ---
+          \draw[line width=2.4pt, utnblue, ->, >=stealth] (4.3,2.95) -- (4.3,6.45) node[above, font=\footnotesize\bfseries, utnblue] {Montante};
 
-          % Boca de impulsión
-          \draw[line width=1.5pt, firered, <-, >=stealth] (4.6,0.7) -- (5.5,0.7) node[right, font=\fontsize{4}{5}\selectfont\bfseries, firered] {Siamesa Bomberos};
+          % --- NIVEL 2: BOCA SIAMESA EXTERIOR ---
+          \draw[line width=1.6pt, firered, ->, >=stealth] (5.8,4.0) -- (4.3,4.0);
+          \draw[fill=firered, draw=darkcharcoal, line width=0.8pt] (5.8,3.8) rectangle (6.05,4.2);
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, firered, align=left, anchor=south west] at (4.4,4.1) {Boca Siamesa Bomberos};
+
+
+          % --- NIVEL 1: SALA DE BOMBAS (PRESURIZACIÓN) ---
+          \draw[fill=cardbg, draw=darkcharcoal, line width=1.1pt, rounded corners=3pt] (0.2,1.75) rectangle (4.5,3.65);
+          \node[font=\footnotesize\bfseries, darkcharcoal] at (2.35,3.4) {Sala de Bombas};
+
+          % Bomba Jockey
+          \draw[fill=amberyellow!25, draw=amberyellow!80!black, line width=0.9pt, rounded corners=2pt] (0.4,1.95) rectangle (2.15,2.75);
+          \node[font=\scriptsize\bfseries, amberyellow!90!black] at (1.27,2.48) {Jockey};
+          \node[font=\fontsize{5.5}{6.5}\selectfont, darkcharcoal] at (1.27,2.18) {Presión $8\text{--}10\,\mathrm{bar}$};
+
+          % Bomba Principal
+          \draw[fill=firered!20, draw=firered, line width=0.9pt, rounded corners=2pt] (2.45,1.95) rectangle (4.3,2.75);
+          \node[font=\scriptsize\bfseries, firered] at (3.37,2.48) {Principal};
+          \node[font=\fontsize{5.5}{6.5}\selectfont, darkcharcoal] at (3.37,2.18) {Eléctrica / Diésel};
+
+          % Colector de impulsión común que une bombas a montante
+          \draw[line width=1.8pt, utnblue] (1.27,2.75) -- (1.27,2.95) -- (4.3,2.95);
+          \draw[line width=1.8pt, utnblue] (3.37,2.75) -- (3.37,2.95);
+
+          % --- TUBERÍAS DE SUCCIÓN (CISNERNA -> SALA DE BOMBAS) ---
+          \draw[line width=1.8pt, utnblue, ->, >=stealth] (1.27,1.25) -- (1.27,1.95);
+          \draw[line width=1.8pt, utnblue, ->, >=stealth] (3.37,1.25) -- (3.37,1.95);
+          \node[font=\fontsize{5.5}{6.5}\selectfont\bfseries, utnblue] at (2.35,1.5) {$\uparrow$ Succión de agua};
+
+          % --- NIVEL 0: CISTERNA REI (SUBTERRÁNEA / ABAJO) ---
+          \draw[fill=utncyan!25, draw=utnblue, line width=1.2pt, rounded corners=3pt] (0.2,-0.25) rectangle (4.5,1.25);
+          % Nivel de agua decorativo
+          \draw[dashed, line width=0.7pt, utncyan!80!black] (0.3,1.0) -- (4.4,1.0);
+          \node[font=\footnotesize\bfseries, utnblue] at (2.35,0.65) {Cisterna REI (Subterránea)};
+          \node[font=\fontsize{5.5}{6.5}\selectfont, darkcharcoal] at (2.35,0.18) {Reserva Exclusiva de Incendio};
         \end{tikzpicture}
       }
     \end{column}
