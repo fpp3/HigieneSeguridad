@@ -70,7 +70,7 @@
   \begin{itemize}
     \setlength{\itemsep}{0.35cm}
     \item \textbf{Tratamiento ignífugo, muros cortafuego:} Estructuras especiales con resistencia $F30$ a $F180$. Superan estrictos ensayos realizados por laboratorios acreditados que demuestran su eficacia (reacción, resistencia y/o estabilidad, luminiscencia) en pruebas con fuego real.
-    \item \textbf{Puertas cortafuego de doble contacto:} Cierre automático mediante retenedores electromagnéticos liberados por la central; sellos perimetrales que se expanden ante calor para retener el paso de humo.
+    \item \textbf{Puertas cortafuego:} Cierre automático mediante retenedores electromagnéticos liberados por la central; sellos perimetrales que se expanden ante calor para retener el paso de humo.
   \end{itemize}
 \end{frame}
 
@@ -262,64 +262,43 @@
 
     \begin{column}{0.48\textwidth}
       \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[fill=darkcharcoal!20, draw=darkcharcoal, line width=1.2pt] (0,0) rectangle (3.5,2.4);
-          \fill[firered] (1.75,1.2) circle (0.5);
-          \fill[yellow] (1.75,1.2) circle (0.25);
-          \node[font=\tiny\bfseries, white] at (1.75,1.2) {$85\,\Celsius$};
-          \node[below, font=\tiny\bfseries] at (1.75,0.4) {Punto Caliente en Borne};
-        \end{tikzpicture}
-      }
+      \begin{figure}
+        \centering
+        \resizebox{0.85\columnwidth}{!}{%
+          \begin{tikzpicture}
+            \draw[fill=darkcharcoal!20, draw=darkcharcoal, line width=1.2pt] (0,0) rectangle (3.5,2.4);
+            \fill[firered] (1.75,1.2) circle (0.55);
+            \fill[yellow] (1.75,1.2) circle (0.28);
+            \node[font=\tiny\bfseries, black] at (1.75,1.2) {$85\,\Celsius$};
+          \end{tikzpicture}
+        }
+        \caption{Tablero eléctrico.}
+      \end{figure}
     \end{column}
   \end{columns}
 \end{frame}
 
-% --- SLIDE 52: BRIGADAS EPI Y ESI ---
-\begin{frame}{Organización Humana de Respuesta: E.P.I. y E.S.I.}
+% --- ELABORACIÓN DE PLAN DE EMERGENCIA ---
+\begin{frame}{Elaboración de Plan de Emergencia}
   \small
-  Estructura escalonada para la gestión humana de emergencias (doctrina de cátedra y SRT):
-
-  \vspace{0.4cm}
-  \centering
-  \begin{tikzpicture}[
-    line cap=round, line join=round,
-    boxcomite/.style={draw=darkcharcoal, fill=cardbg, line width=1.3pt, rounded corners=5pt, text width=7.4cm, align=center, inner sep=6pt},
-    boxepi/.style={draw=firered, fill=firered!12, line width=1.3pt, rounded corners=5pt, text width=5.7cm, align=center, inner sep=6pt},
-    boxesi/.style={draw=utnblue, fill=utnblue!12, line width=1.3pt, rounded corners=5pt, text width=5.7cm, align=center, inner sep=6pt}
-  ]
-    % Comité (arriba centro)
-    \node[boxcomite] (Comite) at (0, 1.8) {
-      {\small\textbf{\textcolor{darkcharcoal}{Comité de Emergencia y Jefe de Emergencia}}}\\[3pt]
-      {\scriptsize Conducción estratégica $\;\cdot\;$ Orden de evacuación $\;\cdot\;$ Punto de encuentro}
-    };
-
-    % EPI (abajo izquierda)
-    \node[boxepi] (EPI) at (-3.65, -0.8) {
-      {\small\textbf{\textcolor{firered}{Equipo de Primera Intervención (E.P.I.)}}}\\[3pt]
-      {\scriptsize Fuerza de choque en taller $\;\cdot\;$ Advertencia\\[2pt] Extintores en $<30\,\mathrm{s}$}
-    };
-
-    % ESI (abajo derecha)
-    \node[boxesi] (ESI) at (3.65, -0.8) {
-      {\small\textbf{\textcolor{utnblue}{Equipo de Segunda Intervención (E.S.I.)}}}\\[3pt]
-      {\scriptsize Brigada de planta $\;\cdot\;$ Mangueras $45/63.5\mm$\\[2pt] ERA $\;\cdot\;$ Bomberos}
-    };
-
-    % Conexiones jerárquicas desde Comité
-    \coordinate (fork) at (0, 0.5);
-    \draw[line width=1.3pt, darkcharcoal] (Comite.south) -- (fork);
-    \draw[->, >=stealth, line width=1.3pt, darkcharcoal] (fork) -| (EPI.north);
-    \draw[->, >=stealth, line width=1.3pt, darkcharcoal] (fork) -| (ESI.north);
-
-    % Coordinación operativa entre EPI y ESI
-    \draw[<->, >=stealth, line width=1.3pt, dashed, darkcharcoal!80] (EPI.east) -- (ESI.west);
-
-  \end{tikzpicture}
+  Pautas fundamentales para su confección e implementación:
+  \vspace{0.3cm}
+  \begin{itemize}
+    \small
+    \setlength{\itemsep}{0.28cm}
+    \item \textbf{Características del edificio}, sus instalaciones y entorno en el cual está emplazado.
+    \item \textbf{Disponer de planos}.
+    \item \textbf{Identificar los lugares más riesgosos} y los medios de protección y/o extinción existentes.
+    \item \textbf{Planificar normas de actuación:} no demorarse en para recoger
+        objetos, no regresar a la zona evacuada bajo ningún concepto, no
+          utilizar ascensores, no correr, no gritar, no empujar, etc.
+    \item \textbf{Designar personas responsables} de llevar a cabo lo dispuesto en el plan de emergencia.
+    \item \textbf{Realización de simulacros.}
+  \end{itemize}
 \end{frame}
 
 % --- SLIDE 43: JERARQUÍA DE CONTROL DE RIESGOS ---
-\begin{frame}{La Jerarquía de Control de Riesgos (ISO 45001 / IRAM 3800)}
+\begin{frame}{La Jerarquía de Control de Riesgos General (ISO 45001 / IRAM 3800)}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \small
@@ -329,7 +308,8 @@
         \item \textbf{Eliminación:} Suprimir físicamente el peligro en el diseño.
         \item \textbf{Sustitución:} Reemplazar reactivos y fluidos combustibles por alternativas no inflamables.
         \item \textbf{Controles de Ingeniería:} Salvaguardas tecnológicas automáticas, AFDD, termografía, ventilación forzada.
-        \item \textbf{Controles Administrativos:} Protocolos de trabajo seguro, permisos PTC y metodología 5S.
+        \item \textbf{Controles Administrativos:} Protocolos de trabajo seguro,
+            plan de emergencia.
         \item \textbf{EPP:} Atenuación del impacto residual sobre el trabajador.
       \end{enumerate}
     \end{column}
@@ -349,86 +329,3 @@
   \end{columns}
 \end{frame}
 
-% --- SLIDE 53: CASO IRON MOUNTAIN ---
-\begin{frame}{Análisis Forense: Depósito Iron Mountain (Barracas, 2014)}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \small
-      Lecciones del colapso estructural de Barracas:
-      \begin{itemize}
-        \scriptsize
-        \item \textbf{Carga de fuego extrema ($Q_f \gg 150\,\kg/\m^2$):} Racks metálicos autoportantes de más de $10\,\m$ densamente cargados de papel.
-        \item \textbf{Efecto tiro de chimenea vertical:} Aceleración violenta de las llamas hacia el techo.
-        \item \textbf{Falla activa total:} Válvulas de rociadores cerradas sin presurización; bombas principales apagadas.
-        \item \textbf{Ausencia de protección pasiva en el acero:} Al superar los $900\,\Celsius$, el acero sufrió fluencia térmica, pandeó y empujó el muro este hacia la calle Jovellanos, provocando el fallecimiento de 10 rescatistas.
-      \end{itemize}
-    \end{column}
-
-    \begin{column}{0.48\textwidth}
-      \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[line width=1.5pt, fill=firered!10] (0,0) rectangle (3.5,3.0);
-          \draw[line width=2pt, dashed, firered] (0,0) -- (-0.8,2.8) node[above, font=\tiny\bfseries, firered] {Colapso hacia la calle};
-          \node[font=\tiny\bfseries, align=center] at (1.75,1.5) {Fluencia térmica a $>900\,\Celsius$\\Pandeo de cabriadas\\Empuje sobre muro exterior};
-        \end{tikzpicture}
-      }
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% --- SLIDE 54: CASO EDESUR CABALLITO ---
-\begin{frame}{Análisis Forense: Subestación Edesur Caballito (2024)}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \small
-      Falla durante mantenimiento electromecánico:
-      \begin{itemize}
-        \scriptsize
-        \item Intervención sobre transformador de $132/13.2\,\mathrm{kV}$ con máquina de filtrado de aceite caliente.
-        \item Rotura de manguera flexible bajo presión: pulverización de aceite mineral sobre bornes calientes/energizados.
-        \item \textbf{Fuego mixto Clase B + Clase C:} Propagación inmediata por túneles y bandejas de cables aislados con PVC convencional.
-        \item Columnas densas de humo negro y $HCl$ bloquearon la visibilidad y demoraron el ataque.
-        \item \textbf{Lección de diseño:} Obligatoriedad de ésteres dieléctricos autoextinguibles y conductores LS0H en subestaciones urbanas.
-      \end{itemize}
-    \end{column}
-
-    \begin{column}{0.48\textwidth}
-      \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[fill=darkcharcoal!20, line width=1.2pt] (0,0) rectangle (3.2,2.2) node[midway, font=\tiny\bfseries] {Transformador de Potencia};
-          \draw[->, >=stealth, line width=2pt, firered] (3.2,1.1) -- (4.2,1.1) node[right, font=\tiny\bfseries, firered] {Fuga de Aceite};
-          \node[below, font=\tiny\bfseries] at (1.6,-0.2) {Propagación por cables de PVC};
-        \end{tikzpicture}
-      }
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% --- SLIDE 55: MATRIZ RESUMEN Y CONCLUSIONES ---
-\begin{frame}{Matriz Síntesis de Soluciones y Conclusiones Finales}
-  \small
-  La prevención y protección eficaz conforma un sistema integral de barreras múltiples:
-
-  \vspace{0.2cm}
-  \begin{table}[h]
-    \centering
-    \scriptsize
-    \begin{tabular}{p{2.8cm} p{2.2cm} p{3.4cm} p{3.2cm}}
-      \toprule
-      \textbf{Medida de Solución} & \textbf{Nivel / Tipo} & \textbf{Mecanismo Técnico} & \textbf{Impacto Operativo} \\
-      \midrule
-      \textbf{Ésteres Dieléctricos} & Sustitución / Prev. & Punto de fuego $>300\,\Celsius$, autoextinguible & Elimina explosión Clase B en transformadores. \\
-      \addlinespace
-      \textbf{Cables LS0H} & Sustitución / Prev. & Poliolefinas sin halógenos; vapor no tóxico & Mantiene visibilidad y evita corrosión de silicio. \\
-      \addlinespace
-      \textbf{Dispositivos AFDD} & Ingeniería / Prev. & Detección de firma de RF de arco serie & Evita arcos que burlan a termomagnéticas. \\
-      \addlinespace
-      \textbf{Sectorización $F$} & Ingeniería / Pasiva & Muros certificados y sellos intumescentes & Confinamiento físico del fuego y gases calientes. \\
-      \addlinespace
-      \textbf{Brigadas E.P.I. / E.S.I.} & Humana / Activa & Advertencia precoz y ataque con hidrantes & Ataque en $<30\,\mathrm{s}$ y enlace con bomberos. \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-\end{frame}
