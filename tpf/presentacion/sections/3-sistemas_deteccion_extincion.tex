@@ -4,22 +4,39 @@
 
 % --- SLIDE 29: ARQUITECTURA DE DETECCIÓN ---
 \begin{frame}{Topologías de Detección: Convencional frente a Direccionable}
-  \begin{columns}[c]
+  \begin{columns}[T]
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Sistema Convencional (Zonas Radiales)}}
         \scriptsize
-        $\bullet$ Detectores enlazados en circuitos radiales de 2 hilos con resistencia de fin de línea ($R_{\mathrm{EOL}}$).\\
-        $\bullet$ La conmutación de cualquier sensor altera la impedancia de toda la zona.\\
-        $\bullet$ \textbf{Severa limitación:} No individualiza el detector activado; requiere búsqueda visual en toda la nave.
+        $\bullet$ Circuito radial de 2 hilos con resistencia fin de línea ($R_{\mathrm{EOL}}$).\\
+        $\bullet$ Alarma por caída de impedancia en toda la zona.\\
+        $\bullet$ \textbf{Limitación:} No individualiza el detector activado; requiere búsqueda visual en el local.
       \end{block}
-      \vspace{0.1cm}
+      \vspace{0.15cm}
       \centering
-      \resizebox{0.8\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[line width=1.5pt, utnblue] (0,0) node[left, font=\tiny\bfseries] {Panel} -- (3.2,0);
-          \node[circle, fill=darkcharcoal, inner sep=2pt] at (1,0) {};
-          \node[circle, fill=darkcharcoal, inner sep=2pt] at (2,0) {};
-          \draw[line width=1pt] (3.2,-0.2) rectangle (3.6,0.2) node[midway, font=\tiny] {$R$};
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[font=\tiny]
+          % Central
+          \draw[fill=utnblue!15, draw=utnblue, line width=1.2pt, rounded corners=2pt] (0,-0.7) rectangle (1.2,0.7) node[midway, align=center, font=\fontsize{5}{6}\selectfont\bfseries, utnblue] {Central\\Convencional};
+          % Línea radial
+          \draw[line width=1.2pt, darkcharcoal] (1.2,0.3) -- (4.2,0.3);
+          \draw[line width=1.2pt, darkcharcoal] (1.2,-0.3) -- (4.2,-0.3);
+          % Detectores
+          \draw[fill=white, draw=darkcharcoal, line width=1pt] (2.0,0) circle (0.28) node[font=\fontsize{4}{5}\selectfont\bfseries] {D1};
+          \draw[line width=0.8pt] (2.0,0.3) -- (2.0,0.28);
+          \draw[line width=0.8pt] (2.0,-0.3) -- (2.0,-0.28);
+          
+          \draw[fill=firered!20, draw=firered, line width=1.2pt] (3.1,0) circle (0.28) node[font=\fontsize{4}{5}\selectfont\bfseries, firered] {D2};
+          \draw[line width=0.8pt] (3.1,0.3) -- (3.1,0.28);
+          \draw[line width=0.8pt] (3.1,-0.3) -- (3.1,-0.28);
+          
+          % Resistencia EOL
+          \draw[line width=0.8pt] (4.2,0.3) -- (4.2,0.18);
+          \draw[line width=0.8pt] (4.2,-0.18) -- (4.2,-0.3);
+          \draw[fill=amberyellow!30, draw=darkcharcoal, line width=0.8pt] (3.85,-0.18) rectangle (4.55,0.18) node[midway, font=\fontsize{4}{5}\selectfont\bfseries] {$R_{\mathrm{EOL}}$};
+          
+          % Alerta
+          \node[draw=firered, fill=firered!10, rounded corners=2pt, font=\fontsize{4.5}{5.5}\selectfont, align=center, text=firered] at (2.6,-0.9) {Disparo en D2 $\rightarrow$ Solo indica ``Zona 1''};
         \end{tikzpicture}
       }
     \end{column}
@@ -27,20 +44,32 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Sistema Analógico-Direccionable (Anillo)}}
         \scriptsize
-        $\bullet$ Lazos en anillo cerrado Clase A bidireccional.\\
-        $\bullet$ Cada sensor posee dirección binaria y microprocesador propio.\\
-        $\bullet$ Reporta valores cuantitativos analógicos continuos de temperatura y oscurecimiento óptico.\\
-        $\bullet$ \textbf{Ventaja:} Localización puntual milimétrica, autodiagnóstico de suciedad y anulación de falsas alarmas.
+        $\bullet$ Lazo cerrado con retorno a central.\\
+        $\bullet$ Cada sensor tiene microprocesador e ID.\\
+        $\bullet$ Supervisión analógica continua.\\
+        $\bullet$ \textbf{Ventaja:} Localización puntual y tolerancia a corte.
       \end{block}
-      \vspace{0.1cm}
+      \vspace{0.15cm}
       \centering
-      \resizebox{0.8\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[line width=1.5pt, successgreen!80!black] (0,0) rectangle (2.8,1.2);
-          \node[circle, fill=successgreen!80!black, inner sep=2.5pt] at (0.7,0) {};
-          \node[circle, fill=successgreen!80!black, inner sep=2.5pt] at (2.1,0) {};
-          \node[circle, fill=successgreen!80!black, inner sep=2.5pt] at (1.4,1.2) {};
-          \node[font=\tiny\bfseries] at (1.4,0.6) {Lazo Clase A};
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[font=\tiny]
+          % Central FACP
+          \draw[fill=successgreen!15, draw=successgreen!80!black, line width=1.2pt, rounded corners=2pt] (0,-0.7) rectangle (1.2,0.7) node[midway, align=center, font=\fontsize{5}{6}\selectfont\bfseries, successgreen!80!black] {Central\\Direccionable};
+          % Lazo en anillo Clase A
+          \draw[line width=1.2pt, successgreen!70!black] (1.2,0.4) -- (2.0,0.6) -- (3.6,0.6) -- (4.2,0) -- (3.6,-0.6) -- (2.0,-0.6) -- (1.2,-0.4);
+          % Sensores con dirección
+          \draw[fill=white, draw=successgreen!80!black, line width=1pt] (2.2,0.6) circle (0.24) node[font=\fontsize{4}{5}\selectfont\bfseries] {\#01};
+          \draw[fill=white, draw=successgreen!80!black, line width=1pt] (3.4,0.6) circle (0.24) node[font=\fontsize{4}{5}\selectfont\bfseries] {\#02};
+          \draw[fill=white, draw=successgreen!80!black, line width=1pt] (4.2,0) circle (0.24) node[font=\fontsize{4}{5}\selectfont\bfseries] {\#03};
+          \draw[fill=white, draw=successgreen!80!black, line width=1pt] (3.4,-0.6) circle (0.24) node[font=\fontsize{4}{5}\selectfont\bfseries] {\#04};
+          \draw[fill=white, draw=successgreen!80!black, line width=1pt] (2.2,-0.6) circle (0.24) node[font=\fontsize{4}{5}\selectfont\bfseries] {\#05};
+          
+          % Flechas bidireccionales
+          \draw[->, >=stealth, line width=0.8pt, successgreen!80!black] (1.5,0.48) -- (1.8,0.55);
+          \draw[<-, >=stealth, line width=0.8pt, successgreen!80!black] (1.5,-0.48) -- (1.8,-0.55);
+          
+          % Texto centro
+          \node[draw=successgreen!80!black, fill=successgreen!10, rounded corners=2pt, font=\fontsize{4.5}{5.5}\selectfont, align=center, text=darkcharcoal] at (2.6,-1.2) {Reporta ID exacto y nivel analógico continuo};
         \end{tikzpicture}
       }
     \end{column}
@@ -55,25 +84,53 @@
       Principio físico de dispersión de la luz en cámara oscura:
       \begin{itemize}
         \scriptsize
-        \item Dispone de una cámara laberíntica que bloquea la luz ambiental exterior pero permite la libre circulación del aire.
-        \item Aloja un LED emisor infrarrojo y un fotodiodo receptor colocado en ángulo diedro ($90^\circ\text{ a }120^\circ$).
-        \item \textbf{En reposo:} El haz se propaga en línea recta sin incidir sobre el fotodiodo receptor (corriente nula).
-        \item \textbf{En alarma:} Las partículas de humo dispersan los fotones hacia el fotodiodo por efecto Tyndall.
-        \item \textbf{Especialidad:} Incendios lentos o latentes con partículas visibles de $0.3\text{ a }10\,\mu\mathrm{m}$ (PVC, celulosa).
+        \item Cámara laberíntica opaca que bloquea la luz ambiental exterior pero permite la libre entrada de humo.
+        \item Emisor LED infrarrojo y fotoreceptor orientados perpendicularmente.
+        \item \textbf{En reposo (aire limpio):} El haz IR viaja en línea recta y es absorbido por la trampa de luz.
+        \item \textbf{En alarma (humo presente):} Las partículas de humo dispersan fotones hacia el fotodiodo receptor.
+        \item \textbf{Aplicación óptima:} Fuegos lentos o latentes con partículas visibles.
       \end{itemize}
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \centering
-      \resizebox{0.9\columnwidth}{!}{%
-        \begin{tikzpicture}[scale=0.9]
-          \draw[line width=1.5pt, darkcharcoal] (0,0) circle (2.0);
-          \node[draw, fill=utnblue, inner sep=3pt, font=\tiny\bfseries, white] (LED) at (-1.3,0) {LED};
-          \node[draw, fill=fireorange, inner sep=3pt, font=\tiny\bfseries, white] (PD) at (0,-1.3) {Sensor};
-          \draw[->, >=stealth, line width=1.5pt, red!80] (LED) -- (1.5,0);
-          \draw[dashed, ->, >=stealth, line width=1pt, fireorange] (0,0) -- (PD);
-          \fill[gray!60] (-0.2,-0.2) circle (0.3);
-          \node[above, font=\tiny\bfseries] at (0,0.2) {Humo (Tyndall)};
+      \resizebox{0.92\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.95]
+          % Carcasa exterior circular
+          \draw[line width=1.5pt, darkcharcoal, fill=lightbg] (0,0) circle (2.2);
+          
+          % Laberinto óptico (aletas deflectoras periféricas)
+          \foreach \ang in {15, 35, 55, 75, 105, 125, 145, 165, 195, 215, 235, 255, 285, 305, 325, 345} {
+            \draw[line width=1.8pt, darkcharcoal!80] (\ang:2.2) -- (\ang-15:1.7);
+          }
+          \draw[line width=0.8pt, darkcharcoal!40, dashed] (0,0) circle (1.7);
+          
+          % Emisor LED IR
+          \draw[fill=utnblue, draw=darkcharcoal, line width=1pt, rounded corners=1pt] (-1.6,-0.3) rectangle (-0.9,0.3);
+          \node[font=\tiny\bfseries, text=white] at (-1.25,0) {LED IR};
+          
+          % Trampa de luz
+          \draw[fill=darkcharcoal, draw=darkcharcoal, line width=1pt] (1.3,-0.35) -- (1.6,-0.2) -- (1.3,0) -- (1.6,0.2) -- (1.3,0.35) -- (1.1,0.35) -- (1.1,-0.35) -- cycle;
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, text=darkcharcoal, right] at (1.1,0.5) {Trampa};
+          
+          % Haz directo (rojo)
+          \draw[->, >=stealth, line width=1.5pt, red!80] (-0.9,0) -- (1.1,0);
+          
+          % Receptor Fotodiodo
+          \draw[fill=fireorange, draw=darkcharcoal, line width=1pt, rounded corners=1pt] (-0.6,-1.6) rectangle (0.6,-1.0);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, text=white] at (0,-1.3) {Fotodiodo};
+          
+          % Nube de humo en el centro
+          \fill[gray!40, opacity=0.7] (0,0) circle (0.45);
+          \foreach \x/\y in {-0.2/0.1, 0.1/0.15, -0.1/-0.2, 0.2/-0.1, 0/0} {
+            \fill[darkcharcoal!70] (\x,\y) circle (0.04);
+          }
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, darkcharcoal, above] at (0,0.45) {Humo};
+          
+          % Rayos dispersados Tyndall a 90 grados
+          \draw[->, >=stealth, dashed, line width=1.2pt, fireorange] (0.05,-0.05) -- (0,-0.95);
+          \draw[->, >=stealth, dashed, line width=1pt, fireorange] (-0.15,-0.1) -- (-0.15,-0.95);
+          \draw[->, >=stealth, dashed, line width=1pt, fireorange] (0.2,-0.1) -- (0.15,-0.95);
         \end{tikzpicture}
       }
     \end{column}
@@ -85,26 +142,60 @@
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \small
-      Principio de conducción eléctrica en gases ionizados:
+      Principio de conducción eléctrica en cámara ionizada:
       \begin{itemize}
         \scriptsize
-        \item Contiene una microfuente radiactiva encapsulada de $^{241}\mathrm{Am}$ emisora de partículas alfa ($\alpha$).
-        \item Las partículas $\alpha$ ionizan las moléculas de aire ($N_2, O_2$), separándolas en iones positivos y electrones libres.
-        \item Se establece una \textbf{corriente basal de reposo} entre dos placas cargadas a una diferencia de potencial fija.
-        \item Al ingresar partículas submicrónicas de humo ($<0.3\,\mu\mathrm{m}$), los iones se adhieren a ellas, disminuyendo drásticamente la corriente y disparando la alarma.
-        \item \textbf{Especialidad:} Fuegos vivos de rápida combustión con llama abierta y aerosoles invisibles.
+        \item Fuente radiactiva encapsulada de $^{241}\mathrm{Am}$ que emite partículas alfa ($\alpha$).
+        \item Las partículas $\alpha$ ionizan las moléculas de aire ($N_2, O_2$), separándolas en iones positivos ($+$) y electrones libres ($-$).
+        \item Se genera una \textbf{corriente de reposo} ($I_{\mathrm{reposo}} \sim \mathrm{pA}$) entre las dos placas a potencial fijo.
+        \item Las partículas de humo capturan los iones móviles lo que produce una caída abrupta de corriente.
+        \item \textbf{Especialidad:} Fuegos abiertos de combustión rápida con llama viva.
       \end{itemize}
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[line width=1.5pt, darkcharcoal] (0,0) rectangle (3.5,2.4);
-          \draw[line width=2pt, firered] (0.5,2.1) -- (3.0,2.1) node[right, font=\tiny\bfseries] {$+V$};
-          \draw[line width=2pt, utnblue] (0.5,0.3) -- (3.0,0.3) node[right, font=\tiny\bfseries] {GND};
-          \node[circle, fill=amberyellow, inner sep=3pt, font=\tiny\bfseries] at (1.75,1.7) {$\alpha$};
-          \node[font=\tiny, align=center] at (1.75,1.0) {Flujo de iones\\capturados por humo};
+      \resizebox{0.92\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.9]
+          % Cámara exterior mallada
+          \draw[line width=1.5pt, darkcharcoal, fill=lightbg] (0,0) rectangle (4.2,3.2);
+          \draw[dashed, line width=0.8pt, darkcharcoal!50] (0,0.8) -- (0,2.4);
+          \draw[dashed, line width=0.8pt, darkcharcoal!50] (4.2,0.8) -- (4.2,2.4);
+          \node[font=\fontsize{4.5}{5.5}\selectfont, darkcharcoal, above] at (2.1,3.2) {Cámara de Ionización};
+
+          % Placa Superior (+V)
+          \draw[fill=firered!80, draw=darkcharcoal, line width=1pt] (0.6,2.7) rectangle (3.6,2.95);
+          \node[font=\tiny\bfseries, text=white] at (2.1,2.82) {Electrodo Colector ($+V$)};
+
+          % Placa Inferior (Tierra / Circuito sensor)
+          \draw[fill=utnblue!80, draw=darkcharcoal, line width=1pt] (0.6,0.25) rectangle (3.6,0.5);
+          \node[font=\tiny\bfseries, text=white] at (2.1,0.37) {Electrodo Base (Sensor $I$)};
+
+          % Fuente Americio 241
+          \draw[fill=amberyellow, draw=darkcharcoal, line width=1pt] (1.8,0.5) rectangle (2.4,0.75);
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, text=darkcharcoal] at (2.1,0.62) {$^{241}\mathrm{Am}$};
+
+          % Partículas alfa y pares de iones
+          \draw[->, >=stealth, line width=1pt, amberyellow!90!black] (2.0,0.75) -- (1.2,1.8) node[midway, left, font=\fontsize{5}{6}\selectfont\bfseries] {$\alpha$};
+          \draw[->, >=stealth, line width=1pt, amberyellow!90!black] (2.2,0.75) -- (3.0,1.8) node[midway, right, font=\fontsize{5}{6}\selectfont\bfseries] {$\alpha$};
+
+          % Iones libres
+          \node[circle, fill=utncyan, text=white, inner sep=1pt, font=\tiny\bfseries] at (1.3,1.4) {$+$};
+          \node[circle, fill=fireorange, text=white, inner sep=1pt, font=\tiny\bfseries] at (1.6,2.2) {$-$};
+          \node[circle, fill=utncyan, text=white, inner sep=1pt, font=\tiny\bfseries] at (2.9,1.3) {$+$};
+          \node[circle, fill=fireorange, text=white, inner sep=1pt, font=\tiny\bfseries] at (2.7,2.3) {$-$};
+
+          % Humo entrando
+          \draw[->, >=stealth, line width=1.2pt, darkcharcoal!70] (0.0,1.6) -- (0.8,1.6) node[midway, above, font=\fontsize{4}{5}\selectfont\bfseries] {Humo};
+          \draw[->, >=stealth, line width=1.2pt, darkcharcoal!70] (4.2,1.6) -- (3.4,1.6) node[midway, above, font=\fontsize{4}{5}\selectfont\bfseries] {Humo};
+          \fill[gray!50, opacity=0.7] (2.1,1.7) circle (0.35);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, darkcharcoal] at (2.1,1.7) {Captura};
+
+          % Medidor de corriente
+          \draw[fill=white, draw=darkcharcoal, line width=0.8pt] (3.6,0.37) -| (4.0,-0.3) -- (3.5,-0.3);
+          \draw[fill=white, draw=darkcharcoal, line width=0.8pt] (2.1,0.25) |- (2.7,-0.3);
+          \node[draw, circle, fill=cardbg, line width=0.8pt, inner sep=2pt, font=\fontsize{4}{5}\selectfont\bfseries] at (3.1,-0.3) {$\mathrm{pA}$};
+          \node[font=\fontsize{4}{5}\selectfont, firered, below] at (3.1,-0.55) {$\Delta I \downarrow \rightarrow \text{Alarma}$};
         \end{tikzpicture}
       }
     \end{column}
@@ -116,13 +207,13 @@
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \small
-      Tecnología orientada a naves industriales y depósitos de gran altura:
+      Tecnología orientada a locales industriales y techos de gran altura:
       \begin{itemize}
         \scriptsize
-        \item Se compone de un emisor óptico infrarrojo colimado y un receptor fotosensible (o prisma catadióptrico retrorreflector).
-        \item Cubre distancias lineales de hasta $\mathbf{100\,\m}$ y anchos de cobertura lateral de $\mathbf{14\,\m}$.
-        \item \textbf{Mecanismo de Detección:} Oscurecimiento porcentual acumulado a lo largo de todo el haz lumínico.
-        \item Inmune al fenómeno de estratificación térmica que frena el humo antes de alcanzar detectores de techo.
+        \item Compuesto por un emisor de haz infrarrojo y un receptor fotosensible.
+        \item Cubre distancias longitudinales de hasta $\mathbf{100\,\m}$.
+        \item \textbf{Principio de funcionamiento:} Atenuación del haz de luz por las particulas de humo que la absorben.
+        \item \textbf{Ventaja operativa:} Inmune al retardo por estratificación térmica.
       \end{itemize}
     \end{column}
 
@@ -130,12 +221,36 @@
       \centering
       \resizebox{0.95\columnwidth}{!}{%
         \begin{tikzpicture}[scale=0.9]
-          \draw[line width=1.5pt, darkcharcoal] (0,0) rectangle (5,2.8);
-          \node[draw, fill=utnblue, font=\tiny\bfseries, white] at (0.5,2.3) {Emisor};
-          \node[draw, fill=utnblue, font=\tiny\bfseries, white] at (4.5,2.3) {Receptor};
-          \draw[line width=2pt, red!80, dashed] (0.8,2.3) -- (4.2,2.3) node[midway, above, font=\tiny\bfseries] {Haz IR Colimado};
-          \fill[gray!50, opacity=0.7] (2.0,1.2) ellipse (1.2 and 0.8);
-          \node[font=\tiny\bfseries] at (2.0,1.4) {Nube de Humo};
+          % Silueta nave industrial con techo a dos aguas
+          \draw[line width=1.2pt, darkcharcoal, fill=lightbg] (0,0) -- (0,2.5) -- (2.5,3.3) -- (5.0,2.5) -- (5.0,0) -- cycle;
+          % Suelo
+          \draw[line width=1.5pt, darkcharcoal!70] (-0.2,0) -- (5.2,0);
+          \node[font=\fontsize{4.5}{5.5}\selectfont, darkcharcoal] at (2.5,0.2) {Piso de Planta};
+
+          % Capa de estratificación de humo bajo techo
+          \fill[gray!40, opacity=0.85] (0.2,1.8) .. controls (1.5,2.4) and (3.5,2.4) .. (4.8,1.8) -- (4.8,2.4) -- (2.5,3.1) -- (0.2,2.4) -- cycle;
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, darkcharcoal] at (2.5,2.6) {Capa de Humo Estratificado};
+
+          % Columna térmica ascendente
+          \draw[->, >=stealth, line width=1pt, firered, dashed] (2.5,0.4) .. controls (2.3,1.0) .. (2.5,1.8);
+          \draw[->, >=stealth, line width=1pt, firered, dashed] (2.3,0.4) .. controls (2.1,1.0) .. (2.3,1.8);
+          \draw[->, >=stealth, line width=1pt, firered, dashed] (2.7,0.4) .. controls (2.9,1.0) .. (2.7,1.8);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, firered] at (2.5,0.6) {Foco Térmico};
+
+          % Emisor IR en pared izquierda
+          \draw[fill=utnblue, draw=darkcharcoal, line width=0.8pt, rounded corners=1pt] (0.15,1.9) rectangle (0.75,2.3);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, text=white] at (0.45,2.1) {Emisor};
+
+          % Receptor / Prisma en pared derecha
+          \draw[fill=utnblue, draw=darkcharcoal, line width=0.8pt, rounded corners=1pt] (4.25,1.9) rectangle (4.85,2.3);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, text=white] at (4.55,2.1) {Receptor};
+
+          % Haz infrarrojo colimado
+          \draw[line width=1.8pt, firered, dashed] (0.75,2.1) -- (4.25,2.1);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, firered, above] at (2.5,2.1) {Haz IR};
+
+          % Cota de distancia
+          \draw[<->, >=stealth, line width=0.8pt, darkcharcoal] (0.75,1.4) -- (4.25,1.4) node[midway, fill=lightbg, font=\fontsize{4.5}{5.5}\selectfont\bfseries] {Alcance hasta $100\,\m$};
         \end{tikzpicture}
       }
     \end{column}
@@ -147,27 +262,53 @@
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \small
-      El estándar de detección ultraprecoz en infraestructuras críticas:
+      El estándar de detección de alta fidelidad en infraestructuras críticas:
       \begin{itemize}
         \scriptsize
-        \item Red de tuberías de muestreo con orificios calibrados distribuidos en racks y pasillos.
-        \item Aspirador de alta eficiencia que succiona continuamente el aire ambiental hacia el detector.
-        \item Filtro de doble etapa para eliminar polvo grueso y fibras.
-        \item \textbf{Cámara de análisis láser:} Detección por dispersión de partículas submicrónicas con sensibilidad de hasta $\mathbf{0.005\%\,\mathrm{obs/m}}$ (1000 veces superior a detectores ópticos convencionales).
-        \item Brinda una ventana temporal de respuesta de hasta 30 a 60 minutos antes del inicio de llamas visibles.
+        \item Red de tuberías con orificios a lo largo de todo el local.
+        \item Aspirador de alta eficiencia que succiona aire continuo hacia el módulo de detección central.
+        \item Filtro de doble etapa: separa partículas gruesas y polvo ambiental.
+        \item \textbf{Cámara láser de alta precisión:} Detección por dispersión de partículas con sensibilidad de hasta $\mathbf{0.005\%\,\mathrm{obs/m}}$.
+        \item Alerta hasta 60 minutos antes del conato con llama.
       \end{itemize}
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \centering
-      \resizebox{0.75\columnwidth}{!}{%
+      \resizebox{0.92\columnwidth}{!}{%
         \begin{tikzpicture}[scale=0.85]
-          \draw[line width=1.5pt, fill=lightbg] (0,0) rectangle (3.8,4.0);
-          \node[font=\scriptsize\bfseries, utnblue] at (1.9,3.6) {Módulo VESDA};
-          \draw[line width=1.2pt, fill=cardbg] (0.4,2.2) rectangle (3.4,3.1) node[midway, font=\tiny\bfseries] {Cámara Láser};
-          \draw[line width=1.2pt, fill=cardbg] (0.4,1.1) rectangle (3.4,1.8) node[midway, font=\tiny\bfseries] {Filtro de Partículas};
-          \draw[line width=1.2pt, fill=cardbg] (0.4,0.3) rectangle (3.4,0.8) node[midway, font=\tiny\bfseries] {Aspirador Continuo};
-          \draw[<-<, line width=1.5pt, firered] (1.9,0.3) -- (1.9,-0.3) node[below, font=\tiny\bfseries] {Red de Tuberías};
+          % Módulo detector VESDA
+          \draw[line width=1.5pt, fill=cardbg, draw=utnblue, rounded corners=4pt] (0,0) rectangle (4.2,4.0);
+          \node[fill=utnblue, text=white, rounded corners=2pt, font=\fontsize{5.5}{6.5}\selectfont\bfseries, minimum width=3.8cm, minimum height=0.45cm] at (2.1,3.7) {MÓDULO CENTRAL VESDA};
+
+          % Cámara láser
+          \draw[fill=firered!15, draw=firered, line width=1pt, rounded corners=2pt] (0.4,2.4) rectangle (3.8,3.2);
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, firered] at (2.1,2.95) {Cámara de Análisis Láser};
+          \node[font=\fontsize{4}{5}\selectfont, darkcharcoal] at (2.1,2.6) {Sensibilidad $0.005\%\,\mathrm{obs/m}$};
+
+          % Filtro de partículas
+          \draw[fill=amberyellow!20, draw=amberyellow!80!black, line width=1pt, rounded corners=2pt] (0.4,1.4) rectangle (3.8,2.1);
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, amberyellow!80!black] at (2.1,1.85) {Filtro de Doble Etapa};
+          \node[font=\fontsize{4}{5}\selectfont, darkcharcoal] at (2.1,1.55) {Eliminación de polvo y pelusa};
+
+          % Aspirador de turbina
+          \draw[fill=utncyan!20, draw=utncyan, line width=1pt, rounded corners=2pt] (0.4,0.4) rectangle (3.8,1.1);
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, utncyan] at (2.1,0.85) {Aspirador de Turbina Continua};
+          \node[font=\fontsize{4}{5}\selectfont, darkcharcoal] at (2.1,0.58) {Presión negativa de muestreo};
+
+          % Flujo interno
+          \draw[->, >=stealth, line width=1.5pt, utnblue] (2.1,1.1) -- (2.1,1.4);
+          \draw[->, >=stealth, line width=1.5pt, utnblue] (2.1,2.1) -- (2.1,2.4);
+
+          % Tubería externa de entrada
+          \draw[line width=2.5pt, firered] (0.9,-0.6) -- (0.9,0.4);
+          \draw[->, >=stealth, line width=1.5pt, firered] (0.9,-0.6) -- (0.9,0.1);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, firered, left] at (0.8,-0.3) {Red de Tuberías};
+
+          % Escape de aire
+          \draw[line width=2pt, darkcharcoal!50] (3.3,3.2) -- (3.3,4.4);
+          \draw[->, >=stealth, line width=1.2pt, darkcharcoal!60] (3.3,3.2) -- (3.3,4.3);
+          \node[font=\fontsize{4.5}{5.5}\selectfont, darkcharcoal, right] at (3.4,4.2) {Escape};
         \end{tikzpicture}
       }
     \end{column}
@@ -178,49 +319,59 @@
 \begin{frame}{Detección Térmica, Cable Sensor Lineal y Detectores de Llama}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Detectores Térmicos y Cable Lineal}}
+      \begin{block}{\textbf{Cable Sensor Lineal Térmico}}
         \scriptsize
-        $\bullet$ \textbf{Termostáticos y Termovelocimétricos:} Disparo por umbral fijo ($57\,\Celsius$) o tasa de elevación rápida ($>8\,\Celsius/\mathrm{min}$).\\
-        $\bullet$ \textbf{Cable Sensor Lineal Térmico:} Dos conductores bajo tensión mecánica separados por polímero termosensible; el aislante se funde ante sobrecalentamiento produciendo cortocircuito supervisado.\\
-        $\bullet$ \textbf{Aplicación:} Bandejas portacables, túneles y subestaciones.
+        $\bullet$ Dos conductores elásticos bajo torsión mecánica, aislados por polímero termosensible.\\
+        $\bullet$ Al superar la temperatura crítica ($68\text{--}105\,\Celsius$), el polímero funde $\rightarrow$ \textbf{cortocircuito calibrado}.\\
+        $\bullet$ La central mide la resistencia del lazo y calcula la \textbf{distancia en metros} del siniestro.\\
+        $\bullet$ \textbf{Uso:} Bandejas de cables y túneles.
       \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.9]
+          % Cable normal
+          \draw[fill=lightbg, draw=darkcharcoal, line width=0.8pt] (0,0.6) rectangle (4.2,1.2);
+          \draw[line width=1.8pt, utnblue] (0,0.95) -- (4.2,0.95) node[right, font=\tiny] {C1};
+          \draw[line width=1.8pt, firered] (0,0.75) -- (4.2,0.75) node[right, font=\tiny] {C2};
+          \node[fill=amberyellow!30, font=\fontsize{4}{5}\selectfont, inner sep=1pt] at (1.0,1.2) {Aislante Polímero};
+
+          % Punto de calor y contacto
+          \draw[fill=firered!30, draw=firered, line width=1pt, rounded corners=2pt] (2.3,0.5) rectangle (3.3,1.3);
+          \draw[line width=2pt, darkcharcoal] (2.8,0.95) -- (2.8,0.75);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, firered, above] at (2.8,1.3) {Calor: Fusión y Contacto};
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, utnblue, below] at (2.1,0.5) {$\Delta R \rightarrow$ Ubicación métrica exacta};
+        \end{tikzpicture}
+      }
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Detectores Ópticos de Llama}}
+      \begin{block}{\textbf{Detectores Ópticos de Llama (UV / IR)}}
         \scriptsize
-        $\bullet$ Sensores optoelectrónicos sintonizados al espectro infrarrojo ($\mathrm{IR}$ a $4.3\,\mu\mathrm{m}$, emisión de $CO_2$) y ultravioleta ($\mathrm{UV}$ a $0.2\,\mu\mathrm{m}$).\\
-        $\bullet$ Algoritmos de parpadeo (\textit{flicker}) para descartar radiación solar.\\
-        $\bullet$ Tiempo de respuesta inferior a \textbf{segundos}.\\
-        $\bullet$ \textbf{Aplicación:} Depósitos de solventes y turbinas.
+        $\bullet$ Sensores optoelectrónicos sintonizados al espectro infrarrojo y ultravioleta.\\
+        $\bullet$ Algoritmos de parpadeo que discriminan la radiación solar y soldaduras.\\
+        $\bullet$ Tiempo de respuesta \textbf{inferior a 1 segundo}.\\
+        $\bullet$ \textbf{Uso:} Parques de tanques, turbinas y pintura.
       \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.9]
+          % Detector en la pared
+          \draw[fill=utnblue, draw=darkcharcoal, line width=1pt, rounded corners=2pt] (0,0.6) rectangle (0.8,1.4);
+          \node[text=white, font=\fontsize{4.5}{5.5}\selectfont\bfseries, align=center] at (0.4,1.0) {Sensor\\UV/IR};
+
+          % Cono de visión de detección
+          \draw[fill=amberyellow!20, draw=fireorange, line width=0.8pt, opacity=0.7] (0.8,1.0) -- (3.8,1.8) -- (3.8,0.2) -- cycle;
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, fireorange] at (2.3,1.0) {Cono $90^\circ\text{--}120^\circ$};
+
+          % Llama en el extremo
+          \draw[fill=firered, draw=fireorange, line width=0.8pt] (3.9,0.7) .. controls (4.2,0.9) and (3.7,1.2) .. (4.0,1.4) .. controls (4.1,1.1) and (4.4,0.9) .. (3.9,0.7);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, firered, right, align=left] at (4.1,1.0) {Llama\\$< 1\,\mathrm{s}$};
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
-\end{frame}
-
-% --- SLIDE 35: MATRIZ DE DETECTORES ---
-\begin{frame}{Matriz de Selección Tecnológica de Detección}
-  \small
-  Criterio de ingeniería para la selección idónea del sistema según el riesgo ambiental:
-
-  \vspace{0.2cm}
-  \begin{table}[h]
-    \centering
-    \scriptsize
-    \begin{tabular}{p{2.8cm} p{2.4cm} p{3.2cm} p{3.2cm}}
-      \toprule
-      \textbf{Recinto / Sector} & \textbf{Tecnología Primaria} & \textbf{Ventaja Operativa} & \textbf{Foco de Riesgo Mitigado} \\
-      \midrule
-      \textbf{Centros de Cómputo / Data Centers} & Aspiración ASD (VESDA) láser & Detección en fase latente sin humo visible & Degradación pirolítica de plaquetas y servidores. \\
-      \addlinespace
-      \textbf{Naves de Producción y Depósitos} & Barreras de haz óptico proyectado & Cobertura lineal de grandes áreas abiertas & Estratificación térmica de humos en techos altos. \\
-      \addlinespace
-      \textbf{Bandejas de Cables Subterráneas} & Cable sensor lineal térmico & Detección continua a lo largo del tendido & Fallas por efecto Joule y cortocircuitos en PVC. \\
-      \addlinespace
-      \textbf{Almacén de Solventes y Combustibles} & Detectores de llama ópticos UV/IR & Respuesta casi instantánea ante conatos & Inflamación violenta de vapores hidrocarburados. \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
 \end{frame}
 
 % --- SLIDE 36: ANATOMÍA DEL EXTINTOR ---
@@ -231,7 +382,7 @@
       Componentes mecánicos (presión permanente):
       \begin{enumerate}
         \scriptsize
-        \item \textbf{Cilindro metálico:} Chapa de acero ensayada a presión.
+        \item \textbf{Cilindro metálico:} Chapa de acero para alta presión
         \item \textbf{Gas impulsor:} Nitrógeno seco ($N_2$) presurizado.
         \item \textbf{Tubo sifón:} Conduce el agente del fondo a la tobera.
         \item \textbf{Válvula de gatillo:} Apertura manual instantánea.
@@ -242,7 +393,7 @@
 
     \begin{column}{0.44\textwidth}
       \centering
-      \resizebox{0.55\columnwidth}{!}{%
+      \resizebox{0.65\columnwidth}{!}{%
         \begin{tikzpicture}
           % Cilindro
           \draw[fill=firered!85, draw=darkcharcoal, line width=1.5pt, rounded corners=5pt] (0,0) rectangle (2.4,3.5);
@@ -270,22 +421,49 @@
 \begin{frame}{Extintores de Polvo Químico Seco (PQS ABC y BC)}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{PQS Triclase ABC (Fosfato Monoamónico)}}
+      \begin{block}{\textbf{PQS Clase ABC (Fosfato Monoamónico)}}
         \scriptsize
-        $\bullet$ Base de $\mathrm{NH_4H_2PO_4}$ finamente micronizado con agentes hidrofugantes siliconados.\\
-        $\bullet$ \textbf{En fuegos Clase A:} Descompone a $>180\,\Celsius$ formando una capa vidriada de ácido metafosfórico que obtura los poros y aísla el oxígeno.\\
-        $\bullet$ \textbf{En fuegos Clase B:} Captura radicales libres e interrumpe la reacción en cadena.\\
-        $\bullet$ \textbf{Efecto adverso severo:} Altamente corrosivo e higroscópico; arruina circuitos electrónicos delicados.
+        $\bullet$ Base de $\mathrm{NH_4H_2PO_4}$ finamente micronizado.\\
+        $\bullet$ \textbf{Fuegos Clase A:} Descompone a $>180\,\Celsius$ formando capa vidriada que sella poros y aísla el oxígeno.\\
+        $\bullet$ \textbf{Fuegos Clase B:} Interrumpe reacción en cadena.\\
+        $\bullet$ \textbf{Riesgo:} Altamente corrosivo en circuitería.
       \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.90\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.85]
+          % Brasa sólida de madera
+          \draw[fill=firered!70, draw=darkcharcoal, line width=1pt] (0,0) rectangle (2.8,0.7);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, white] at (1.4,0.35) {Brasa Clase A};
+          % Capa vidriada
+          \draw[fill=utncyan!40, draw=utncyan!90!black, line width=1.2pt] (0,0.7) rectangle (2.8,1.0);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, utncyan!90!black] at (1.4,0.85) {Capa Vidriada $\mathrm{HPO_3}$};
+          % Advertencia corrosión
+          \node[draw=firered, fill=firered!10, rounded corners=2pt, font=\fontsize{4}{5}\selectfont\bfseries, text=firered, align=center] at (1.4,-0.4) {$\triangle$ Residuo ácido daña plaquetas};
+        \end{tikzpicture}
+      }
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{PQS Clase BC (Bicarbonato de Sodio/Potasio)}}
+      \begin{block}{\textbf{PQS Clase BC (Bicarbonato)}}
         \scriptsize
-        $\bullet$ Formulado a base de $\mathrm{NaHCO_3}$ o bicarbonato de potasio $\mathrm{KHCO_3}$.\\
-        $\bullet$ No forma costra vidriada adherente; limpieza más sencilla en motores y maquinaria mecánica.\\
-        $\bullet$ Excelente eficacia en derrames de líquidos hidrocarburos y gases a presión.
+        $\bullet$ Formulado con $\mathrm{NaHCO_3}$ o bicarbonato de potasio $\mathrm{KHCO_3}$.\\
+        $\bullet$ \textbf{Mecanismo:} Captura química masiva de radicales libres en llama gaseosa sin fundirse.\\
+        $\bullet$ \textbf{Ventaja:} Limpieza más fácil.
       \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.90\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.85]
+          % Líquido inflamable Clase B
+          \draw[fill=fireorange!30, draw=darkcharcoal, line width=1pt] (0,0) rectangle (2.8,0.6);
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, darkcharcoal] at (1.4,0.3) {Líquido Inflamable Clase B};
+          % Llama y nube de polvo
+          \draw[fill=fireorange!80, opacity=0.7] (0.4,0.6) .. controls (0.8,1.3) .. (1.4,0.9) .. controls (2.0,1.4) .. (2.4,0.6) -- cycle;
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, white] at (1.4,0.8) {Llama};
+          \node[draw=successgreen!80!black, fill=successgreen!10, rounded corners=2pt, font=\fontsize{4}{5}\selectfont\bfseries, text=successgreen!80!black, align=center] at (1.4,-0.4) {Inhibición de radicales libres sin costra};
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
 \end{frame}
@@ -294,36 +472,48 @@
 \begin{frame}{Dióxido de Carbono ($CO_2$) y Agentes Limpios en Electrónica}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
-      \small
-      Los agentes limpios preservan los circuitos sin dejar residuos:
+      Protección de circuitos energizados y centros de cómputo:
       \begin{itemize}
-        \scriptsize
+        \small
         \item \textbf{Dióxido de Carbono ($CO_2$):}
         \begin{itemize}
-          \tiny
-          \item Almacenado a $50\text{--}60\,\mathrm{bar}$ en cilindros sin costura; se descarga en nieve carbónica a $\mathbf{-78.5\,\Celsius}$.
-          \item Gas inerte, no conductor de electricidad y de evaporación limpia sin humedad.
-          \item Tobera difusora cónica no metálica para evitar descargas estáticas.
+          \scriptsize
+          \item Cilindros de acero sin costura a $50\text{--}60\,\mathrm{bar}$.
+          \item Descarga en nieve carbónica a $\mathbf{-78.5\,\Celsius}$.
+          \item Gas dieléctrico que se evapora al $100\%$ sin humedad ni residuos.
         \end{itemize}
-        \item \textbf{Fluidos Fluorados (FK-5-1-12 / Novec 1230):}
+        \item \textbf{Fluidos Fluorados:}
         \begin{itemize}
-          \tiny
-          \item Líquido vaporizante con cero potencial de agotamiento de ozono.
-          \item Absorbe calor e interrumpe la combustión sin provocar choque térmico extremo en microprocesadores.
+          \scriptsize
+          \item Líquido vaporizante con cero potencial de daño a la capa de ozono.
+          \item Enfriamiento molecular sin choque térmico extremo sobre silicio.
         \end{itemize}
       \end{itemize}
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \node[draw=utnblue, fill=cardbg, rounded corners=6pt, line width=1.5pt, inner sep=8pt, text width=4.5cm, align=center] {
-            \textbf{\textcolor{utnblue}{AGENTES LIMPIOS}}\\[4pt]
-            \scriptsize Cero residuos químicos $\cdot$ Dieléctricos\\
-            \scriptsize Sin daño en salas de servidores\\
-            \scriptsize Compatibles con ocupantes
-          };
+      \resizebox{0.92\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.9]
+          % Tobera difusora cónica no conductora
+          \draw[fill=darkcharcoal, draw=darkcharcoal, line width=1pt] (0.2,2.0) -- (1.6,2.4) -- (1.6,1.4) -- (0.2,1.8) -- cycle;
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, text=white] at (0.9,1.9) {Tobera Cónica};
+          \draw[line width=3pt, darkcharcoal!70] (-0.3,1.9) -- (0.2,1.9);
+
+          % Nube de CO2 / Gas limpio
+          \draw[fill=utncyan!25, draw=utncyan, line width=0.8pt, opacity=0.85] (1.6,2.4) .. controls (2.4,2.8) and (3.4,2.7) .. (4.0,2.5) -- (4.0,1.2) .. controls (3.4,1.0) and (2.4,1.1) .. (1.6,1.4) -- cycle;
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, utncyan!90!black, align=center] at (2.8,1.9) {Nieve Carbónica\\$-78.5\,\Celsius$ / Gas};
+
+          % Rack o componente electrónico
+          \draw[fill=lightbg, draw=darkcharcoal, line width=1pt] (4.0,0.8) rectangle (4.6,2.8);
+          \draw[line width=0.8pt, utnblue] (4.1,2.5) -- (4.5,2.5);
+          \draw[line width=0.8pt, utnblue] (4.1,2.1) -- (4.5,2.1);
+          \draw[line width=0.8pt, utnblue] (4.1,1.7) -- (4.5,1.7);
+          \draw[line width=0.8pt, utnblue] (4.1,1.3) -- (4.5,1.3);
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, darkcharcoal, rotate=90] at (4.8,1.8) {Servidor};
+
+          % Cuadro de propiedades
+          \node[draw=successgreen!80!black, fill=successgreen!10, rounded corners=3pt, font=\fontsize{4.5}{5.5}\selectfont\bfseries, text=darkcharcoal, align=center] at (2.4,0.3) {Dieléctrico $\cdot$ Cero residuos $\cdot$ Sin daño electrónico};
         \end{tikzpicture}
       }
     \end{column}
@@ -336,44 +526,106 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Rating Clase A ($1\mathrm{A}$ a $40\mathrm{A}$)}}
         \scriptsize
-        $\bullet$ Ensayado sobre una pira normalizada de listones de madera de pino secados en estufa y dispuestos en capas cruzadas.\\
-        $\bullet$ \textbf{Definición de 1A:} Capacidad de extinguir una pira de madera equivalente a $1.25\,\mathrm{gal}$ ($5\,\mathrm{L}$) de agua aplicada por un operador calificado.\\
-        $\bullet$ Un matafuego con rating $4\mathrm{A}$ apaga cuatro veces más madera que uno de $1\mathrm{A}$.
+        $\bullet$ Ensayo sobre pira cúbica normalizada de listones de madera de pino secados en horno y dispuestos en capas cruzadas.\\
+        $\bullet$ \textbf{Equivalencia 1A:} Extingue pira patrón de 50 listones equivalente a $5L$ de agua.\\
+        $\bullet$ Un extintor $4\mathrm{A}$ apaga cuatro veces más masa de madera que uno de $1\mathrm{A}$.
       \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.85\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.8]
+          % Pira de listones cruzados
+          \foreach \y in {0, 0.25, 0.5, 0.75, 1.0} {
+            \draw[fill=amberyellow!50, draw=darkcharcoal, line width=0.6pt] (0.2,\y) rectangle (2.6,\y+0.15);
+          }
+          \foreach \x in {0.4, 0.9, 1.4, 1.9, 2.4} {
+            \draw[fill=amberyellow!80!black, draw=darkcharcoal, line width=0.6pt] (\x-0.1,0.05) rectangle (\x+0.1,1.1);
+          }
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, firered, above] at (1.4,1.15) {Pira Normalizada Clase A};
+          \node[draw=utnblue, fill=utnblue!10, rounded corners=2pt, font=\fontsize{4.5}{5.5}\selectfont\bfseries, text=utnblue] at (1.4,-0.4) {Rating: Capacidad de masa apagada};
+        \end{tikzpicture}
+      }
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Rating Clase B ($1\mathrm{B}$ a $120\mathrm{B}$)}}
         \scriptsize
-        $\bullet$ Ensayado sobre bateas de acero cuadradas con nafta heptano y combustión libre.\\
-        $\bullet$ \textbf{Definición:} El número indica el área en pies cuadrados ($1\,\mathrm{ft^2} \approx 0.09\,\m^2$) de líquido inflamable que un operador no experto es capaz de sofocar con seguridad.
+        $\bullet$ Ensayo sobre bateas cuadradas de acero con nafta en combustión libre.\\
+        $\bullet$ \textbf{Definición del número:} Superficie de líquido inflamable que un operador es capaz de sofocar.\\
       \end{block}
+      \vspace{0.1cm}
+      \centering
+      \resizebox{0.85\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.8]
+          % Batea de acero
+          \draw[fill=darkcharcoal!40, draw=darkcharcoal, line width=1pt] (0.2,0) -- (0.4,-0.3) -- (2.6,-0.3) -- (2.8,0) -- cycle;
+          \draw[fill=fireorange!40, draw=fireorange, line width=0.8pt] (0.2,0) rectangle (2.8,0.25);
+          % Llamas en batea
+          \draw[fill=firered!80, opacity=0.8] (0.5,0.25) .. controls (0.9,1.1) .. (1.5,0.7) .. controls (2.1,1.2) .. (2.5,0.25) -- cycle;
+          \node[font=\fontsize{5}{6}\selectfont\bfseries, firered, above] at (1.5,0.95) {Batea Líquida ($n$-heptano)};
+          \node[draw=fireorange, fill=fireorange!10, rounded corners=2pt, font=\fontsize{4.5}{5.5}\selectfont\bfseries, text=fireorange!90!black] at (1.5,-0.65) {$10\mathrm{B} = 0.9\,\m^2$ sofocado por no experto};
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
 \end{frame}
 
 % --- SLIDE 40: RED DE HIDRANTES ---
-\begin{frame}{Sistemas Fijos: Red Interior de Hidrantes (R.I.A.)}
+\begin{frame}{Sistemas Fijos: Red Interior de Hidrantes}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
-      \small
-      Instalación fija de suministro hídrico para combate de siniestros mayores:
+      Instalación fija de suministro hídrico presurizado:
       \begin{itemize}
-        \scriptsize
-        \item \textbf{Reserva Exclusiva de Incendio (REI):} Volumen de agua independiente calculado para abastecer la red durante un tiempo mínimo de 60 a 120 minutos.
-        \item \textbf{Grupo de Presurización:} Bomba principal eléctrica, bomba de respaldo diésel y bomba jockey presurizadora para compensar fugas menores.
-        \item \textbf{Nichos de Incendio:} Mangueras sintéticas de $45\mm$ o $63.5\mm$, devanaderas semirrígidas de $25\mm$ y lanzas con efecto de chorro pleno y niebla protectora.
+        \small
+        \item \textbf{Reserva Exclusiva de Incendio:} Cisterna calculada para 60 a 120 minutos de agua.
+        \item \textbf{Sala de Bombas Presurizadora:}
+        \begin{itemize}
+          \scriptsize
+          \item Bomba principal eléctrica + Bomba de respaldo diésel.
+          \item Bomba Jockey auxiliar para mantener la presión estática de red.
+        \end{itemize}
+        \item \textbf{Columna montante y gabinetes:}
+        \begin{itemize}
+          \scriptsize
+          \item Mangueras de fibra sintética o devanaderas.
+          \item Lanzas de chorro pleno y cono de niebla.
+        \end{itemize}
+        \item \textbf{Boca de impulsión exterior:} Para acople de autobomba de bomberos.
       \end{itemize}
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \centering
-      \resizebox{0.9\columnwidth}{!}{%
+      \resizebox{0.95\columnwidth}{!}{%
         \begin{tikzpicture}[scale=0.85]
-          \draw[line width=1.5pt, fill=utncyan!20] (0,0) rectangle (2.0,1.5) node[midway, font=\tiny\bfseries] {Reserva REI};
-          \draw[line width=1.5pt, utnblue, ->] (2.0,0.75) -- (2.8,0.75);
-          \draw[line width=1.2pt, fill=firered!30] (2.8,0.3) rectangle (3.6,1.2) node[midway, font=\tiny\bfseries] {Bombas};
-          \draw[line width=1.5pt, utnblue, ->] (3.2,1.2) -- (3.2,2.8) -- (4.2,2.8) node[right, font=\tiny\bfseries] {Bocas R.I.A.};
+          % Cisterna REI
+          \draw[fill=utncyan!25, draw=utnblue, line width=1.2pt, rounded corners=2pt] (0,0) rectangle (1.7,1.6);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, utnblue, align=center] at (0.85,0.8) {Cisterna REI\\(Agua Exclusiva)};
+          \draw[line width=1.5pt, utnblue] (1.7,0.5) -- (2.2,0.5);
+
+          % Sala de Bombas
+          \draw[fill=cardbg, draw=darkcharcoal, line width=1pt, rounded corners=2pt] (2.2,0.1) rectangle (4.2,2.1);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, darkcharcoal] at (3.2,1.85) {Sala de Bombas};
+          
+          % Bomba eléctrica
+          \draw[fill=firered!20, draw=firered, line width=0.8pt, rounded corners=1pt] (2.35,1.05) rectangle (4.05,1.55);
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, firered] at (3.2,1.3) {Bomba Principal};
+          
+          % Bomba jockey
+          \draw[fill=amberyellow!20, draw=amberyellow!80!black, line width=0.8pt, rounded corners=1pt] (2.35,0.35) rectangle (4.05,0.85);
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, amberyellow!80!black] at (3.2,0.6) {Bomba Jockey};
+
+          % Colector y Columna montante
+          \draw[line width=2pt, utnblue, ->, >=stealth] (4.05,1.3) -- (4.6,1.3) -- (4.6,3.3) node[above, font=\fontsize{4.5}{5.5}\selectfont\bfseries, utnblue] {Montante};
+
+          % Gabinete R.I.A. en planta
+          \draw[fill=firered!15, draw=firered, line width=1pt, rounded corners=2pt] (4.6,2.4) -- (5.0,2.4) -- (5.0,1.8) -- (6.0,1.8) -- (6.0,2.8) -- (5.0,2.8) -- (5.0,2.4);
+          \draw[fill=firered, draw=darkcharcoal, line width=0.8pt] (5.2,2.0) rectangle (5.8,2.6);
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, text=white] at (5.5,2.3) {R.I.A.};
+          \node[font=\fontsize{4}{5}\selectfont, darkcharcoal, right] at (5.0,1.6) {Manguera $45\mm$};
+
+          % Boca de impulsión
+          \draw[line width=1.5pt, firered, <-, >=stealth] (4.6,0.7) -- (5.5,0.7) node[right, font=\fontsize{4}{5}\selectfont\bfseries, firered] {Siamesa Bomberos};
         \end{tikzpicture}
       }
     \end{column}
@@ -381,24 +633,59 @@
 \end{frame}
 
 % --- SLIDE 41: SPRINKLERS E INUNDACIÓN GASEOSA ---
-\begin{frame}{Rociadores Automáticos (\textit{Sprinklers}) e Inundación Gaseosa}
+\begin{frame}{Rociadores Automáticos e Inundación Gaseosa}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Rociadores Automáticos (NFPA 13)}}
+      \begin{block}{\textbf{Rociadores Automáticos}}
         \scriptsize
-        $\bullet$ Red de cañerías presurizadas permanentemente bajo techo.\\
-        $\bullet$ \textbf{Ampolla termosensible de cuarzo:} Contiene un líquido con burbuja de vapor que expande por calor y estalla al alcanzar la temperatura nominal ($68\,\Celsius$ rojo, $79\,\Celsius$ amarillo, $93\,\Celsius$ verde).\\
-        $\bullet$ \textbf{Acción puntual:} Se abre únicamente el rociador ubicado sobre el foco, evitando anegamientos innecesarios.
+        $\bullet$ Cañerías presurizadas permanentemente bajo techo.\\
+        $\bullet$ \textbf{Ampolla de cuarzo:} Expansión por calor del líquido interno que estalla a temperatura de disparo.\\
+        $\bullet$ \textbf{Puntual:} Abre solo el cabezal sobre el foco.
       \end{block}
+      \centering
+      \resizebox{0.65\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.75]
+          % Rosca superior
+          \draw[fill=darkcharcoal!40, draw=darkcharcoal, line width=0.8pt] (0.7,2.2) rectangle (1.7,2.6);
+          \node[font=\fontsize{4}{5}\selectfont\bfseries] at (1.2,2.4) {Rosca};
+          % Brazos del rociador
+          \draw[line width=1.5pt, darkcharcoal] (0.8,2.2) -- (0.6,1.0) -- (1.2,0.6) -- (1.8,1.0) -- (1.6,2.2);
+          % Ampolla termosensible de cuarzo (rojo 68°C)
+          \draw[fill=firered, draw=darkcharcoal, line width=0.8pt, rounded corners=2pt] (1.05,0.7) rectangle (1.35,1.9);
+          \fill[white] (1.15,1.3) circle (0.06); % burbuja
+          % Deflector inferior dentado
+          \draw[fill=amberyellow!80!black, line width=1pt] (0.3,0.5) -- (2.1,0.5) -- (2.0,0.35) -- (0.4,0.35) -- cycle;
+          \node[font=\fontsize{4}{5}\selectfont\bfseries, darkcharcoal, below] at (1.2,0.35) {Deflector Distribuidor};
+        \end{tikzpicture}
+      }
     \end{column}
 
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Inundación Total por Gas Limpio}}
         \scriptsize
-        $\bullet$ Batería de cilindros de alta presión vinculada a toberas de descarga volumétrica en recinto cerrado.\\
-        $\bullet$ Activación cruzada de dos zonas de detectores para evitar disparos accidentales.\\
-        $\bullet$ Descarga integral en menos de $\mathbf{10\,\mathrm{s}}$, extinguiendo el fuego por inhibición química o desplazamiento controlado sin daño en servidores ni peligro letal para operarios.
+        $\bullet$ Cilindros presurizados vinculados a toberas en recinto cerrado.\\
+        $\bullet$ Activación cruzada por 2 zonas para evitar falsos disparos.\\
+        $\bullet$ Descarga integral en $<10\,\mathrm{s}$ sin daño informático.
       \end{block}
+      \centering
+      \resizebox{0.65\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.75]
+          % Cilindros de gas
+          \foreach \x in {0.4, 1.0, 1.6} {
+            \draw[fill=utnblue!80, draw=darkcharcoal, line width=0.8pt, rounded corners=2pt] (\x,0.2) rectangle (\x+0.45,1.8);
+            \draw[fill=darkcharcoal] (\x+0.12,1.8) rectangle (\x+0.33,2.0);
+          }
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, utnblue] at (1.2,0.0) {Batería de Gas};
+          % Colector de descarga
+          \draw[line width=2pt, darkcharcoal] (0.6,2.0) -- (2.4,2.0) -- (2.4,2.6) -- (3.6,2.6);
+          % Tobera en techo
+          \draw[fill=darkcharcoal] (3.4,2.4) -- (3.8,2.4) -- (3.9,2.2) -- (3.3,2.2) -- cycle;
+          \draw[->, >=stealth, line width=1pt, utncyan, dashed] (3.6,2.2) -- (3.1,1.2);
+          \draw[->, >=stealth, line width=1pt, utncyan, dashed] (3.6,2.2) -- (3.6,1.0);
+          \draw[->, >=stealth, line width=1pt, utncyan, dashed] (3.6,2.2) -- (4.1,1.2);
+          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, utncyan!90!black, below] at (3.6,0.9) {Inundación $<10\,\mathrm{s}$};
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
 \end{frame}
