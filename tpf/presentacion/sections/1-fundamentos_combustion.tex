@@ -3,13 +3,13 @@
 % =============================================================================
 
 % --- SLIDE 3: FUEGO VS INCENDIO ---
-\begin{frame}{Fuego frente a Incendio: Distinción Conceptual}
+\begin{frame}{Fuego frente a Incendio}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Fuego (Proceso Dominado)}}
+      \begin{block}{\textbf{Fuego}}
         \small
         $\bullet$ Reacción fisicoquímica de óxido-reducción fuertemente exotérmica.\\
-        $\bullet$ Emisión controlada de luz, calor y humos.\\
+        $\bullet$ Emisión de luz, calor y humos.\\
         $\bullet$ \textbf{Condición operativa:} Parámetros espaciales, temporales y de combustible están gobernados por el ser humano.
       \end{block}
       \vspace{0.2cm}
@@ -18,7 +18,7 @@
         \begin{tikzpicture}
           \node[draw=successgreen!80!black, fill=successgreen!10, rounded corners=4pt, line width=1.2pt, inner sep=6pt, text width=5cm, align=center] {
             \textbf{Energía Aprovechable}\\[2pt]
-            \scriptsize Hornos $\cdot$ Calderas $\cdot$ Soldadura $\cdot$ Motores
+            \scriptsize Hornos $\cdot$ Calderas
           };
         \end{tikzpicture}
       }
@@ -206,7 +206,7 @@
 \end{frame}
 
 % --- SLIDE 7: ESCALA DE VELOCIDADES DE COMBUSTIÓN ---
-\begin{frame}{Regímenes de Combustión: Escala Física de Velocidad}
+\begin{frame}{Regímenes de Combustión}
   \small
   La combustión se clasifica rigurosamente según la velocidad lineal de avance del frente reactivo:
 
@@ -223,8 +223,7 @@
       \draw[line width=1.5pt, fireorange] (6.0, 0.3) -- (6.0, -0.3) node[below=4pt, font=\scriptsize\bfseries, fireorange, align=center] {Deflagración\\($1\text{--}333\,\mathrm{m/s}$)};
       \draw[line width=2.0pt, firered] (8.5, 0.4) -- (8.5, -0.4) node[below=4pt, font=\scriptsize\bfseries, firered, align=center] {Detonación\\($> 333\,\mathrm{m/s}$)};
 
-      % Barrera del sonido
-      \draw[dashed, line width=1pt, firered] (7.2, 1.8) -- (7.2, -0.8) node[below, font=\tiny\bfseries, firered] {Barrera del Sonido ($333\,\mathrm{m/s}$)};
+      \draw[dashed, line width=1pt, firered] (7.2, 1.8) -- (7.2, -0.8) node[below, font=\fontsize{4}{5}\selectfont, firered] {Barrera del Sonido};
 
       % Regiones superiores
       \node[fill=successgreen!15, rounded corners=3pt, inner sep=4pt, font=\tiny, align=center] at (2.2, 1.2) {Sin llamas vivas\\(Corrosión, carbón)};
@@ -333,10 +332,10 @@
 \begin{frame}{Temperaturas Críticas de Inflamación de Sustancias}
   \begin{columns}[c]
     \begin{column}{0.52\textwidth}
-      \begin{block}{\textbf{1. Inflamación (\textit{Flash Point})}}
+      \begin{block}{\textbf{1. Inflamación }}
         \scriptsize Temperatura mínima donde los vapores forman mezcla inflamable y destellan ante llama externa (se apagan al retirar la fuente).
       \end{block}
-      \begin{block}{\textbf{2. Punto de Fuego (\textit{Fire Point})}}
+      \begin{block}{\textbf{2. Punto de Fuego }}
         \scriptsize Temperatura superior donde la evaporación sostiene la combustión continua con llama por $\ge 5\,\mathrm{s}$.
       \end{block}
       \begin{alertblock}{\textbf{3. Temperatura de Autoignición}}
@@ -369,23 +368,23 @@
     \begin{tikzpicture}[xscale=2.2, line cap=round, line join=round]
       % Clase A
       \node[regular polygon, regular polygon sides=3, draw=successgreen!90!black, fill=successgreen!20, line width=1.5pt, inner sep=4pt] (A) at (0,0) {\bfseries\large A};
-      \node[below=8pt, font=\tiny, align=center] at (A) {\textbf{Sólidos Orgánicos}\\Madera, papel, telas\\Residuos con brasas};
+      \node[below=20pt, font=\tiny, align=center] at (A) {\textbf{Sólidos Orgánicos}\\Madera, papel, telas\\Residuos con brasas};
 
       % Clase B
       \node[regular polygon, regular polygon sides=4, draw=firered!90!black, fill=firered!20, line width=1.5pt, inner sep=5pt] (B) at (1.2,0) {\bfseries\large B};
-      \node[below=8pt, font=\tiny, align=center] at (B) {\textbf{Líquidos y Gases}\\Naftas, solventes, aceites\\Combustión superficial};
+      \node[below=20pt, font=\tiny, align=center] at (B) {\textbf{Líquidos y Gases}\\Naftas, solventes, aceites\\Combustión superficial};
 
       % Clase C
       \node[circle, draw=utnblue!90!black, fill=utnblue!20, line width=1.5pt, inner sep=4pt] (C) at (2.4,0) {\bfseries\large C};
-      \node[below=8pt, font=\tiny, align=center] at (C) {\textbf{Equipos Eléctricos}\\Tableros energizados\\Riesgo de electrocución};
+      \node[below=20pt, font=\tiny, align=center] at (C) {\textbf{Equipos Eléctricos}\\Tableros energizados\\Riesgo de electrocución};
 
       % Clase D
       \node[star, star points=5, star point ratio=2.2, draw=amberyellow!90!black, fill=amberyellow!25, line width=1.5pt, inner sep=2pt] (D) at (3.6,0) {\bfseries\large D};
-      \node[below=8pt, font=\tiny, align=center] at (D) {\textbf{Metales Reactivos}\\Magnesio, sodio, titanio\\Polvos especiales};
+      \node[below=20pt, font=\tiny, align=center] at (D) {\textbf{Metales Reactivos}\\Magnesio, sodio, titanio\\Polvos especiales};
 
       % Clase K
       \node[regular polygon, regular polygon sides=6, draw=darkcharcoal, fill=darkcharcoal!15, line width=1.5pt, inner sep=4pt] (K) at (4.8,0) {\bfseries\large K};
-      \node[below=8pt, font=\tiny, align=center] at (K) {\textbf{Grasas y Aceites}\\Cocinas industriales\\Saponificación alcalina};
+      \node[below=20pt, font=\tiny, align=center] at (K) {\textbf{Grasas y Aceites}\\Cocinas industriales\\Saponificación alcalina};
     \end{tikzpicture}
   }
 \end{frame}
