@@ -1,32 +1,53 @@
 % =============================================================================
 % PARTE II: GASES DE COMBUSTIÓN, HUMOS Y MARCO LEGAL ARGENTINO
+% Disertante: Gaston Grasso (Leg. 401892) --- Diapositivas 16 a 28
 % =============================================================================
 
 % --- SLIDE 16: MONÓXIDO DE CARBONO ---
 \begin{frame}{Gases Asfixiantes: Monóxido de Carbono ($CO$)}
   \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.48\textwidth}
       \small
-      El $CO$ es el causante principal de muertes en incendios estructurales:
+      Causa principal de víctimas fatales en incendios:
       \begin{itemize}
         \scriptsize
-        \item Gas sin olor, color ni sabor; no da ningún aviso sensorial.
-        \item Se une al hierro de la sangre unas \textbf{250 veces más rápido} que el oxígeno.
-        \item Desplaza al oxígeno en los glóbulos rojos y bloquea su entrega a los órganos vitales.
-        \item \textbf{Efecto físico fulminante:} Pérdida rápida de agudeza visual, confusión y debilidad severa en piernas que impide caminar hacia las salidas.
+        \item \textbf{Gas sin aviso sensorial:} Inodoro, incoloro e insípido; no irrita los ojos ni la nariz.
+        \item \textbf{Afinidad demoledora:} Se une al hierro de la hemoglobina \textbf{250 veces más rápido} que el oxígeno.
+        \item \textbf{Bloqueo en sangre:} Desaloja al $O_2$ de los glóbulos rojos; la sangre circula pero no transporta oxígeno.
+        \item \textbf{Efecto físico fulminante:} Mareo, confusión y \textbf{debilidad súbita en piernas} que postra al operario al piso e impide evacuar.
       \end{itemize}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.50\textwidth}
       \centering
-      \resizebox{0.9\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \node[draw=utnblue, fill=utnblue!10, rounded corners=6pt, line width=1.2pt, inner sep=6pt, text width=4.5cm, align=center] (Hb) {
-            \textbf{Hemoglobina en Sangre}\\[2pt]
-            \scriptsize Capacidad de transporte de $O_2$ bloqueada
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[line cap=round, line join=round]
+          % Glóbulo rojo esquemático
+          \draw[fill=firered!12, draw=firered!80, line width=1.5pt] (0,0.5) ellipse (2.5cm and 1.4cm);
+          \node[font=\tiny\bfseries, firered!80!black] at (0,1.6) {Glóbulo Rojo en Circulación};
+
+          % Núcleo de Fe
+          \node[draw=darkcharcoal, fill=white, circle, line width=1.2pt, inner sep=4pt, font=\scriptsize\bfseries] (Fe) at (0,0.4) {Fe};
+
+          % Molécula de CO entrante
+          \node[draw=firered, fill=firered, text=white, circle, line width=1pt, font=\tiny\bfseries, inner sep=3pt] (CO) at (2.0,0.8) {CO};
+          \draw[->, >=stealth, line width=2pt, firered] (CO) -- (0.55,0.48);
+          \node[font=\tiny\bfseries, firered] at (0.95,0.95) {Afinidad $\times 250$};
+
+          % Oxígeno desplazado
+          \node[draw=utnblue, fill=utnblue!15, circle, line width=1pt, font=\tiny\bfseries, inner sep=2pt] (O2) at (-1.8,-0.1) {$O_2$};
+          \draw[<-, >=stealth, line width=1.4pt, dashed, darkcharcoal!70] (O2) -- (-0.55,0.28);
+          \node[font=\tiny\bfseries, darkcharcoal!70] at (-1.0,0.35) {Desplazado};
+
+          % Card inferior de síntomas con tabla para alineación exacta
+          \node[draw=amberyellow!90!black, fill=amberyellow!15, rounded corners=4pt, line width=1pt, inner sep=4pt] at (0,-1.55) {
+            \renewcommand{\arraystretch}{1.1}
+            \begin{tabular}{c@{\hspace{12pt}}c}
+              \multicolumn{2}{c}{\scriptsize\textbf{Efectos según Saturación en Sangre}}\\[1pt]
+              \tiny $\bullet$ \textbf{20\%:} Cefaleas y mareo & \tiny $\bullet$ \textbf{40\%:} Falla motriz y caída\\[1pt]
+              \multicolumn{2}{c}{\tiny $\bullet$ \textbf{$>$ 60\%:} Inconsciencia y paro respiratorio}
+            \end{tabular}
           };
-          \node[draw=firered, fill=firered!20, circle, line width=1.2pt, font=\scriptsize\bfseries, above=0.6cm of Hb] (CO) {CO};
-          \draw[->, >=stealth, line width=2pt, firered] (CO) -- node[right, font=\tiny\bfseries, firered] {Afinidad $\times 250$} (Hb);
         \end{tikzpicture}
       }
     \end{column}
@@ -36,26 +57,47 @@
 % --- SLIDE 17: CIANURO DE HIDRÓGENO ---
 \begin{frame}{Asfixia a Nivel Celular: Cianuro de Hidrógeno ($HCN$)}
   \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.48\textwidth}
       \small
-      El $HCN$ actúa como un veneno respiratorio directo sobre las células:
+      Veneno de acción celular directa y fulminante:
       \begin{itemize}
         \scriptsize
-        \item Se libera al quemarse espumas de poliuretano, aislaciones acústicas y térmicas, tapizados y plásticos con nitrógeno (nylon).
-        \item Bloquea la capacidad de las células de absorber y utilizar el oxígeno disponible en sangre.
-        \item Aunque la sangre transporte oxígeno, la célula se ahoga y muere en minutos.
-        \item \textbf{Efecto combinado con el $CO$:} El monóxido anula el transporte en sangre y el cianuro bloquea el consumo celular. Provoca desmayo en menos de 2 a 3 minutos.
+        \item \textbf{Origen cotidiano:} Se libera al arder espumas de poliuretano, aislaciones acústicas y térmicas, alfombras y nylon.
+        \item \textbf{Bloqueo interno:} Entra a las células y anula su capacidad de procesar el oxígeno que llega por sangre.
+        \item \textbf{Ahogo celular:} Aunque la sangre transporte $O_2$, la célula no puede consumirlo y muere en minutos.
+        \item \textbf{Sinergia letal con $CO$:} El $CO$ corta la entrega y el $HCN$ apaga el motor celular $\implies$ \textbf{Desmayo en $<3$ minutos}.
       \end{itemize}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.50\textwidth}
       \centering
-      \resizebox{0.9\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \node[draw=darkcharcoal, fill=cardbg, rounded corners=6pt, line width=1.2pt, inner sep=8pt, text width=4.5cm, align=center] {
-            \textbf{\textcolor{firered}{BLOQUEO CELULAR}}\\[4pt]
-            \scriptsize Las células no pueden utilizar el oxígeno en sangre.\\[3pt]
-            \scriptsize Pérdida de conocimiento en menos de 2 a 3 minutos.
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[line cap=round, line join=round]
+          % Célula esquemática
+          \draw[fill=darkcharcoal!4, draw=darkcharcoal!60, line width=1.4pt, rounded corners=10pt] (-2.6,-1.2) rectangle (2.6,1.8);
+          \node[font=\tiny\bfseries, darkcharcoal] at (0,1.55) {Célula del Tejido Humano};
+
+          % Entrada de oxígeno desde capilar
+          \node[draw=successgreen!80!black, fill=successgreen!15, rounded corners=3pt, font=\tiny\bfseries, inner sep=2pt] (O2in) at (-1.4,0.9) {$O_2$ en sangre};
+          \draw[->, >=stealth, line width=1.5pt, successgreen!80!black] (O2in) -- (-0.5,0.3);
+
+          % Mitocondria esquemática
+          \draw[fill=utnblue!15, draw=utnblue!80, line width=1.2pt] (0,0) ellipse (1.5cm and 0.75cm);
+          \node[font=\tiny\bfseries, utnblue!90!black] at (0,0.25) {Motor Celular};
+
+          % HCN bloqueando
+          \node[draw=firered, fill=firered, text=white, rounded corners=3pt, font=\tiny\bfseries, inner sep=3pt] (HCN) at (1.6,-0.5) {HCN};
+          \draw[->, >=stealth, line width=1.8pt, firered] (HCN) -- (0.6,-0.15);
+          \node[font=\Large\bfseries, text=firered] at (0,-0.15) {$\times$};
+
+          % Banner inferior de alerta
+          \node[draw=firered!80, fill=firered!12, rounded corners=4pt, line width=1pt, inner sep=4pt] at (0,-2.1) {
+            \renewcommand{\arraystretch}{1.1}
+            \begin{tabular}{l}
+              \multicolumn{1}{c}{\scriptsize\textbf{\textcolor{firered}{Sinergia Mortal: $CO + HCN$}}}\\[2pt]
+              \tiny $\bullet$ \textbf{CO:} Bloquea el transporte de oxígeno en sangre\\
+              \tiny $\bullet$ \textbf{HCN:} Apaga la respiración celular y destruye el tejido
+            \end{tabular}
           };
         \end{tikzpicture}
       }
@@ -68,90 +110,175 @@
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Cloruro de Hidrógeno ($HCl$)}}
-        \small
-        $\bullet$ Se libera al quemarse el aislante de \textbf{PVC} de cañerías y cables.\\
-        $\bullet$ Con la humedad del aire o los pulmones forma ácido clorhídrico concentrado.\\
-        $\bullet$ Causa quemaduras químicas inmediatas en vías respiratorias.\\
-        $\bullet$ \textbf{Efecto en electrónica:} El gas ácido corroe pistas de cobre y componentes de placas electrónicas contiguas.
+        \scriptsize
+        \textbf{Origen:} Quema de aislantes de \textbf{PVC} en cables y cañerías.
+        \begin{itemize}
+          \tiny
+          \item Al mezclarse con la humedad se convierte en \textbf{ácido clorhídrico concentrado}.
+          \item Produce quemaduras químicas en vías respiratorias.
+          \item \textbf{Ataque sobre electrónica:} Corroe con rapidez pistas de cobre, soldaduras y componentes en tableros y placas contiguas.
+        \end{itemize}
       \end{block}
+      \vspace{0.12cm}
+      \centering
+      \resizebox{0.94\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \node[draw=firered!80, fill=firered!10, rounded corners=4pt, line width=1pt, inner sep=5pt, text width=5.2cm, align=center] {
+            \scriptsize\textbf{\textcolor{firered}{Impacto Directo del $HCl$}}\\[2pt]
+            \tiny $\bullet$ Quemaduras químicas en vías respiratorias\\[1pt]
+            \tiny $\bullet$ Corrosión ácida veloz de circuitos y cobre
+          };
+        \end{tikzpicture}
+      }
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Óxidos de Nitrógeno y Azufre}}
-        \small
-        $\bullet$ \textbf{Dióxido de nitrógeno ($NO_2$):} Provoca acumulación tardía de líquido en pulmones (edema) hasta 24 horas después.\\
-        $\bullet$ \textbf{Dióxido de azufre ($SO_2$) y acroleína:} Irritación ocular extrema, lagrimeo masivo y \textbf{cierre involuntario de párpados} que anula la visión en el escape.
+      \begin{block}{\textbf{Origen de $SO_2$, Acroleína y $NO_x$}}
+        \scriptsize
+        \begin{itemize}
+          \tiny
+          \item \textbf{$SO_2$ (Dióxido de azufre):} Quema de \textbf{cauchos vulcanizados} (gomas, sellos) y azufre $\rightarrow$ Ácido corrosivo y ardor ocular.
+          \item \textbf{Acroleína:} Pirólisis de \textbf{grasas y aceites lubricantes} (glicerol) $\rightarrow$ Ardor extremo y \textbf{cierre involuntario de ojos}.
+          \item \textbf{$NO_x$ ($NO_2$ / Óxidos de nitrógeno):} Reacción del $N_2$ del aire ($>1000\,\Celsius$) y lacas $\rightarrow$ \textbf{Edema pulmonar tardío} ($<24\,\mathrm{h}$).
+        \end{itemize}
       \end{block}
+      \vspace{0.12cm}
+      \centering
+      \resizebox{0.94\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \node[draw=amberyellow!90!black, fill=amberyellow!15, rounded corners=4pt, line width=1pt, inner sep=5pt, text width=5.2cm, align=center] {
+            \scriptsize\textbf{\textcolor{amberyellow!90!black}{Riesgos Críticos en Evacuación}}\\[2pt]
+            \tiny $\bullet$ Cierre reflejo de párpados y ceguera en escape\\[1pt]
+            \tiny $\bullet$ Edema pulmonar tardío diferido hasta 24 horas
+          };
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
 \end{frame}
 
 % --- SLIDE 19: CONCENTRACIÓN DE OXÍGENO ---
 \begin{frame}{Efectos de la Caída del Oxígeno Ambiental}
-  \small
-  El fuego en recintos cerrados consume rápidamente el oxígeno del aire:
+  \begin{columns}[c]
+    \begin{column}{0.42\textwidth}
+      \small
+      El fuego en recintos cerrados agota el oxígeno a gran velocidad:
+      \begin{itemize}
+        \scriptsize
+        \item El consumo del fuego genera un ambiente de \textbf{asfixia rápida}.
+        \item No hay margen de vacilación: los reflejos y la motricidad se pierden en segundos.
+        \item La caída por debajo del $14\%$ deja al operario tendido en el suelo.
+      \end{itemize}
+      \vspace{0.15cm}
+      \begin{alertblock}{\textbf{Regla Operativa}}
+        \tiny Ante la alarma, evacuar de inmediato sin intentar rescatar pertenencias.
+      \end{alertblock}
+    \end{column}
 
-  \vspace{0.2cm}
-  \centering
-  \resizebox{0.95\textwidth}{!}{%
-    \begin{tikzpicture}[yscale=0.75, line cap=round, line join=round]
-      % Escala vertical
-      \draw[line width=1.5pt, ->, >=stealth, darkcharcoal] (0,0) -- (0,5.8) node[above, font=\scriptsize\bfseries] {Concentración de $O_2$};
+    \begin{column}{0.56\textwidth}
+      \centering
+      \resizebox{0.98\columnwidth}{!}{%
+        \begin{tikzpicture}[xscale=0.95, yscale=0.72]
+          % Barra vertical graduada
+          \draw[line width=1.5pt, ->, >=stealth, darkcharcoal] (0,-0.4) -- (0,5.6) node[above, font=\tiny\bfseries] {$\% O_2$};
 
-      % Niveles
-      \draw[fill=successgreen!20, draw=successgreen!80!black, line width=1pt] (0.5,4.5) rectangle (9.5,5.3) 
-            node[midway, font=\scriptsize] {\textbf{20.9\% (Normal):} Respiración y capacidades motrices plenamente normales.};
+          % 20.9%
+          \draw[fill=successgreen!25, draw=successgreen!80!black, line width=1pt, rounded corners=3pt] (0.3,4.3) rectangle (6.2,5.1);
+          \node[font=\tiny\bfseries, successgreen!80!black, anchor=east] at (1.6,4.7) {20.9\%};
+          \node[font=\tiny, anchor=west] at (1.8,4.7) {\textbf{Normal:} Respiración y marcha estables.};
 
-      \draw[fill=amberyellow!25, draw=amberyellow!90!black, line width=1pt] (0.5,3.3) rectangle (9.5,4.1) 
-            node[midway, font=\scriptsize] {\textbf{16.0\% (Alerta):} Taquicardia, mareos, desorientación y menor noción del peligro.};
+          % 16.0%
+          \draw[fill=amberyellow!25, draw=amberyellow!90!black, line width=1pt, rounded corners=3pt] (0.3,3.2) rectangle (6.2,4.0);
+          \node[font=\tiny\bfseries, amberyellow!90!black, anchor=east] at (1.6,3.6) {16.0\%};
+          \node[font=\tiny, anchor=west] at (1.8,3.6) {\textbf{Alerta:} Taquicardia, mareos y desorientación.};
 
-      \draw[fill=fireorange!25, draw=fireorange!90!black, line width=1pt] (0.5,2.1) rectangle (9.5,2.9) 
-            node[midway, font=\scriptsize] {\textbf{14.0\% (Falla Motriz):} Pérdida de fuerza en piernas; la persona cae al suelo.};
+          % 14.0%
+          \draw[fill=fireorange!25, draw=fireorange!90!black, line width=1pt, rounded corners=3pt] (0.3,2.1) rectangle (6.2,2.9);
+          \node[font=\tiny\bfseries, fireorange!90!black, anchor=east] at (1.6,2.5) {14.0\%};
+          \node[font=\tiny, anchor=west] at (1.8,2.5) {\textbf{Falla motriz:} Piernas ceden; caída al piso.};
 
-      \draw[fill=firered!25, draw=firered!90!black, line width=1pt] (0.5,0.9) rectangle (9.5,1.7) 
-            node[midway, font=\scriptsize] {\textbf{10.0\% (Crítico):} Náuseas violentas, pérdida de reflejos y estado de coma.};
+          % 10.0%
+          \draw[fill=firered!25, draw=firered!90!black, line width=1pt, rounded corners=3pt] (0.3,1.0) rectangle (6.2,1.8);
+          \node[font=\tiny\bfseries, firered, anchor=east] at (1.6,1.4) {10.0\%};
+          \node[font=\tiny, anchor=west] at (1.8,1.4) {\textbf{Crítico:} Náuseas violentas, vómitos y coma.};
 
-      \draw[fill=darkcharcoal!30, draw=darkcharcoal, line width=1.2pt] (0.5,-0.3) rectangle (9.5,0.5) 
-            node[midway, font=\scriptsize\bfseries, firered] {\textbf{$<$ 6.0\% (Letal):} Paro respiratorio en menos de 40 segundos.};
-    \end{tikzpicture}
-  }
+          % < 6.0%
+          \draw[fill=darkcharcoal!35, draw=darkcharcoal, line width=1.2pt, rounded corners=3pt] (0.3,-0.1) rectangle (6.2,0.7);
+          \node[font=\tiny\bfseries, firered, anchor=east] at (1.6,0.3) {$<$ 6.0\%};
+          \node[font=\tiny\bfseries, firered, anchor=west] at (1.8,0.3) {Letal: Paro respiratorio en $<40\,\mathrm{s}$.};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % --- SLIDE 20: DINÁMICA DEL HUMO Y PLANO NEUTRO ---
 \begin{frame}{Dinámica del Humo y el Concepto de Plano Neutro}
   \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.46\textwidth}
       \small
-      Comportamiento de la masa de humo en un recinto cerrado:
+      Comportamiento de la masa gaseosa en interiores:
       \begin{itemize}
         \scriptsize
-        \item Los gases calientes suben por ser más livianos y chocan contra el techo (\textit{ceiling jet}).
-        \item Se acumulan arriba formando una \textbf{capa caliente de humo denso y tóxico}.
-        \item Se forma un \textbf{Plano Neutro}: límite que separa el colchón de humo caliente superior del aire limpio inferior.
-        \item \textbf{Criterio de Evacuación:} Desplazamiento gateando por debajo del plano neutro para conservar visibilidad y respirar aire fresco.
+        \item El aire caliente sube por ser más liviano y choca con el techo (\textit{ceiling jet}).
+        \item Se acumula arriba formando una \textbf{capa caliente de humo denso y gases}.
+        \item Se define el \textbf{Plano Neutro}: límite entre la masa caliente superior y el aire limpio inferior.
+        \item \textbf{Criterio táctico de escape:} Avanzar \textbf{a gatas o gateando} para ver el suelo y respirar aire fresco.
       \end{itemize}
     \end{column}
 
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.52\textwidth}
       \centering
-      \resizebox{0.95\columnwidth}{!}{%
-        \begin{tikzpicture}[scale=0.9]
-          % Habitación
-          \draw[line width=1.5pt, darkcharcoal] (0,0) rectangle (5,3.2);
+      \resizebox{0.98\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.92, line cap=round, line join=round]
+          % Contorno habitación
+          \draw[line width=1.5pt, darkcharcoal, fill=white] (0,0) rectangle (5.5,3.2);
 
-          % Capa superior de humo
-          \fill[darkcharcoal!60] (0,1.8) rectangle (5,3.2);
-          \node[font=\scriptsize\bfseries, white] at (2.5,2.5) {Humo y Gases Calientes ($>200\,\Celsius$)};
+          % Capa de humo superior
+          \fill[darkcharcoal!65] (0,1.7) rectangle (5.5,3.2);
+          \node[font=\tiny\bfseries, white, align=center] at (2.75,2.45) {Capa de Humo Caliente ($>200\,\Celsius$)\\$CO \cdot HCN \cdot \text{Hollín}$};
 
-          % Plano Neutro
-          \draw[dashed, line width=1.5pt, fireorange] (0,1.8) -- (5,1.8) node[right, font=\tiny\bfseries, fireorange] {Plano Neutro};
+          % Plano Neutro con badge centrado y claro
+          \draw[dashed, line width=1.8pt, fireorange] (0,1.7) -- (5.5,1.7);
+          \node[fill=fireorange, text=white, rounded corners=2pt, inner sep=2.5pt, font=\tiny\bfseries] at (2.75,1.7) {Plano Neutro};
 
-          % Aire limpio inferior
-          \node[font=\scriptsize\bfseries, successgreen!80!black] at (2.5,0.8) {Aire Frío Respirable ($O_2 \approx 20\%$)};
+          % Foco de fuego sentado en el piso
+          \draw[fill=firered!20, draw=firered, line width=1pt] (0.55,0.22) circle (0.22cm);
+          \shade[inner color=yellow, outer color=firered] (0.55,0.22) .. controls (0.37,0.5) .. (0.55,0.85) .. controls (0.73,0.5) .. (0.55,0.22);
+          \draw[->, >=stealth, line width=1.5pt, firered] (0.55,0.9) .. controls (0.75,1.35) .. (1.25,2.0);
 
-          % Foco
-          \node[circle, fill=firered, inner sep=4pt] at (0.8,0.3) {};
-          \draw[->, >=stealth, line width=1.2pt, firered] (0.8,0.4) .. controls (1.0,1.2) .. (1.5,2.2);
+          % Capa inferior limpia: card destacado
+          \node[draw=successgreen!80!black, fill=successgreen!10, rounded corners=3pt, font=\tiny, align=center, inner sep=3.5pt] at (2.25,0.95) {
+            \textbf{Aire Frío Respirable ($O_2 \approx 20\%$)}\\[2pt]
+            Visibilidad sobre el suelo
+          };
+
+          % Puerta de salida en pared derecha
+          \fill[successgreen!15, draw=successgreen!80!black, line width=1.2pt] (4.8,0) rectangle (5.45,1.3);
+          \node[fill=successgreen!80!black, text=white, font=\tiny\bfseries, rounded corners=1pt, inner sep=1.5pt] at (5.12,1.15) {SALIDA};
+
+          % Operario gateando hacia la salida (postura anatómica natural)
+          % Cabeza
+          \fill[successgreen!80!black] (4.22,0.36) circle (0.10cm);
+
+          % Torso inclinado
+          \draw[line width=4pt, successgreen!80!black, line cap=round] (3.45,0.28) -- (3.98,0.25);
+
+          % Pierna delantera flexionada (cadera -> rodilla en suelo -> empeine atrás)
+          \draw[line width=2.4pt, successgreen!80!black, line cap=round, line join=round] (3.45,0.28) -- (3.70,0.05) -- (3.35,0.05);
+
+          % Pierna trasera estirada impulsando
+          \draw[line width=2.2pt, successgreen!80!black, line cap=round, line join=round] (3.45,0.28) -- (3.20,0.18) -- (2.95,0.05);
+
+          % Brazo de apoyo
+          \draw[line width=2.2pt, successgreen!80!black, line cap=round] (3.88,0.25) -- (3.88,0.05);
+
+          % Brazo delantero alcanzando el piso
+          \draw[line width=2.2pt, successgreen!80!black, line cap=round, line join=round] (3.98,0.25) -- (4.20,0.15) -- (4.32,0.05);
+
+          % Flecha y etiqueta de escape
+          \draw[->, >=stealth, line width=1.6pt, successgreen!80!black] (4.4,0.58) -- (5.0,0.58);
+          \node[font=\tiny\bfseries, successgreen!80!black, above] at (4.7,0.60) {A gatas};
         \end{tikzpicture}
       }
     \end{column}
@@ -161,26 +288,36 @@
 % --- SLIDE 21: DIAGNÓSTICO VISUAL DE HUMOS ---
 \begin{frame}{Diagnóstico del Fuego según el Color del Humo}
   \small
-  El color del humo indica el tipo de material que arde y el nivel de ventilación:
+  El color del humo es la primera telemetría visual del material y la ventilación:
 
-  \vspace{0.2cm}
+  \vspace{0.15cm}
   \centering
   \resizebox{0.98\textwidth}{!}{%
-    \begin{tikzpicture}[yscale=0.7]
-      \draw[fill=white, draw=grayborder, line width=1pt] (0,4) rectangle (10,4.8)
-            node[midway, font=\scriptsize] {\textbf{Blanco:} Madera seca con aire abundante o presencia de vapor de agua.};
+    \begin{tikzpicture}[yscale=0.72]
+      % Blanco
+      \draw[fill=white, draw=grayborder, line width=1pt, rounded corners=3pt] (0,4.2) rectangle (10.5,4.95);
+      \node[font=\scriptsize\bfseries, darkcharcoal, anchor=west] at (0.3,4.58) {Humo Blanco};
+      \node[font=\tiny, align=left, anchor=west] at (2.6,4.58) {Madera seca o forraje con abundante aire $\cdot$ Presencia masiva de vapor de agua.};
 
-      \draw[fill=amberyellow!30, draw=amberyellow!90!black, line width=1pt] (0,3) rectangle (10,3.8)
-            node[midway, font=\scriptsize] {\textbf{Amarillo:} Químicos con azufre o ácidos clorhídrico y nítrico; atmósfera muy tóxica.};
+      % Amarillo
+      \draw[fill=amberyellow!25, draw=amberyellow!90!black, line width=1pt, rounded corners=3pt] (0,3.15) rectangle (10.5,3.9);
+      \node[font=\scriptsize\bfseries, amberyellow!90!black, anchor=west] at (0.3,3.53) {Humo Amarillo};
+      \node[font=\tiny, align=left, anchor=west] at (2.6,3.53) {Sustancias con azufre o ácidos nítrico y clorhídrico $\cdot$ Atmósfera letal e irritante.};
 
-      \draw[fill=gray!30, draw=gray, line width=1pt] (0,2) rectangle (10,2.8)
-            node[midway, font=\scriptsize] {\textbf{Gris:} Celulosa, papel o madera quemándose con poco aire (brasas).};
+      % Gris
+      \draw[fill=gray!25, draw=gray!80, line width=1pt, rounded corners=3pt] (0,2.1) rectangle (10.5,2.85);
+      \node[font=\scriptsize\bfseries, darkcharcoal!80, anchor=west] at (0.3,2.48) {Humo Gris};
+      \node[font=\tiny, align=left, anchor=west] at (2.6,2.48) {Celulosa, papel, cartón o madera ardiendo con poco aire (fuego latente con brasas).};
 
-      \draw[fill=darkcharcoal!35, draw=darkcharcoal!80, line width=1pt] (0,1) rectangle (10,1.8)
-            node[midway, font=\scriptsize] {\textbf{Negro Claro:} Caucho o carbón.};
+      % Negro Claro
+      \draw[fill=darkcharcoal!30, draw=darkcharcoal!70, line width=1pt, rounded corners=3pt] (0,1.05) rectangle (10.5,1.8);
+      \node[font=\scriptsize\bfseries, darkcharcoal, anchor=west] at (0.3,1.43) {Negro Claro};
+      \node[font=\tiny, align=left, anchor=west] at (2.6,1.43) {Combustión de cauchos sintéticos, gomas y carbón mineral.};
 
-      \draw[fill=darkcharcoal!85, draw=black, line width=1pt] (0,0) rectangle (10,0.8)
-            node[midway, font=\scriptsize, white] {\textbf{Negro Oscuro:} Combustibles líquidos, aceites, solventes y plásticos; mucho hollín y falta de aire.};
+      % Negro Oscuro
+      \draw[fill=darkcharcoal!85, draw=black, line width=1pt, rounded corners=3pt] (0,0) rectangle (10.5,0.75);
+      \node[font=\scriptsize\bfseries, white, anchor=west] at (0.3,0.38) {Negro Denso};
+      \node[font=\tiny, align=left, white, anchor=west] at (2.6,0.38) {Hidrocarburos, aceites, naftas y plásticos $\cdot$ Altísimo hollín y falta severa de aire.};
     \end{tikzpicture}
   }
 \end{frame}
@@ -190,32 +327,52 @@
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \small
-      El marco normativo de higiene y seguridad laboral se asienta en tres niveles:
+      Tres niveles de exigencia legal en higiene y seguridad laboral:
       \begin{enumerate}
         \scriptsize
-        \item \textbf{Ley Nacional 19.587 (1972):} Marco general obligatorio de condiciones de seguridad en todo el país.
-        \item \textbf{Ley 24.557 (1995):} Régimen de Prevención y Reparación de Riesgos del Trabajo (SRT y ART).
-        \item \textbf{Decreto Reglamentario 351/79:}
+        \item \textbf{Leyes Nacionales (Cúspide):}
+        \begin{itemize}
+          \tiny
+          \item \textbf{Ley 19.587 (1972):} Marco obligatorio en todo el territorio.
+          \item \textbf{Ley 24.557 (1995):} Prevención con ART y control de la SRT.
+        \end{itemize}
+        \item \textbf{Decreto Reglamentario 351/79 (Eje Operativo):}
         \begin{itemize}
           \tiny
           \item \textbf{Capítulo 18:} Protección activa, pasiva y extintores.
-          \item \textbf{Anexo VII:} Carga de fuego y medios de escape.
-          \item \textbf{Capítulo 21:} Capacitación obligatoria registrada.
+          \item \textbf{Anexo VII:} Carga de fuego, muros $F$ y salidas (UAS).
+          \item \textbf{Capítulo 21:} Capacitación obligatoria con registro.
         \end{itemize}
-        \item \textbf{Normas complementarias:} Normas IRAM y reglamentación AEA 90364.
+        \item \textbf{Normas de Aplicación (Base):}
+        \begin{itemize}
+          \tiny
+          \item Normas IRAM (ensayos y extintores).
+          \item Reglamentación AEA 90364 (instalaciones eléctricas).
+        \end{itemize}
       \end{enumerate}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.50\textwidth}
       \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}[scale=0.9]
-          \draw[fill=utnblue!90, draw=black, line width=1pt] (0,3.2) rectangle (4,4.2) node[midway, white, font=\scriptsize\bfseries] {Ley 19.587 / Ley 24.557};
-          \draw[fill=utncyan!80, draw=black, line width=1pt] (0,1.6) rectangle (4,2.6) node[midway, white, font=\scriptsize\bfseries] {Decreto 351/79 (Anexo VII)};
-          \draw[fill=lightbg!80!black, draw=black, line width=1pt] (0,0) rectangle (4,1.0) node[midway, darkcharcoal, font=\scriptsize\bfseries] {Normas IRAM y AEA 90364};
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.92, line cap=round, line join=round]
+          % Nivel 1
+          \draw[fill=utnblue!90, draw=utnblue!90!black, line width=1.2pt, rounded corners=4pt] (0,3.3) rectangle (4.6,4.3);
+          \node[font=\scriptsize\bfseries, white, align=center] at (2.3,3.8) {Leyes 19.587 y 24.557\\{\tiny Marco Legal Nacional $\cdot$ SRT / ART}};
 
-          \draw[->, >=stealth, line width=1.5pt, firered] (2,3.2) -- (2,2.6);
-          \draw[->, >=stealth, line width=1.5pt, firered] (2,1.6) -- (2,1.0);
+          % Flecha
+          \draw[->, >=stealth, line width=2pt, fireorange] (2.3,3.3) -- (2.3,2.7);
+
+          % Nivel 2
+          \draw[fill=utncyan!85, draw=utncyan!90!black, line width=1.2pt, rounded corners=4pt] (0,1.7) rectangle (4.6,2.7);
+          \node[font=\scriptsize\bfseries, white, align=center] at (2.3,2.2) {Decreto Reglamentario 351/79\\{\tiny Anexo VII $\cdot$ Carga de Fuego $\cdot$ UAS $\cdot$ Muros $F$}};
+
+          % Flecha
+          \draw[->, >=stealth, line width=2pt, fireorange] (2.3,1.7) -- (2.3,1.1);
+
+          % Nivel 3
+          \draw[fill=lightbg!90!black, draw=darkcharcoal!60, line width=1.2pt, rounded corners=4pt] (0,0.1) rectangle (4.6,1.1);
+          \node[font=\scriptsize\bfseries, darkcharcoal, align=center] at (2.3,0.6) {Normas IRAM y AEA 90364\\{\tiny Ensayos Normalizados $\cdot$ Seguridad Eléctrica}};
         \end{tikzpicture}
       }
     \end{column}
@@ -225,103 +382,221 @@
 % --- SLIDE 23: CARGA DE FUEGO FÓRMULA ---
 \begin{frame}{Determinación de la Carga de Fuego ($Q_f$)}
   \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Fórmula Oficial del Anexo VII}}
         \begin{equation*}
           Q_f = \frac{\sum (M_i \cdot PC_i)}{S \cdot 4400} \quad \left[\frac{\kg}{\m^2}\right]
         \end{equation*}
       \end{block}
       \scriptsize
-      $\bullet$ $M_i$: Masa inventariada de cada combustible ($\kg$).\\
-      $\bullet$ $PC_i$: Poder calorífico de cada material ($\mathrm{kcal/kg}$).\\
-      $\bullet$ $S$: Superficie de piso del sector considerado ($\m^2$).\\
-      $\bullet$ $4400\,\mathrm{kcal/kg}$: Poder calorífico de la madera patrón de referencia ($\approx 18.4\,\mathrm{MJ/kg}$).
-    \end{column}
-
-    \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{\textbf{Poderes Caloríficos Comunes}}
-        \tiny
-        $\bullet$ Madera de referencia: $4400\,\mathrm{kcal/kg}$.\\
-        $\bullet$ Papel y cartón: $4000\,\mathrm{kcal/kg}$.\\
-        $\bullet$ Plásticos (PVC, nylon): $8000\text{ a }10000\,\mathrm{kcal/kg}$.\\
-        $\bullet$ Aceites y solventes: $10000\text{ a }11500\,\mathrm{kcal/kg}$.\\[3pt]
-        \textbf{Significado:} Representa cuántos kilos de madera por metro cuadrado equivalen al calor de todos los combustibles del lugar.\\
-        \textbf{Cálculo del informe:} Depósito de $600\,\m^2$ con embalajes y plásticos $\rightarrow Q_f = 12.77\,\kg/\m^2$ (Riesgo 3, Muy Combustible).
-      \end{exampleblock}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% --- SLIDE 24: RESISTENCIA F TABLA ---
-\begin{frame}{Carga de Fuego y Resistencia al Fuego de Muros ($F$)}
-  \small
-  El valor de $Q_f$ determina por ley la resistencia al fuego mínima de los muros divisorios:
-
-  \vspace{0.2cm}
-  \begin{table}[h]
-    \centering
-    \scriptsize
-    \begin{tabular}{p{3.2cm} p{2.2cm} p{2.5cm} p{2.5cm}}
-      \toprule
-      \textbf{Carga de Fuego ($Q_f$)} & \textbf{Riesgo 2 (Inflam.)} & \textbf{Riesgo 3 (Muy Comb.)} & \textbf{Riesgo 4 (Combustible)} \\
-      \midrule
-      $Q_f \le 15\,\kg/\m^2$ & $F60$ & $F30$ & --- \\
-      $15 < Q_f \le 30\,\kg/\m^2$ & $F90$ & $F60$ & $F30$ \\
-      $30 < Q_f \le 60\,\kg/\m^2$ & $F120$ & $F90$ & $F60$ \\
-      $60 < Q_f \le 100\,\kg/\m^2$ & $F180$ & $F120$ & $F90$ \\
-      $Q_f > 100\,\kg/\m^2$ & $F180$ & $F180$ & $F120$ \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-
-  \vspace{0.1cm}
-  \begin{alertblock}{\textbf{Qué Significa la Resistencia $F$}}
-    \scriptsize El valor numérico ($F30, F60, F120$) indica los minutos que la pared soporta el fuego (curva normalizada ISO 834) cumpliendo tres condiciones:\\
-    1. No se derrumba ni colapsa mecanicamente.\\
-    2. No deja pasar llamas ni humo al otro lado.\\
-    3. No calienta el recinto vecino (la cara fría no supera los $140\,^\circ\mathrm{C}$ de aumento medio).
-  \end{alertblock}
-\end{frame}
-
-% --- SLIDE 25: MEDIOS DE ESCAPE Y UAS ---
-\begin{frame}{Medios de Escape: Unidades de Ancho de Salida (UAS)}
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Definición de UAS}}
-        \small
-        Espacio libre necesario para que circule una hilera de personas en marcha ordenada:
-        \begin{itemize}
-          \scriptsize
-          \item Primeras $2\,\mathrm{UAS} = 1.10\,\m$ (ancho mínimo de cualquier salida colectiva).
-          \item Cada unidad adicional suma $+0.45\,\m$.
-          \item Ninguna puerta individual medirá $< 0.90\,\m$.
-        \end{itemize}
-      \end{block}
+      $\bullet$ $M_i$: Masa de cada material combustible ($\kg$).\\
+      $\bullet$ $PC_i$: Poder calorífico inferior ($\mathrm{kcal/kg}$).\\
+      $\bullet$ $S$: Superficie útil de piso del sector ($\m^2$).\\
+      $\bullet$ $4400\,\mathrm{kcal/kg}$: Poder calorífico de la madera patrón.
       \vspace{0.1cm}
-      \begin{block}{\textbf{Fórmulas de Cálculo}}
-        \scriptsize
-        Población a evacuar: $N = \frac{S}{f_o}$ ($f_o = 16\,\m^2/\text{persona}$ en naves y talleres)\\[2pt]
-        Unidades requeridas: $n = \frac{N}{100}$ (redondeo $\ge 0.5$ hacia arriba)\\[2pt]
-        \textbf{Cálculo del informe:} Nave de $1600\,\m^2 \rightarrow N = 100$ operarios $\rightarrow n = 1\,\mathrm{UAS}$. Por ley se adoptan obligatoriamente \textbf{$2\,\mathrm{UAS} = 1.10\,\m$}.
-      \end{block}
+      \begin{alertblock}{\textbf{Cálculo del Informe}}
+        \tiny Depósito de $600\,\m^2$ con embalajes y plásticos:\\
+        $\sum (M_i \cdot PC_i) = 33.7 \times 10^6\,\mathrm{kcal} \implies \mathbf{Q_f = 12.77\,\kg/\m^2}$\\
+        $\rightarrow$ Rango reglamentario: \textbf{$Q_f \le 15\,\kg/\m^2$} (Carga de fuego baja).
+      \end{alertblock}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.50\textwidth}
       \centering
-      \resizebox{0.9\columnwidth}{!}{%
-        \begin{tikzpicture}
-          \draw[line width=1.5pt, darkcharcoal] (0,0) rectangle (4,1.8);
-          \draw[line width=1pt, dashed, grayborder!80!black] (2,0) -- (2,1.8);
-          \draw[<->, >=stealth, line width=1.2pt, firered] (0,2.1) -- (4,2.1) node[midway, above, font=\scriptsize\bfseries] {$2\,\mathrm{UAS} = 1.10\,\m$};
-          \node[font=\scriptsize\bfseries] at (1,0.9) {Hilera 1};
-          \node[font=\scriptsize\bfseries] at (3,0.9) {Hilera 2};
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[yscale=0.8]
+          \node[font=\scriptsize\bfseries, darkcharcoal] at (2.2,3.4) {Comparativa de Poder Calorífico};
+
+          % Madera
+          \draw[fill=darkcharcoal!20, draw=darkcharcoal!60, line width=1pt, rounded corners=2pt] (0,2.3) rectangle (2.2,3.0);
+          \node[font=\tiny\bfseries] at (1.1,2.65) {Madera: $4400$};
+          \node[font=\tiny, right] at (2.3,2.65) {$1.0\times$ (patrón)};
+
+          % Cartón
+          \draw[fill=darkcharcoal!20, draw=darkcharcoal!60, line width=1pt, rounded corners=2pt] (0,1.4) rectangle (2.0,2.1);
+          \node[font=\tiny\bfseries] at (1.0,1.75) {Cartón: $4000$};
+          \node[font=\tiny, right] at (2.1,1.75) {$0.9\times$};
+
+          % Plásticos
+          \draw[fill=firered!25, draw=firered, line width=1.2pt, rounded corners=2pt] (0,0.5) rectangle (4.2,1.2);
+          \node[font=\tiny\bfseries, firered] at (2.1,0.85) {Plásticos / Embalajes: $8000\text{--}10000$};
+          \node[font=\tiny\bfseries, firered, right] at (4.25,0.85) {$>2\times$};
+
+          % Nota al pie
+          \node[draw=utnblue!60, fill=utnblue!10, rounded corners=3pt, font=\tiny, align=center, text width=4.8cm] at (2.3,-0.4) {
+            \textbf{Significado:} Un kilo de plástico acumulado aporta el calor de más de dos kilos de madera.
+          };
         \end{tikzpicture}
       }
     \end{column}
   \end{columns}
 \end{frame}
 
-% --- SLIDE 26: ERGONOMÍA DE ESCALERAS ---
+% --- SLIDE 24: CLASIFICACIÓN DE RIESGOS (TABLA 2.1) ---
+\begin{frame}{Clasificación de Riesgos según Decreto 351/79 (Tabla 2.1)}
+  \begin{columns}[T]
+    \begin{column}{0.51\textwidth}
+      \begin{block}{\textbf{Tabla 2.1: Materiales según su Combustión}}
+        \vspace{0.04cm}
+        \centering
+        \resizebox{\columnwidth}{!}{%
+          \renewcommand{\arraystretch}{1.10}
+          \begin{tabular}{c l l}
+            \toprule
+            \textbf{Riesgo} & \textbf{Denominación} & \textbf{Materiales Representativos} \\
+            \midrule
+            \textbf{R1} & Explosivo & Pólvoras y gases a presión \\
+            \textbf{R2} & Inflamable & Naftas y solventes ($T_i \le 38\,\Celsius$) \\
+            \rowcolor{firered!18}
+            \textbf{R3} & \textbf{Muy Combustible} & \textbf{Plásticos, cartón, pallets (Informe)} \\
+            \textbf{R4} & Combustible & Maderas pesadas macizas, carbón \\
+            \textbf{R5} & Poco Combustible & Autoextinguibles al retirar llama \\
+            \textbf{R6/R7} & Incombustible & Hormigón, acero y refractarios \\
+            \bottomrule
+          \end{tabular}
+        }
+        \vspace{0.06cm}
+        \centering
+        \tiny\textit{Escala decreciente: R1 es el más severo y R7 el inerte.}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.46\textwidth}
+      \begin{block}{\textbf{Encuadre del Sector (Informe)}}
+        \scriptsize
+        \begin{itemize}
+          \tiny
+          \item Predominan pallets, embalajes y plásticos.
+          \item Arden con llama viva y desprenden gran calor.
+          \item Corresponde a \textbf{Riesgo 3 (Muy Combustible)}.
+        \end{itemize}
+      \end{block}
+      \vspace{0.10cm}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[line cap=round, line join=round]
+          \node[draw=utnblue!80!black, fill=utnblue!10, rounded corners=4pt, line width=1pt, inner sep=5pt, text width=5.0cm, align=center] {
+            \scriptsize\textbf{\textcolor{utnblue!90!black}{Cruce Reglamentario (Anexo VII)}}\\[3pt]
+            \tiny
+            \textbf{1. Riesgo (Tabla 2.1):} \textcolor{firered}{\textbf{R3 (Muy Combustible)}}\\[1pt]
+            \textbf{2. Carga de Fuego ($Q_f$):} \textcolor{firered}{\textbf{$12.77\,\kg/\m^2$}} ($\le 15\,\kg/\m^2$)\\[3pt]
+            $\Downarrow$\\[2pt]
+            $\bullet$ \textbf{Muro Cortafuego:} \textbf{$F60$} (Cuadro 2.2.1)\\[1pt]
+            $\bullet$ \textbf{Matafuegos:} $1\mathrm{A}$ cada $200\,\m^2$ (Cuadro 4)
+          };
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 25: RESISTENCIA F TABLA ---
+\begin{frame}{Carga de Fuego y Resistencia al Fuego de Muros ($F$)}
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \small
+      El valor de $Q_f$ fija la resistencia de muros separadores:
+      \vspace{0.1cm}
+      \begin{table}[h]
+        \centering
+        \tiny
+        \begin{tabular}{p{2.3cm} c c c}
+          \toprule
+          \textbf{Carga ($Q_f$)} & \textbf{Riesgo 2} & \textbf{Riesgo 3} & \textbf{Riesgo 4} \\
+          \midrule
+          $\mathbf{Q_f \le 15\,\kg/\m^2}$ & \textbf{F60} & \textbf{\textcolor{firered}{F60 (Informe)}} & \textbf{F30} \\
+          $15 < Q_f \le 30$ & $F90$ & $F60$ & $F30$ \\
+          $30 < Q_f \le 60$ & $F120$ & $F90$ & $F60$ \\
+          $60 < Q_f \le 100$ & $F180$ & $F120$ & $F90$ \\
+          $Q_f > 100\,\kg/\m^2$ & $F180$ & $F180$ & $F120$ \\
+          \bottomrule
+        \end{tabular}
+      \end{table}
+      \scriptsize $\rightarrow$ Para nuestro depósito ($12.77\,\kg/\m^2$, R3) rige pared \textbf{$F60$}.
+    \end{column}
+
+    \begin{column}{0.46\textwidth}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[line cap=round, line join=round]
+          % Muro F esquemático
+          \draw[fill=darkcharcoal!20, draw=darkcharcoal, line width=1.5pt] (0,0) rectangle (0.8,3.2);
+          \node[font=\tiny\bfseries, rotate=90] at (0.4,1.6) {Muro $F60$ (60 min)};
+
+          % Lado Fuego
+          \draw[fill=firered!20, draw=firered, line width=1pt] (-1.4,1.6) circle (0.5cm);
+          \node[font=\tiny\bfseries, firered] at (-1.4,1.6) {Fuego};
+          \draw[->, >=stealth, line width=2pt, firered] (-0.8,1.6) -- (-0.1,1.6);
+
+          % Criterios
+          \node[draw=successgreen!80!black, fill=successgreen!10, rounded corners=3pt, font=\tiny, align=left, text width=2.4cm] at (2.4,2.5) {
+            \textbf{1. Portante:}\\No colapsa con peso.
+          };
+          \node[draw=utnblue!80!black, fill=utnblue!10, rounded corners=3pt, font=\tiny, align=left, text width=2.4cm] at (2.4,1.5) {
+            \textbf{2. Estanco:}\\Sin humo ni llamas.
+          };
+          \node[draw=fireorange!90!black, fill=fireorange!10, rounded corners=3pt, font=\tiny, align=left, text width=2.4cm] at (2.4,0.5) {
+            \textbf{3. Aislante:}\\Cara fría $\le 140\,\Celsius$.
+          };
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 26: MEDIOS DE ESCAPE Y UAS ---
+\begin{frame}{Medios de Escape: Unidades de Ancho de Salida (UAS)}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textbf{Definición y Reglas de Ancho}}
+        \scriptsize
+        Espacio libre para que camine una hilera de personas:
+        \begin{itemize}
+          \tiny
+          \item \textbf{Primeras 2 UAS = $1.10\,\m$:} Ancho mínimo legal de cualquier puerta o paso general.
+          \item \textbf{UAS adicionales:} $+0.45\,\m$ cada una.
+          \item Puertas secundarias individuales: mínimo $0.90\,\m$.
+        \end{itemize}
+      \end{block}
+      \vspace{0.1cm}
+      \begin{exampleblock}{\textbf{Cálculo de la Nave del Informe}}
+        \tiny
+        Superficie $S = 1600\,\m^2$ $\cdot$ Factor de ocupación $f_o = 16\,\m^2/\text{persona}$:\\
+        $N = 1600 / 16 = \mathbf{100\ \text{operarios teóricos}}$\\[2pt]
+        $n = 100 / 100 = 1\,\mathrm{UAS} \implies$ Por ley se adopta \textbf{$2\,\mathrm{UAS} = 1.10\,\m$}.
+      \end{exampleblock}
+    \end{column}
+
+    \begin{column}{0.50\textwidth}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[line cap=round, line join=round]
+          % Marco de puerta
+          \draw[line width=2.5pt, darkcharcoal] (0,0) -- (0,2.6) -- (4.2,2.6) -- (4.2,0);
+          \fill[lightbg!90!black] (0.1,0) rectangle (4.1,2.5);
+
+          % Línea divisoria de 2 hileras
+          \draw[dashed, line width=1.2pt, grayborder!90!black] (2.1,0) -- (2.1,2.5);
+
+          % Cota de ancho superior
+          \draw[<->, >=stealth, line width=1.5pt, firered] (0,2.9) -- (4.2,2.9) node[midway, above, font=\scriptsize\bfseries] {$2\,\mathrm{UAS} = 1.10\,\m$};
+
+          % Hilera 1
+          \draw[fill=utnblue!80] (1.05,1.5) circle (0.24cm);
+          \draw[fill=utnblue!80, rounded corners=4pt] (0.65,0.5) rectangle (1.45,1.2);
+          \node[font=\tiny\bfseries, utnblue!90!black] at (1.05,0.2) {Hilera 1 ($0.55\,\m$)};
+
+          % Hilera 2
+          \draw[fill=utnblue!80] (3.15,1.5) circle (0.24cm);
+          \draw[fill=utnblue!80, rounded corners=4pt] (2.75,0.5) rectangle (3.55,1.2);
+          \node[font=\tiny\bfseries, utnblue!90!black] at (3.15,0.2) {Hilera 2 ($0.55\,\m$)};
+        \end{tikzpicture}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- SLIDE 27: ERGONOMÍA DE ESCALERAS ---
 \begin{frame}{Geometría de Escaleras y Vías de Evacuación}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
@@ -331,80 +606,137 @@
         \end{equation*}
         \scriptsize
         $\bullet$ Alzada ($a$): Altura del escalón ($\le 0.18\,\m$).\\
-        $\bullet$ Pedada ($p$): Ancho de pisada ($\ge 0.26\,\m$).\\
-        $\bullet$ \textbf{Cálculo del informe:} $a = 0.17\,\m$, $p = 0.28\,\m \rightarrow 2(0.17) + 0.28 = 0.62\,\m$ (dentro de norma).
+        $\bullet$ Pedada ($p$): Ancho de pisada ($\ge 0.26\,\m$).\\[2pt]
+        \textbf{Cálculo del informe:} $a = 0.17\,\m$, $p = 0.28\,\m$:\\
+        $2(0.17) + 0.28 = \mathbf{0.62\,\m}$ (\textcolor{successgreen!80!black}{\textbf{Verifica}}).
       \end{block}
-      \begin{block}{\textbf{Límites de Evacuación}}
-        \scriptsize
-        $\bullet$ Recorrido máximo a salida exterior: $\le 40\,\m$.\\
-        $\bullet$ Si $n \ge 4\,\mathrm{UAS}$, se exigen salidas independientes:
-        \begin{equation*}
-          ME = \frac{n}{4} + 1
-        \end{equation*}
-        Distribuidas en extremos opuestos para no quedar atrapados por un mismo foco.
-      \end{block}
+      \vspace{0.05cm}
+      \begin{alertblock}{\textbf{Límites Obligatorios}}
+        \tiny
+        $\bullet$ Recorrido máximo a salida: $\le 40\,\m$.\\
+        $\bullet$ Si $n \ge 4\,\mathrm{UAS} \implies ME = n/4 + 1$ (salidas independientes en extremos opuestos para no quedar encerrados).
+      \end{alertblock}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.50\textwidth}
       \centering
-      \resizebox{0.85\columnwidth}{!}{%
-        \begin{tikzpicture}[scale=0.85]
-          \draw[line width=1.5pt, darkcharcoal] (0,0) -- (1.4,0) -- (1.4,1.0) -- (2.8,1.0) -- (2.8,2.0) -- (4.2,2.0);
-          \draw[<->, >=stealth, line width=1pt, firered] (1.4,0) -- (1.4,1.0) node[midway, left, font=\tiny\bfseries] {$a \le 0.18\m$};
-          \draw[<->, >=stealth, line width=1pt, utnblue] (1.4,1.0) -- (2.8,1.0) node[midway, below, font=\tiny\bfseries] {$p \ge 0.26\m$};
+      \resizebox{0.95\columnwidth}{!}{%
+        \begin{tikzpicture}[scale=0.95, line cap=round, line join=round]
+          % Badge de confort superior
+          \node[draw=successgreen!80!black, fill=successgreen!15, rounded corners=4pt, line width=1pt, text width=4.6cm, align=center, font=\tiny] at (2.2,3.1) {
+            \textbf{Paso Ergonómico Verificado}\\$2(0.17\,\m) + 0.28\,\m = \mathbf{0.62\,\m}$ (Confort óptimo)
+          };
+
+          % Escalones
+          \draw[line width=2.2pt, darkcharcoal] (0.0,0.6) -- (1.5,0.6) -- (1.5,1.8) -- (3.2,1.8) -- (3.2,2.5) -- (4.4,2.5);
+
+          % Cotas
+          \draw[<->, >=stealth, line width=1.2pt, firered] (1.5,0.6) -- (1.5,1.8) node[midway, left, font=\tiny\bfseries] {$a = 0.17\,\m$};
+          \draw[<->, >=stealth, line width=1.2pt, utnblue] (1.5,1.8) -- (3.2,1.8) node[midway, below, font=\tiny\bfseries] {$p = 0.28\,\m$};
+
+          % Criterio normativo al pie
+          \node[draw=utnblue!70, fill=utnblue!10, rounded corners=3pt, font=\tiny, align=center, text width=4.6cm] at (2.2,-0.2) {
+            \textbf{Regla de Escaleras (Dec. 351):}\\Peldaños rectos sin descansos en abanico
+          };
         \end{tikzpicture}
       }
     \end{column}
   \end{columns}
 \end{frame}
 
-% --- SLIDE 27: AEA 90364 SECCIÓN 42 ---
+% --- SLIDE 28: AEA 90364 SECCIÓN 42 ---
 \begin{frame}{Reglamentación AEA 90364 Sección 42: Cables LS0H}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Locales BD2 / BD3 / BD4}}
-        \small
-        $\bullet$ Lugares con alta afluencia de personas o riesgo de incendio.\\
-        $\bullet$ Prohibición estricta de cables con aislación de PVC común.\\
-        $\bullet$ \textbf{Cables obligatorios:} LS0H (baja emisión de humos, sin halógenos) bajo norma \textbf{IRAM 62267} e \textbf{IEC 60332}.
+      \begin{block}{\textbf{Cables de PVC Convencional}}
+        \scriptsize\textcolor{firered}{\textbf{Prohibidos en locales BD2 / BD3 / BD4:}}
+        \begin{itemize}
+          \tiny
+          \item Propagan la llama por las bandejas portacables.
+          \item Generan humo negro que bloquea la visión de escape.
+          \item Liberan \textbf{ácido clorhídrico ($HCl$)} corrosivo.
+        \end{itemize}
       \end{block}
+      \vspace{0.15cm}
+      \centering
+      \resizebox{0.92\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \node[draw=firered, fill=firered!12, rounded corners=4pt, line width=1.2pt, inner sep=6pt, text width=5.0cm, align=center, minimum height=1.3cm] {
+            \scriptsize\textbf{\textcolor{firered}{RIESGO CON PVC}}\\[2pt]
+            \tiny $\bullet$ Nubes ácidas densas $\cdot$ Ceguera en escape\\[1pt]
+            \tiny $\bullet$ Corrosión irreversible de cobre y silicio
+          };
+        \end{tikzpicture}
+      }
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{block}{\textbf{Comportamiento ante el Fuego}}
-        \small
-        $\bullet$ Formulados con poliolefinas e hidróxidos metálicos que absorben calor de la llama.\\
-        $\bullet$ \textbf{Solo emiten vapor de agua no tóxico.}\\
-        $\bullet$ No desprenden ácido clorhídrico: conservan la visibilidad para evacuar y no dañan placas electrónicas contiguas.
+      \begin{block}{\textbf{Cables Libres de Halógenos (LS0H)}}
+        \scriptsize\textcolor{successgreen!80!black}{\textbf{Obligatorios según IRAM 62267:}}
+        \begin{itemize}
+          \tiny
+          \item Compuestos con poliolefinas e hidróxidos minerales.
+          \item Reacción endotérmica que absorbe calor de la llama.
+          \item \textbf{Solo emiten vapor de agua no tóxico}.
+        \end{itemize}
       \end{block}
+      \vspace{0.15cm}
+      \centering
+      \resizebox{0.92\columnwidth}{!}{%
+        \begin{tikzpicture}
+          \node[draw=successgreen!80!black, fill=successgreen!15, rounded corners=4pt, line width=1.2pt, inner sep=6pt, text width=5.0cm, align=center, minimum height=1.3cm] {
+            \scriptsize\textbf{\textcolor{successgreen!80!black}{SOLUCIÓN LS0H}}\\[2pt]
+            \tiny $\bullet$ Emisión neutra de vapor $\cdot$ No propaga llama\\[1pt]
+            \tiny $\bullet$ Visibilidad asegurada y sin daños a circuitos
+          };
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
 \end{frame}
 
-% --- SLIDE 28: AEA 90364 SECCIÓN 43 ---
+% --- SLIDE 29: AEA 90364 SECCIÓN 43 ---
 \begin{frame}{Reglamentación AEA 90364 Sección 43: Protección ante Cortocircuitos}
   \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{\textbf{Inecuación de Energía Pasante}}
         \begin{equation*}
           I_{cc}^2 \cdot t \le k^2 \cdot S^2
         \end{equation*}
       \end{block}
       \scriptsize
-      $\bullet$ $I_{cc}$: Corriente eficaz de cortocircuito ($\mathrm{A}$).\\
+      $\bullet$ $I_{cc}$: Corriente de cortocircuito ($\mathrm{A}$).\\
       $\bullet$ $t$: Tiempo de corte de la protección ($\mathrm{s}$).\\
-      $\bullet$ $k$: Constante del conductor ($115$ para Cu/PVC; $143$ para Cu/XLPE).\\
-      $\bullet$ $S$: Sección transversal del cable ($\mm^2$).\\[3pt]
-      \textbf{Significado:} El cortocircuito es tan rápido que el calor no escapa. La protección debe cortar antes de que el calor alcance la temperatura de descomposición del aislante ($160\,\Celsius$).
+      $\bullet$ $k$: Constante del cable ($115$ para Cu/PVC).\\
+      $\bullet$ $S$: Sección transversal ($25\,\mm^2$).\\[2pt]
+      \textbf{Principio:} El calor se genera tan rápido que no escapa. La llave debe abrir antes de alcanzar $160\,\Celsius$ en el aislante.
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{alertblock}{\textbf{Cálculo del Informe}}
-        \tiny
-        Alimentador de $25\,\mm^2$ con falla de $8.5\,\mathrm{kA}$:\\
-        $\bullet$ \textbf{Corte en $30\,\mathrm{ms}$ (normal):} Energía disipada $2.17 \times 10^6\,\mathrm{A^2 s} \le 8.27 \times 10^6\,\mathrm{A^2 s}$ (opera al $26\%$ del límite, seguro).\\
-        $\bullet$ \textbf{Corte en $250\,\mathrm{ms}$ (falla):} Energía disipada $18.1 \times 10^6\,\mathrm{A^2 s}$ (+218\% sobre el límite). Funde el aislante y prende fuego la bandeja de cables.
-      \end{alertblock}
+    \begin{column}{0.50\textwidth}
+      \centering
+      \resizebox{0.98\columnwidth}{!}{%
+        \begin{tikzpicture}[line cap=round, line join=round]
+          % Título de la comparativa
+          \node[font=\scriptsize\bfseries, darkcharcoal] at (2.4,3.2) {Energía Pasante ante Cortocircuito ($8.5\,\mathrm{kA}$)};
+
+          % Línea de límite admisible
+          \draw[line width=1.2pt, dashed, darkcharcoal!70] (3.6,0.3) -- (3.6,2.5);
+          \node[font=\tiny\bfseries, darkcharcoal, fill=white, inner sep=1.5pt, above] at (3.6,2.5) {Límite: $8.27 \times 10^6\,\mathrm{A^2 s}$};
+
+          % Caso Normal (30 ms)
+          \draw[fill=successgreen!30, draw=successgreen!80!black, line width=1pt, rounded corners=2pt] (0,1.5) rectangle (0.94,2.1);
+          \node[font=\tiny\bfseries, successgreen!80!black, anchor=west] at (1.05,1.8) {$30\,\mathrm{ms}$: \textbf{26\% (Seguro)}};
+
+          % Caso Falla (250 ms)
+          \draw[fill=firered!35, draw=firered, line width=1.2pt, rounded corners=2pt] (0,0.5) rectangle (4.6,1.1);
+          \node[font=\tiny\bfseries, firered!90!black] at (2.3,0.8) {$250\,\mathrm{ms}$: \textbf{+218\% (Funde aislante)}};
+
+          % Conclusión al pie
+          \node[draw=firered, fill=firered!10, rounded corners=3pt, font=\tiny, align=center, text width=5.0cm] at (2.4,-0.6) {
+            \textbf{Consecuencia:} Si la protección tarda $250\,\mathrm{ms}$, el cable funde el aislante y desata el fuego en la bandeja.
+          };
+        \end{tikzpicture}
+      }
     \end{column}
   \end{columns}
 \end{frame}

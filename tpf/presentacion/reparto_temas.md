@@ -75,8 +75,8 @@
 
 ### BLOQUE II: Toxicología de Gases, Humos y Marco Legal Argentino
 * **Disertante:** Gaston Grasso (Leg. 401892)
-* **Alcance:** Diapositivas 16 a 28 (13 diapositivas)
-* **Tiempo Objetivo:** 15 a 18 minutos (~1.2 a 1.4 min por filmina)
+* **Alcance:** Diapositivas 16 a 29 (14 diapositivas)
+* **Tiempo Objetivo:** 16 a 19 minutos (~1.2 a 1.4 min por filmina)
 
 #### Desglose Diapositiva por Diapositiva:
 1. **Diapositiva 16: Toxicología de Gases: Monóxido de Carbono ($CO$)**
@@ -85,39 +85,42 @@
 2. **Diapositiva 17: Toxicología Celular: Cianuro de Hidrógeno ($HCN$)**
    - *Conceptos clave:* Origen en pirólisis de poliuretanos, resinas nitrogenadas, plásticos y aislamientos.
    - *Mecanismo de acción:* Inhibición irreversible de la enzima citocromo c oxidasa mitocondrial; anoxia citotóxica (la célula no puede metabolizar el oxígeno aunque la sangre esté oxigenada). Sinergia mortal con el $CO$.
-3. **Diapositiva 18: Gases Irritantes, Ácidos y Corrosivos ($HCl, NO_x, SO_2$)**
-   - *Conceptos clave:* Desprendimiento masivo de ácido clorhídrico gaseoso ($HCl$) por degradación de aislaciones de PVC en bandejas eléctricas. Formación de vapores nitrosos ($NO_x$) y sulfurosos ($SO_2$).
-   - *Efectos:* Blefaroespasmo reflejo inmediato (ceguera funcional en el escape), espasmo bronquial y edema agudo de pulmón retardado (fallecimiento horas después del rescate).
+3. **Diapositiva 18: Gases Irritantes, Ácidos y Corrosivos ($HCl, NO_x, SO_2$, Acroleína)**
+   - *Conceptos clave:* Desprendimiento masivo de ácido clorhídrico gaseoso ($HCl$) por degradación de PVC. Origen de $SO_2$ (cauchos vulcanizados), acroleína (grasas y aceites lubricantes) y $NO_x$ (oxidación térmica del $N_2$ del aire a $>1000\,^\circ\mathrm{C}$ y lacas).
+   - *Efectos:* Blefaroespasmo reflejo inmediato (ceguera en escape) y edema agudo de pulmón retardado hasta 24 horas después del rescate.
 4. **Diapositiva 19: Hipoxia y Disminución de la Fracción de Oxígeno ($O_2$)**
-   - *Conceptos clave:* Fisiología respiratoria: $20.9\%$ ambiente normal, $<16\%$ deterioro motor y juicio crítico alterado, $<12\%$ taquicardia severa y confusión, $<10\%$ pérdida de conciencia, $<6\%$ paro cardiorrespiratorio en pocos minutos.
-5. **Diapositiva 20: Fisiología de la Supervivencia ante el Aire Sobrecalentado**
-   - *Conceptos clave:* Exposición a $>120\,^\circ\mathrm{C}$: quemaduras térmicas de la mucosa laringotraqueal, edema de glotis con asfixia mecánica obstructiva rápida antes del ingreso de gases al torrente.
-6. **Diapositiva 21: Dinámica y Estratificación del Humo — El Plano Neutro**
-   - *Conceptos clave:* Boyamiento térmico (*buoyancy*), gradiente vertical de densidad y presión hidrostática dentro del recinto. Formación del plano neutro: capa superior caliente presurizada con gases tóxicos y capa inferior fría con aire limpio. Pauta táctica de avance a gatas.
-7. **Diapositiva 22: Diagnóstico Visual del Fuego por Coloración del Humo**
-   - *Conceptos clave:* Cuadro diagnóstico de la cátedra: Blanco (vapor de agua o combustión limpia con exceso de $O_2$), Amarillo (azufre o $HCl$), Gris claro/pardo (celulosa y madera con pirólisis incompleta), Negro claro (caucho) y Negro denso/oscuro (hidrocarburos pesados, plásticos y deficiencia severa de comburente).
-8. **Diapositiva 23: Estructura del Marco Regulatorio Argentino**
-   - *Conceptos clave:* Pirámide jerárquica: Ley 19.587 de Higiene y Seguridad en el Trabajo, Ley 24.557 de Riesgos del Trabajo (LRT), Decreto Reglamentario 351/79 (Capítulo 18 y Anexo VII), ordenanzas municipales y normas IRAM/AEA.
-9. **Diapositiva 24: Ley 19.587 y Decreto 351/79 — Anexo VII**
-   - *Conceptos clave:* Filosofía regulatoria de los tres pilares: Dificultar la gestación de incendios, Evitar la propagación del fuego y los efectos de los gases, y Garantizar la evacuación segura del personal antes del colapso.
-10. **Diapositiva 25: Determinación Analítica de la Carga de Fuego ($Q_f$)**
-    - *Ecuación analítica:* $Q_f = \frac{\sum (M_i \cdot PC_i)}{S \cdot 4400}$ expresada en $\mathrm{kg/m^2}$ de madera equivalente (con poder calorífico patrón de $4400\,\mathrm{kcal/kg}$).
-    - *Importancia industrial:* Clasificación del riesgo del establecimiento según cuadro 2.2.1 del Anexo VII y asignación de la resistencia estructural mínima requerida.
-11. **Diapositiva 26: Resistencia Estructural al Fuego ($F$) según Uso y Riesgo**
-    - *Conceptos clave:* Norma IRAM 11950 y curva normalizada ISO 834. Categorías $F30, F60, F90, F120, F180$.
-    - *Criterios de falla:* Pérdida de capacidad portante mecánica (R), estanqueidad a llamas y gases calientes (E), y aislamiento térmico (I).
-12. **Diapositiva 27: Medios de Escape y Unidades de Ancho de Salida (UAS)**
-    - *Conceptos de cálculo:* Factor de ocupación ($f_o$), cálculo poblacional $N = S / f_o$. Número de unidades $n = N / 100$.
-    - *Dimensionamiento:* Primeras 2 UAS $= 1.10\,\mathrm{m}$, cada UAS adicional $+0.45\,\mathrm{m}$. Fórmula de Blondel para escaleras de escape ($2a + p = 0.60\text{ a }0.63\,\mathrm{m}$).
-13. **Diapositiva 28: Seguridad Contra Incendios en Instalaciones Eléctricas (AEA 90364)**
-    - *Conceptos clave:* Sección 42: Medidas contra influencias térmicas y cables con aislaciones LS0H (IRAM 62267). Sección 43: Verificación adiabática de conductores ante cortocircuito ($I_{cc}^2 t \le k^2 S^2$) para evitar incendios en canalizaciones.
-    - *Transición al siguiente disertante:* Dar el pase a **Franco Palombo** para detallar cómo la ingeniería aborda activamente la detección inmediata y los sistemas automáticos y manuales de extinción.
+   - *Conceptos clave:* Fisiología respiratoria: $20.9\%$ ambiente normal, $<16\%$ deterioro motor y taquicardia, $<14\%$ fallo motriz en miembros inferiores, $<10\%$ coma, $<6\%$ paro cardiorrespiratorio en $<40\,\mathrm{s}$.
+5. **Diapositiva 20: Dinámica y Estratificación del Humo — El Plano Neutro**
+   - *Conceptos clave:* Boyamiento térmico (*buoyancy*), gradiente vertical de densidad y presión. Capa caliente superior ($>200\,^\circ\mathrm{C}$) vs capa inferior limpia con $O_2 \approx 20\%$. Criterio táctico de avance a gatas.
+6. **Diapositiva 21: Diagnóstico Visual del Fuego por Coloración del Humo**
+   - *Conceptos clave:* Cuadro diagnóstico: Blanco (vapor o madera seca), Amarillo (azufre o ácidos), Gris (madera/celulosa en brasas), Negro claro (caucho) y Negro denso (hidrocarburos, plásticos, falta severa de aire).
+7. **Diapositiva 22: Estructura del Marco Regulatorio Argentino**
+   - *Conceptos clave:* Pirámide jerárquica: Ley 19.587 de Higiene y Seguridad, Ley 24.557 (LRT), Decreto Reglamentario 351/79 (Capítulo 18, Anexo VII y Capítulo 21), normas IRAM y AEA 90364.
+8. **Diapositiva 23: Determinación Analítica de la Carga de Fuego ($Q_f$)**
+   - *Ecuación analítica:* $Q_f = \frac{\sum (M_i \cdot PC_i)}{S \cdot 4400}$ expresada en $\mathrm{kg/m^2}$ de madera equivalente ($4400\,\mathrm{kcal/kg}$).
+   - *Cálculo del informe:* Depósito de $600\,\mathrm{m}^2$ con $33.7 \times 10^6\,\mathrm{kcal} \implies Q_f = 12.77\,\mathrm{kg/m^2}$ (carga de fuego baja, $\le 15\,\mathrm{kg/m^2}$).
+9. **Diapositiva 24: Clasificación de Riesgos según Decreto 351/79 (Tabla 2.1)**
+   - *Escala legal:* Riesgo 1 (Explosivo) a Riesgo 7 (Refractario). Encuadre del sector en **Riesgo 3 (Muy Combustible)** por pallets de madera, cajas de cartón y plásticos.
+   - *Cruce reglamentario:* La ley cruza Riesgo (Tabla 2.1) + Carga de Fuego ($Q_f$) para determinar muros cortafuego ($F$) y extintores.
+10. **Diapositiva 25: Resistencia Estructural al Fuego ($F$) según Uso y Riesgo**
+    - *Conceptos clave:* Norma IRAM 11950 y curva ISO 834. Cuadro 2.2.1: $Q_f \le 15\,\mathrm{kg/m^2}$ en Riesgo 3 exige pared divisoria **$F60$**.
+    - *Criterios de falla:* Capacidad portante mecánica, estanqueidad a humos y aislamiento térmico ($\Delta T \le 140\,^\circ\mathrm{C}$).
+11. **Diapositiva 26: Medios de Escape y Unidades de Ancho de Salida (UAS)**
+    - *Conceptos de cálculo:* Factor de ocupación ($f_o$), cálculo poblacional $N = S / f_o$. Unidades requeridas $n = N / 100$.
+    - *Dimensionamiento:* Primeras 2 UAS $= 1.10\,\mathrm{m}$, cada UAS adicional $+0.45\,\mathrm{m}$. Adopción de 2 UAS ($1.10\,\mathrm{m}$) en el informe.
+12. **Diapositiva 27: Geometría de Escaleras de Evacuación**
+    - *Conceptos clave:* Fórmula de Blondel ($2a + p = 0.60\text{ a }0.63\,\mathrm{m}$). Verificación del informe: $a=0.17\,\mathrm{m}$, $p=0.28\,\mathrm{m} \rightarrow 0.62\,\mathrm{m}$. Límite de $40\,\mathrm{m}$ de recorrido y salidas independientes si $n \ge 4$.
+13. **Diapositiva 28: Seguridad Contra Incendios en Instalaciones Eléctricas (AEA 90364 Sección 42)**
+    - *Conceptos clave:* Locales BD2/BD3/BD4 con prohibición de PVC. Obligatoriedad de cables LS0H (IRAM 62267 / IEC 60332) que emiten solo vapor de agua.
+14. **Diapositiva 29: Protección Adiabática ante Cortocircuitos (AEA 90364 Sección 43)**
+    - *Conceptos clave:* Inecuación $I_{cc}^2 t \le k^2 S^2$. Verificación a $30\,\mathrm{ms}$ (seguro al $26\%$) vs falla a $250\,\mathrm{ms}$ ($+218\%$, ignición de canalización).
+    - *Transición al siguiente disertante:* Dar el pase a **Franco Palombo** (Diapositiva 30) para detallar cómo la ingeniería aborda activamente la detección precoz y la extinción con hidrantes y rociadores.
 
 ---
 
 ### BLOQUE III: Tecnologías de Detección y Sistemas de Extinción
 * **Disertante:** Franco Palombo (Leg. 401910)
-* **Alcance:** Diapositivas 29 a 41 (13 diapositivas)
+* **Alcance:** Diapositivas 30 a 42 (13 diapositivas)
 * **Tiempo Objetivo:** 15 a 18 minutos (~1.2 a 1.4 min por filmina)
 
 #### Desglose Diapositiva por Diapositiva:
