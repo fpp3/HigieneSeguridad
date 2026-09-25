@@ -76,8 +76,23 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{Detectores Puntuales}
+  \begin{figure}[!hc]
+    \centering
+    \begin{subfigure}[c]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{pictures/sist_detecc-detector_optico.jpg}
+      \caption{Detector puntual Óptico.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{pictures/sist_detecc-detector_ionico.jpg}
+      \caption{Detector puntual Iónico.}
+    \end{subfigure}
+  \end{figure}
+\end{frame}
+
 % --- SLIDE 30: DETECTOR ÓPTICO ---
-\begin{frame}{Detector Óptico Puntual de Humo (Efecto Tyndall)}
+\begin{frame}{Detector Óptico Puntual de Humo}
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \small
@@ -215,6 +230,10 @@
         \item \textbf{Principio de funcionamiento:} Atenuación del haz de luz por las particulas de humo que la absorben.
         \item \textbf{Ventaja operativa:} Inmune al retardo por estratificación térmica.
       \end{itemize}
+      \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=0.5\textwidth]{pictures/sist_detecc-detector_haz_proyec.jpg}
+      \end{figure}
     \end{column}
 
     \begin{column}{0.50\textwidth}
@@ -315,6 +334,19 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{Detección por Aspiración de Alta Sensibilidad (ASD / VESDA)}
+  \begin{figure}[!hc]
+    \centering
+    \begin{subfigure}[c]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{pictures/sist_detecc-detector_vesda.jpg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{pictures/sist_detecc-detector_vesda_2.jpg}
+    \end{subfigure}
+  \end{figure}
+\end{frame}
+
 % --- SLIDE 34: TÉRMICA, CABLE SENSOR Y LLAMA ---
 \begin{frame}{Detección Térmica, Cable Sensor Lineal y Detectores de Llama}
   \begin{columns}[T]
@@ -355,21 +387,7 @@
       \end{block}
       \vspace{0.1cm}
       \centering
-      \resizebox{0.95\columnwidth}{!}{%
-        \begin{tikzpicture}[scale=0.9]
-          % Detector en la pared
-          \draw[fill=utnblue, draw=darkcharcoal, line width=1pt, rounded corners=2pt] (0,0.6) rectangle (0.8,1.4);
-          \node[text=white, font=\fontsize{4.5}{5.5}\selectfont\bfseries, align=center] at (0.4,1.0) {Sensor\\UV/IR};
-
-          % Cono de visión de detección
-          \draw[fill=amberyellow!20, draw=fireorange, line width=0.8pt, opacity=0.7] (0.8,1.0) -- (3.8,1.8) -- (3.8,0.2) -- cycle;
-          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, fireorange] at (2.3,1.0) {Cono $90^\circ\text{--}120^\circ$};
-
-          % Llama en el extremo
-          \draw[fill=firered, draw=fireorange, line width=0.8pt] (3.9,0.7) .. controls (4.2,0.9) and (3.7,1.2) .. (4.0,1.4) .. controls (4.1,1.1) and (4.4,0.9) .. (3.9,0.7);
-          \node[font=\fontsize{4.5}{5.5}\selectfont\bfseries, firered, right, align=left] at (4.1,1.0) {Llama\\$< 1\,\mathrm{s}$};
-        \end{tikzpicture}
-      }
+      \includegraphics[width=.7\textwidth]{pictures/sist_detecc-detector_UV.jpg}
     \end{column}
   \end{columns}
 \end{frame}
@@ -377,7 +395,7 @@
 % --- SLIDE 36: ANATOMÍA DEL EXTINTOR ---
 \begin{frame}{Anatomía y Mecánica del Extintor Portátil}
   \begin{columns}[c]
-    \begin{column}{0.54\textwidth}
+    \begin{column}{0.3\textwidth}
       \small
       Componentes mecánicos (presión permanente):
       \begin{enumerate}
@@ -391,9 +409,9 @@
       \end{enumerate}
     \end{column}
 
-    \begin{column}{0.44\textwidth}
+    \begin{column}{0.34\textwidth}
       \centering
-      \resizebox{0.65\columnwidth}{!}{%
+      \resizebox{0.75\columnwidth}{!}{%
         \begin{tikzpicture}
           % Cilindro
           \draw[fill=firered!85, draw=darkcharcoal, line width=1.5pt, rounded corners=5pt] (0,0) rectangle (2.4,3.5);
@@ -413,6 +431,10 @@
           \node[fill=white, draw=darkcharcoal, line width=0.8pt, font=\tiny\bfseries, align=center, inner sep=2pt] at (1.2,1.8) {Carga PQS /\\$\mathrm{CO_2}$};
         \end{tikzpicture}
       }
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \centering
+      \includegraphics[width=.5\textwidth]{pictures/extintor_portatil.jpg}
     \end{column}
   \end{columns}
 \end{frame}
@@ -632,6 +654,19 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{Sistemas Fijos: Red Interior de Hidrantes}
+  \begin{figure}[!hc]
+    \centering
+    \begin{subfigure}[c]{0.55\textwidth}
+      \includegraphics[width=\textwidth]{pictures/red_hidrante.jpg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.35\textwidth}
+      \includegraphics[width=\textwidth]{pictures/red_hidrante_2.jpg}
+    \end{subfigure}
+  \end{figure}
+\end{frame}
+
 % --- SLIDE 41: SPRINKLERS E INUNDACIÓN GASEOSA ---
 \begin{frame}{Rociadores Automáticos e Inundación Gaseosa}
   \begin{columns}[T]
@@ -643,7 +678,10 @@
         $\bullet$ \textbf{Puntual:} Abre solo el cabezal sobre el foco.
       \end{block}
       \centering
-      \resizebox{0.65\columnwidth}{!}{%
+  \begin{figure}[!hc]
+    \centering
+    \begin{subfigure}[c]{0.55\textwidth}
+      \resizebox{\textwidth}{!}{%
         \begin{tikzpicture}[scale=0.75]
           % Rosca superior
           \draw[fill=darkcharcoal!40, draw=darkcharcoal, line width=0.8pt] (0.7,2.2) rectangle (1.7,2.6);
@@ -658,6 +696,12 @@
           \node[font=\fontsize{4}{5}\selectfont\bfseries, darkcharcoal, below] at (1.2,0.35) {Deflector Distribuidor};
         \end{tikzpicture}
       }
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.35\textwidth}
+      \includegraphics[width=\textwidth, angle=180]{pictures/rociador_ampolla.jpg}
+    \end{subfigure}
+  \end{figure}
     \end{column}
 
     \begin{column}{0.48\textwidth}
