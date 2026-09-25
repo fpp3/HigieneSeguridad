@@ -101,7 +101,7 @@
    - *Cálculo del informe:* Depósito de $600\,\mathrm{m}^2$ con $33.7 \times 10^6\,\mathrm{kcal} \implies Q_f = 12.77\,\mathrm{kg/m^2}$ (carga de fuego baja, $\le 15\,\mathrm{kg/m^2}$).
 9. **Diapositiva 24: Clasificación de Riesgos según Decreto 351/79 (Tabla 2.1)**
    - *Escala legal:* Riesgo 1 (Explosivo) a Riesgo 7 (Refractario). Encuadre del sector en **Riesgo 3 (Muy Combustible)** por pallets de madera, cajas de cartón y plásticos.
-   - *Cruce reglamentario:* La ley cruza Riesgo (Tabla 2.1) + Carga de Fuego ($Q_f$) para determinar muros cortafuego ($F$) y extintores.
+   - *Cruce de datos:* La ley cruza Riesgo (Tabla 2.1) + Carga de Fuego ($Q_f$) como datos de entrada obligatorios para los cuadros de exigencias del Anexo VII.
 10. **Diapositiva 25: Resistencia Estructural al Fuego ($F$) según Uso y Riesgo**
     - *Conceptos clave:* Norma IRAM 11950 y curva ISO 834. Cuadro 2.2.1: $Q_f \le 15\,\mathrm{kg/m^2}$ en Riesgo 3 exige pared divisoria **$F60$**.
     - *Criterios de falla:* Capacidad portante mecánica, estanqueidad a humos y aislamiento térmico ($\Delta T \le 140\,^\circ\mathrm{C}$).
